@@ -1,6 +1,6 @@
 //
 //  MasterViewController.swift
-//  Xcode7UITesting
+//  GoCubs
 //
 //  Created by Ellen Shapiro (Vokal) on 9/29/15.
 //  Copyright © 2015 Vokal. All rights reserved.

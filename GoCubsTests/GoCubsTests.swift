@@ -1,15 +1,15 @@
 //
-//  Xcode7UITestingTests.swift
-//  Xcode7UITestingTests
+//  GoCubsTests.swift
+//  GoCubsTests
 //
 //  Created by Ellen Shapiro (Vokal) on 9/29/15.
 //  Copyright © 2015 Vokal. All rights reserved.
 //
 
 import XCTest
-@testable import Xcode7UITesting
+@testable import GoCubs
 
-class Xcode7UITestingTests: XCTestCase {
+class GoCubsTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
