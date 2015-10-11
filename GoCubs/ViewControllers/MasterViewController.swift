@@ -11,12 +11,15 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
+    
+    var dataSource: CubsGameDataSource!
 
     //MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dataSource = CubsGameDataSource(tableView: self.tableView)
         //Grab a reference to the detail from the split view controller.
         if let split = self.splitViewController,
          let detail = (split.viewControllers[split.viewControllers.count-1] as! UINavigationController).topViewController as? DetailViewController{
@@ -29,16 +32,28 @@ class MasterViewController: UITableViewController {
         if let split = self.splitViewController {
             self.clearsSelectionOnViewWillAppear = split.collapsed
         }
+        
+        
         super.viewWillAppear(animated)
     }
+    
 
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
+        
+        guard let segueIdentifier = segue.identifier,
+            identifier = SegueIdentifier(rawValue: segueIdentifier) else {
+                assertionFailure("No segue identifier for \(segue.identifier)")
+                return
+        }
+    
+        switch identifier {
+        case .showDetail:
             if let navController = segue.destinationViewController as? UINavigationController,
-                let controller = navController.topViewController as? DetailViewController {
-                    controller.detailItem = "Something!"
+                controller = navController.topViewController as? DetailViewController,
+                cell = sender as? CubsGameCell {
+                    controller.game = self.dataSource.gameForCell(cell, inTableView: self.tableView)
                     controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                     controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -62,4 +77,3 @@ class MasterViewController: UITableViewController {
         return cell
     }
 }
-

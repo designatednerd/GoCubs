@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CubsGame {
+class CubsGame {
     
     let date: NSDate
     let opponent: Opponent

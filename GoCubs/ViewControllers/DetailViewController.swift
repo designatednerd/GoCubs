@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     //MARK: - Properties
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-    var detailItem: AnyObject? {
+    var game: CubsGame? {
         didSet {
             // Update the view with the new detail item.
             self.configureViewForDetailItem()
@@ -31,9 +31,9 @@ class DetailViewController: UIViewController {
     //MARK: - Setup
     
     func configureViewForDetailItem() {
-        if let detail = self.detailItem {
+        if let cubsGame = self.game {
             if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+                label.text = cubsGame.result.type.rawValue
             }
         }
     }
