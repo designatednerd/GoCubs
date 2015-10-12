@@ -28,6 +28,7 @@
 		9B99F1F51BCB0B7B00EC08DC /* CubsGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F41BCB0B7B00EC08DC /* CubsGameCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9B99F1F71BCB0CBC00EC08DC /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */; settings = {ASSET_TAGS = (); }; };
 		9B99F1F91BCB21F800EC08DC /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F81BCB21F800EC08DC /* UIColor+RGB.swift */; settings = {ASSET_TAGS = (); }; };
+		9B99F1FB1BCB4EA800EC08DC /* TeamColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1FA1BCB4EA700EC08DC /* TeamColors.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		9B99F1F41BCB0B7B00EC08DC /* CubsGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameCell.swift; sourceTree = "<group>"; };
 		9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		9B99F1F81BCB21F800EC08DC /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
+		9B99F1FA1BCB4EA700EC08DC /* TeamColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				9B99F1D31BCAFD8F00EC08DC /* Opponent.swift */,
 				9B99F1D41BCAFD8F00EC08DC /* Pitcher.swift */,
 				9B99F1D51BCAFD8F00EC08DC /* Result.swift */,
+				9B99F1FA1BCB4EA700EC08DC /* TeamColors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				9B99F1E01BCAFD8F00EC08DC /* String+IntsWithDash.swift in Sources */,
 				9B99F1E41BCAFD8F00EC08DC /* Opponent.swift in Sources */,
 				9B99F1DB1BCAFD8F00EC08DC /* AppDelegate.swift in Sources */,
+				9B99F1FB1BCB4EA800EC08DC /* TeamColors.swift in Sources */,
 				9B99F1E61BCAFD8F00EC08DC /* Result.swift in Sources */,
 				9B99F1F11BCB05D900EC08DC /* SeugueIdentifier.swift in Sources */,
 				9B99F1E81BCAFD8F00EC08DC /* MasterViewController.swift in Sources */,

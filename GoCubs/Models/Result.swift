@@ -6,13 +6,46 @@
 //  Copyright © 2015 Vokal. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum ResultType: String {
     case
     Win = "W",
     Loss = "L",
     Postponed //Automatically "Postponed"
+    
+    static let rainBlue = UIColor.cub_RGB(158, 206, 208)
+    
+    func flagString() -> String {
+        switch self {
+        case .Postponed:
+            return "☔️"
+        default:
+            return self.rawValue
+        }
+    }
+    
+    func flagBackground() -> UIColor {
+        switch self {
+        case .Win:
+            return .whiteColor()
+        case .Loss:
+            return TeamColors.Cubs.primary()
+        case .Postponed:
+            return ResultType.rainBlue
+        }
+    }
+    
+    func flagTextColor() -> UIColor {
+        switch self {
+        case .Win:
+            return TeamColors.Cubs.primary()
+        case .Loss:
+            return .whiteColor()
+        case .Postponed:
+            return .blackColor()
+        }
+    }
 }
 
 struct Result {
@@ -49,5 +82,4 @@ struct Result {
             self.opponentRuns = runs.1 
         }
     }
-    
 }
