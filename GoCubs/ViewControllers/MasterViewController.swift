@@ -19,6 +19,7 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = LocalizedString.listTitle
         self.dataSource = CubsGameDataSource(tableView: self.tableView)
         //Grab a reference to the detail from the split view controller.
         if let split = self.splitViewController,
@@ -32,7 +33,6 @@ class MasterViewController: UITableViewController {
         if let split = self.splitViewController {
             self.clearsSelectionOnViewWillAppear = split.collapsed
         }
-        
         
         super.viewWillAppear(animated)
     }

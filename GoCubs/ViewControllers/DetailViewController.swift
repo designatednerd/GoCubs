@@ -19,6 +19,12 @@ class DetailViewController: UIViewController {
             self.configureViewForDetailItem()
         }
     }
+    
+    let dateFormatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MMMM d"
+        return formatter
+    }()
 
     //MARK: - View Lifecycle
     
@@ -35,6 +41,8 @@ class DetailViewController: UIViewController {
             if let label = self.detailDescriptionLabel {
                 label.text = cubsGame.result.type.rawValue
             }
+            
+            self.title = dateFormatter.stringFromDate(cubsGame.date)
         }
     }
 }

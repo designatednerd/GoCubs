@@ -32,13 +32,37 @@ class CubsGameCell: UITableViewCell {
         }
         
         if game.result.type == .Postponed {
-            self.backgroundColor = .lightGrayColor()
+            self.vsLabel.alpha = 0.5
         } else {
-            self.backgroundColor = .whiteColor()
+            self.vsLabel.alpha = 1
         }
         
-        self.primaryColorView.backgroundColor = .blueColor()
-        self.secondaryColorView.backgroundColor = .redColor()
+        self.primaryColorView.backgroundColor = game.opponent.colors.primary()
+        self.secondaryColorView.backgroundColor = game.opponent.colors.secondary()
         
+    }
+    
+    //MARK: Cell silliness
+    //Override these methods to prevent cell selection from futzing with 
+    // the background color of the cell's color views.
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        let primary = self.primaryColorView.backgroundColor
+        let secondary = self.secondaryColorView.backgroundColor
+        
+        super.setSelected(selected, animated: animated)
+        
+        self.primaryColorView.backgroundColor = primary
+        self.secondaryColorView.backgroundColor = secondary
+    }
+    
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        let primary = self.primaryColorView.backgroundColor
+        let secondary = self.secondaryColorView.backgroundColor
+        
+        super.setHighlighted(highlighted, animated: animated)
+        
+        self.primaryColorView.backgroundColor = primary
+        self.secondaryColorView.backgroundColor = secondary
     }
 }

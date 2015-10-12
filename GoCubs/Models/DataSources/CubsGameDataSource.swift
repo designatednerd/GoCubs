@@ -63,7 +63,7 @@ extension CubsGameDataSource: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(CubsGameCell.identifier) as! CubsGameCell
-        
+
         let game = self.games[indexPath.row]
         cell.configureForGame(game)
         return cell

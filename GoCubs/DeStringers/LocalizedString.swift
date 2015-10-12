@@ -10,6 +10,8 @@ import Foundation
 
 enum LocalizedString {
     
+    static let listTitle = NSLocalizedString("Cubs 2015 Games", comment: "Title for the main list view")
+    
     static let cubs = NSLocalizedString("Cubs", comment: "Cubs team name")
     
     static let gamePostponed = NSLocalizedString("Game postponed", comment: "String indicating the game was postponed")
@@ -17,4 +19,5 @@ enum LocalizedString {
     static func versus(awayTeam: String, homeTeam: String) -> String {
         return NSString.localizedStringWithFormat("%1$@ vs. %2$@", awayTeam, homeTeam) as String
     }
+    
 }

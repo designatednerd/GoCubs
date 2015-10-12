@@ -27,6 +27,7 @@
 		9B99F1F11BCB05D900EC08DC /* SeugueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F01BCB05D900EC08DC /* SeugueIdentifier.swift */; settings = {ASSET_TAGS = (); }; };
 		9B99F1F51BCB0B7B00EC08DC /* CubsGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F41BCB0B7B00EC08DC /* CubsGameCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9B99F1F71BCB0CBC00EC08DC /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */; settings = {ASSET_TAGS = (); }; };
+		9B99F1F91BCB21F800EC08DC /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F81BCB21F800EC08DC /* UIColor+RGB.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		9B99F1F01BCB05D900EC08DC /* SeugueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeugueIdentifier.swift; sourceTree = "<group>"; };
 		9B99F1F41BCB0B7B00EC08DC /* CubsGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameCell.swift; sourceTree = "<group>"; };
 		9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		9B99F1F81BCB21F800EC08DC /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				9B99F1CD1BCAFD8F00EC08DC /* String+IntsWithDash.swift */,
+				9B99F1F81BCB21F800EC08DC /* UIColor+RGB.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B99F1E21BCAFD8F00EC08DC /* CubsGame.swift in Sources */,
+				9B99F1F91BCB21F800EC08DC /* UIColor+RGB.swift in Sources */,
 				9B99F1F71BCB0CBC00EC08DC /* LocalizedString.swift in Sources */,
 				9B99F1E01BCAFD8F00EC08DC /* String+IntsWithDash.swift in Sources */,
 				9B99F1E41BCAFD8F00EC08DC /* Opponent.swift in Sources */,
