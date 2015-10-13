@@ -19,6 +19,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var losingTeamNameLabel: UILabel!
     @IBOutlet weak var losingTeamScoreLabel: UILabel!
     @IBOutlet weak var cubsRecordLabel: UILabel!
+    @IBOutlet weak var winningPitcherNameLabel: UILabel!
+    @IBOutlet weak var losingPitcherNameLabel: UILabel!
     
     
     var game: CubsGame? {
@@ -39,6 +41,15 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.configureForGame()
+        self.addAcessibility()
+    }
+    
+    private func addAcessibility() {
+        self.losingTeamNameLabel.accessibilityIdentifier = AccessibilityString.losingTeamName
+        self.losingTeamScoreLabel.accessibilityIdentifier = AccessibilityString.losingTeamScore
+        self.winningTeamNameLabel.accessibilityIdentifier = AccessibilityString.winningTeamName
+        self.winningTeamScoreLabel.accessibilityIdentifier = AccessibilityString.winningTeamScore
+        self.cubsRecordLabel.accessibilityIdentifier = AccessibilityString.cubsRecord
     }
 
     //MARK: - Setup
@@ -48,6 +59,15 @@ class DetailViewController: UIViewController {
          _ = self.flagView { //Make sure the view has loaded
             self.title = self.dateFormatter.stringFromDate(cubsGame.date)
             
+            let components = NSCalendar.currentCalendar().components([.Day, .Month], fromDate: cubsGame.date)
+            var isPostseason = false
+            
+            if (components.month > 10 || //Is november OR
+                (components.month == 10 && components.day >= 7)) { //Is October 7th or later
+                isPostseason = true
+            }
+            
+            
             switch cubsGame.result.type {
             case .Win:
                 self.winningTeamNameLabel.text = LocalizedString.cubs.uppercaseString
@@ -56,15 +76,15 @@ class DetailViewController: UIViewController {
                 self.losingTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
                 self.losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
                 self.losingTeamScoreLabel.text = "\(cubsGame.result.opponentRuns)"
-                self.cubsRecordLabel.text = LocalizedString.improve(cubsGame.cubsRecord)
+                self.cubsRecordLabel.text = LocalizedString.improve(cubsGame.cubsRecord, isPostseason: isPostseason)
             case .Loss:
                 self.losingTeamNameLabel.text = LocalizedString.cubs.uppercaseString
                 self.losingTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
                 self.losingTeamScoreLabel.text = "\(cubsGame.result.cubsRuns)"
                 self.winningTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
+                self.winningTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
                 self.winningTeamScoreLabel.text = "\(cubsGame.result.opponentRuns)"
-                self.losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
-                self.cubsRecordLabel.text = LocalizedString.fall(cubsGame.cubsRecord)
+                self.cubsRecordLabel.text = LocalizedString.fall(cubsGame.cubsRecord, isPostseason: isPostseason)
             case .Postponed:
                 self.winningTeamNameLabel.text = LocalizedString.cubs.uppercaseString
                 self.winningTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
@@ -72,10 +92,22 @@ class DetailViewController: UIViewController {
                 self.losingTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
                 self.losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
                 self.losingTeamScoreLabel.text = LocalizedString.noResult
-                self.cubsRecordLabel.text = LocalizedString.remain(cubsGame.cubsRecord)
+                self.cubsRecordLabel.text = LocalizedString.remain(cubsGame.cubsRecord,isPostseason: isPostseason)
             }
 
             self.configureFlagForResultType(cubsGame.result.type)
+            self.configurePitchersForGame(cubsGame)
+        }
+    }
+    
+    func configurePitchersForGame(game: CubsGame) {
+        switch game.result.type {
+        case .Postponed:
+            self.winningPitcherNameLabel.text = LocalizedString.noResult
+            self.losingPitcherNameLabel.text = LocalizedString.noResult
+        default:
+            self.winningPitcherNameLabel.text = game.winningPitcher.name
+            self.losingPitcherNameLabel.text = game.losingPitcher.name
         }
     }
     
@@ -84,5 +116,6 @@ class DetailViewController: UIViewController {
         self.flagView.backgroundColor = resultType.flagBackground()
         self.resultLabel.text = resultType.flagString()
         self.resultLabel.textColor = resultType.flagTextColor()
+        self.resultLabel.accessibilityLabel = resultType.accessibilityString()
     }
 }

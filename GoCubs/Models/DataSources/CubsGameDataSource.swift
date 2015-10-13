@@ -34,6 +34,10 @@ class CubsGameDataSource: NSObject {
                 gameBuilder.append(game)
             }
         }
+
+        gameBuilder.sortInPlace {
+            $0.date.compare($1.date) == NSComparisonResult.OrderedDescending
+        }
         
         self.games = gameBuilder
         

@@ -20,6 +20,7 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         
         self.title = LocalizedString.listTitle
+        self.tableView.accessibilityIdentifier = AccessibilityString.gamesTableview
         self.dataSource = CubsGameDataSource(tableView: self.tableView)
         //Grab a reference to the detail from the split view controller.
         if let split = self.splitViewController,

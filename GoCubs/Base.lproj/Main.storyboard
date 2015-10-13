@@ -32,6 +32,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wrigley" translatesAutoresizingMaskIntoConstraints="NO" id="jec-2I-fAJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjv-HS-gQZ">
                                 <rect key="frame" x="20" y="106" width="130" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -81,28 +84,65 @@
                                     <constraint firstItem="XSj-33-Rym" firstAttribute="centerY" secondItem="BOT-pJ-Ezc" secondAttribute="centerY" id="jFx-kH-9ax"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cubs Record: 100-200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-ge-9Z7">
-                                <rect key="frame" x="213" y="425" width="175" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cubs Record: 100-200" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-ge-9Z7">
+                                <rect key="frame" x="75" y="425" width="450" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOSING PITCHER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYD-a9-mnM">
+                                <rect key="frame" x="478" y="540.5" width="102" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl1-qY-cvy">
+                                <rect key="frame" x="20" y="559" width="48" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WINNING PITCHER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brs-hq-A61">
+                                <rect key="frame" x="20" y="540" width="111.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aB-K8-By2">
+                                <rect key="frame" x="532" y="559" width="48" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5aB-K8-By2" secondAttribute="trailing" constant="20" id="5lH-YF-9wV"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="xl1-qY-cvy" secondAttribute="bottom" constant="20" id="8YT-XI-qGD"/>
                             <constraint firstItem="Rjv-HS-gQZ" firstAttribute="top" secondItem="KGr-hT-b6F" secondAttribute="bottom" constant="5" id="92e-JK-OhY"/>
+                            <constraint firstItem="5aB-K8-By2" firstAttribute="top" secondItem="fYD-a9-mnM" secondAttribute="bottom" constant="4" id="ArP-1o-glx"/>
                             <constraint firstItem="v7d-ay-Eqt" firstAttribute="width" secondItem="KGr-hT-b6F" secondAttribute="width" id="B44-Z5-5Ig"/>
                             <constraint firstItem="KGr-hT-b6F" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" id="DcP-X9-oYI"/>
                             <constraint firstItem="v7d-ay-Eqt" firstAttribute="top" secondItem="KGr-hT-b6F" secondAttribute="top" id="FQk-nG-UEI"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="jec-2I-fAJ" secondAttribute="bottom" id="Gjl-C0-KJq"/>
                             <constraint firstItem="KGr-hT-b6F" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="20" id="JiH-4F-hIQ"/>
                             <constraint firstItem="BOT-pJ-Ezc" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="Jmx-PU-jcw"/>
+                            <constraint firstItem="xl1-qY-cvy" firstAttribute="leading" secondItem="Brs-hq-A61" secondAttribute="leading" id="OZd-SI-2Mo"/>
+                            <constraint firstAttribute="trailing" secondItem="jec-2I-fAJ" secondAttribute="trailing" id="Pk5-iu-eCN"/>
                             <constraint firstItem="Rjv-HS-gQZ" firstAttribute="trailing" secondItem="KGr-hT-b6F" secondAttribute="trailing" id="Qin-vs-hMK"/>
                             <constraint firstItem="5nV-Tq-kXv" firstAttribute="trailing" secondItem="v7d-ay-Eqt" secondAttribute="trailing" id="TbQ-g6-hYh"/>
                             <constraint firstItem="5nV-Tq-kXv" firstAttribute="leading" secondItem="v7d-ay-Eqt" secondAttribute="leading" id="Urc-oT-Zud"/>
                             <constraint firstItem="4HY-ge-9Z7" firstAttribute="top" secondItem="BOT-pJ-Ezc" secondAttribute="bottom" constant="8" id="YVY-c4-VEv"/>
+                            <constraint firstItem="jec-2I-fAJ" firstAttribute="top" secondItem="svH-Pt-448" secondAttribute="top" id="a1k-BA-LGo"/>
+                            <constraint firstItem="5aB-K8-By2" firstAttribute="trailing" secondItem="fYD-a9-mnM" secondAttribute="trailing" id="dkb-2P-o8Z"/>
+                            <constraint firstItem="jec-2I-fAJ" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="fMa-AN-5GO"/>
                             <constraint firstItem="5nV-Tq-kXv" firstAttribute="top" secondItem="v7d-ay-Eqt" secondAttribute="bottom" constant="5" id="ft3-ac-XaH"/>
                             <constraint firstItem="BOT-pJ-Ezc" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="75" id="glW-1y-2u1"/>
+                            <constraint firstItem="xl1-qY-cvy" firstAttribute="top" secondItem="Brs-hq-A61" secondAttribute="bottom" constant="4" id="i7W-3J-qW2"/>
+                            <constraint firstItem="4HY-ge-9Z7" firstAttribute="leading" secondItem="BOT-pJ-Ezc" secondAttribute="leading" id="kFw-da-JLz"/>
                             <constraint firstItem="BOT-pJ-Ezc" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="mWk-ZQ-bFT"/>
+                            <constraint firstItem="xl1-qY-cvy" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" id="mYb-Mj-kto"/>
+                            <constraint firstItem="5aB-K8-By2" firstAttribute="bottom" secondItem="xl1-qY-cvy" secondAttribute="bottom" id="vOr-2c-KQe"/>
                             <constraint firstAttribute="trailing" secondItem="BOT-pJ-Ezc" secondAttribute="trailing" constant="75" id="vrI-AR-gZa"/>
                             <constraint firstItem="Rjv-HS-gQZ" firstAttribute="leading" secondItem="KGr-hT-b6F" secondAttribute="leading" id="wgo-4e-ZG2"/>
                             <constraint firstItem="4HY-ge-9Z7" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="yXP-bT-7VA"/>
@@ -112,10 +152,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
+                        <outlet property="cubsRecordLabel" destination="4HY-ge-9Z7" id="Ikt-9j-Ude"/>
                         <outlet property="flagView" destination="BOT-pJ-Ezc" id="eVd-PL-anK"/>
+                        <outlet property="losingPitcherNameLabel" destination="5aB-K8-By2" id="Ut3-O9-7qp"/>
                         <outlet property="losingTeamNameLabel" destination="v7d-ay-Eqt" id="hg4-tO-0MB"/>
                         <outlet property="losingTeamScoreLabel" destination="5nV-Tq-kXv" id="yck-12-VJz"/>
                         <outlet property="resultLabel" destination="XSj-33-Rym" id="ahc-Uz-SMZ"/>
+                        <outlet property="winningPitcherNameLabel" destination="xl1-qY-cvy" id="gc3-GU-Gla"/>
                         <outlet property="winningTeamNameLabel" destination="KGr-hT-b6F" id="0TF-Bi-QiB"/>
                         <outlet property="winningTeamScoreLabel" destination="Rjv-HS-gQZ" id="TV2-rA-dCO"/>
                     </connections>
@@ -236,6 +279,9 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Wrigley" width="683" height="512"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>

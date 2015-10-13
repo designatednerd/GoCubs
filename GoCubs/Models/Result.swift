@@ -46,6 +46,17 @@ enum ResultType: String {
             return .blackColor()
         }
     }
+    
+    func accessibilityString() -> String {
+        switch self {
+        case .Win:
+            return AccessibilityString.cubsWin
+        case .Loss:
+            return AccessibilityString.cubsLose
+        case .Postponed:
+            return AccessibilityString.postponed
+        }
+    }
 }
 
 struct Result {
