@@ -10,12 +10,7 @@ import XCTest
 
 class GoCubsUITests: XCTestCase {
     
-    override static func setUp() {
-        super.setUp()
-        
-        // Launch the application to be tested.
-        XCUIApplication.launch()
-    }
+    //MARK: - Test Lifecycle
     
     override func setUp() {
         super.setUp()
@@ -23,10 +18,15 @@ class GoCubsUITests: XCTestCase {
         // Stop immediately when a failure occurs.
         continueAfterFailure = false
         
+        // Launch the application to be tested.
+        XCUIApplication.launch()
+        
         // Set the initial state - such as interface orientation - required for tests before they run.
         XCUIDevice.sharedDevice().orientation = .Portrait
 
     }
+    
+    //MARK: - Helper methods
     
     private func checkResult(app: XCUIApplication,
         expectedWinningTeamName: String,
@@ -51,6 +51,8 @@ class GoCubsUITests: XCTestCase {
             XCTAssertTrue(recordString.containsString(LocalizedString.onTheSeason))
         }
     }
+    
+    //MARK: - Actual Tests
     
     func testKnownPostseasonWin() {
         let app = XCUIApplication()
@@ -77,7 +79,6 @@ class GoCubsUITests: XCTestCase {
     }
     
     func testKnownPostseasonLoss() {
-        
         let app = XCUIApplication()
         
         //Select October 9 game
@@ -119,13 +120,5 @@ class GoCubsUITests: XCTestCase {
     
     func testKnownRegularSeasonPostponement() {
         
-        
-        
-    }
-    
-    func testWat() {
-
-        
-    }
-    
+    }    
 }

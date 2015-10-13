@@ -9,10 +9,12 @@
 import XCTest
 import KIF
 
+//Hey, would you look at that!
 @testable import GoCubs
 
 class GoCubsKIFTests: KIFTestCase {
     
+    //MARK: Test Lifecycle
     
     override func afterEach() {
         //Back out of the list
@@ -28,10 +30,12 @@ class GoCubsKIFTests: KIFTestCase {
         expectedLosingTeamName: String,
         expectedLosingTeamScore: String) {
             
+            //Find, unwrap, and cast all the labels
             if let winningTeamLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.winningTeamName) as? UILabel,
                 losingTeamNameLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.losingTeamName) as? UILabel,
                 winningTeamScoreLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.winningTeamScore) as? UILabel,
                 losingTeamScoreLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.losingTeamScore) as? UILabel {
+                    
                     //Check that the labels have the proper text.
                     XCTAssertEqual(winningTeamLabel.text, expectedWinningTeamName)
                     XCTAssertEqual(losingTeamNameLabel.text, expectedLosingTeamName)
@@ -42,10 +46,7 @@ class GoCubsKIFTests: KIFTestCase {
             }
     }
     
-    
-    
-    func checkIsPostseason(isPostseason: Bool) {
-
+    private func checkIsPostseason(isPostseason: Bool) {
         if let recordLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.cubsRecord) as? UILabel,
         recordString = recordLabel.text {
             if isPostseason {
@@ -54,7 +55,7 @@ class GoCubsKIFTests: KIFTestCase {
                 XCTAssertTrue(recordString.containsString(LocalizedString.onTheSeason))
             }
         } else {
-        
+            XCTFail("Record label was not found or had no text!")
         }
     }
     
