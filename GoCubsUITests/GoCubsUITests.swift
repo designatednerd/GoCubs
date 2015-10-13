@@ -69,11 +69,11 @@ class GoCubsUITests: XCTestCase {
             expectedLosingTeamName: "CARDINALS",
             expectedLosingTeamScore: "3")
         
+        //Verify posteason verbiage
         checkIsPostseason(app, isPostseason: true)
 
+        //Is the W showing
         XCTAssertTrue(app.staticTexts[AccessibilityString.cubsWin].exists)
-        
-        
     }
     
     func testKnownPostseasonLoss() {
