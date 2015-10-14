@@ -30,12 +30,12 @@ class ParsingTests: XCTestCase {
         let testHomeOpponent = Opponent(name: "Cardinals")
         XCTAssertFalse(testHomeOpponent.isHomeTeam)
         XCTAssertEqual(testHomeOpponent.name, "Cardinals")
-        XCTAssertEqual(testHomeOpponent.colors, OpponentColors.Cardinals)
+        XCTAssertEqual(testHomeOpponent.colors, TeamColors.Cardinals)
         
         let testAwayOpponent = Opponent(name: "at Pirates")
         XCTAssertEqual(testAwayOpponent.name, "Pirates")
         XCTAssertTrue(testAwayOpponent.isHomeTeam)
-        XCTAssertEqual(testAwayOpponent.colors, OpponentColors.Pirates)
+        XCTAssertEqual(testAwayOpponent.colors, TeamColors.Pirates)
     }
     
     func testParsingResult() {
@@ -87,7 +87,7 @@ class ParsingTests: XCTestCase {
         
         XCTAssertEqual(postponedComponents.month, 5)
         XCTAssertEqual(postponedComponents.day, 30)
-        XCTAssertEqual(testPostponement.opponent.colors, OpponentColors.Royals)
+        XCTAssertEqual(testPostponement.opponent.colors, TeamColors.Royals)
         XCTAssertEqual(testPostponement.result.type, ResultType.Postponed)
         XCTAssertEqual(testPostponement.cubsRecord.wins, 25)
         XCTAssertEqual(testPostponement.cubsRecord.losses, 22)
