@@ -11,8 +11,8 @@ import XCTest
 
 class GoCubsTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        XCTFail("WRITE YOU SOME UNIT TESTS!");
-    }
+//    override func setUp() {
+//        super.setUp()
+//        XCTFail("WRITE YOU SOME UNIT TESTS!");
+//    }
 }
