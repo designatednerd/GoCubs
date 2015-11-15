@@ -28,7 +28,7 @@
 		9B99F1E51BCAFD8F00EC08DC /* Pitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D41BCAFD8F00EC08DC /* Pitcher.swift */; };
 		9B99F1E61BCAFD8F00EC08DC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D51BCAFD8F00EC08DC /* Result.swift */; };
 		9B99F1E71BCAFD8F00EC08DC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D81BCAFD8F00EC08DC /* DetailViewController.swift */; };
-		9B99F1E81BCAFD8F00EC08DC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D91BCAFD8F00EC08DC /* MasterViewController.swift */; };
+		9B99F1E81BCAFD8F00EC08DC /* Cubs2015TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D91BCAFD8F00EC08DC /* Cubs2015TableViewController.swift */; };
 		9B99F1EB1BCAFDD300EC08DC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B99F1E91BCAFDD300EC08DC /* Launch Screen.storyboard */; };
 		9B99F1F11BCB05D900EC08DC /* SeugueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F01BCB05D900EC08DC /* SeugueHandler.swift */; };
 		9B99F1F51BCB0B7B00EC08DC /* CubsGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F41BCB0B7B00EC08DC /* CubsGameCell.swift */; };
@@ -90,7 +90,7 @@
 		9B99F1D41BCAFD8F00EC08DC /* Pitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitcher.swift; sourceTree = "<group>"; };
 		9B99F1D51BCAFD8F00EC08DC /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		9B99F1D81BCAFD8F00EC08DC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		9B99F1D91BCAFD8F00EC08DC /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		9B99F1D91BCAFD8F00EC08DC /* Cubs2015TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cubs2015TableViewController.swift; sourceTree = "<group>"; };
 		9B99F1EA1BCAFDD300EC08DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9B99F1F01BCB05D900EC08DC /* SeugueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeugueHandler.swift; sourceTree = "<group>"; };
 		9B99F1F41BCB0B7B00EC08DC /* CubsGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameCell.swift; sourceTree = "<group>"; };
@@ -202,7 +202,6 @@
 				9B491D6F1BF8D9C30040FFBD /* DataSources */,
 				9B99F1CC1BCAFD8F00EC08DC /* Extensions */,
 				9B99F1CF1BCAFD8F00EC08DC /* Models */,
-				9B99F1D61BCAFD8F00EC08DC /* Network */,
 				9B99F1D71BCAFD8F00EC08DC /* ViewControllers */,
 				9B99F1DA1BCAFD8F00EC08DC /* Views */,
 				9B99F1E91BCAFDD300EC08DC /* Launch Screen.storyboard */,
@@ -233,18 +232,11 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		9B99F1D61BCAFD8F00EC08DC /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		9B99F1D71BCAFD8F00EC08DC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				9B99F1D81BCAFD8F00EC08DC /* DetailViewController.swift */,
-				9B99F1D91BCAFD8F00EC08DC /* MasterViewController.swift */,
+				9B99F1D91BCAFD8F00EC08DC /* Cubs2015TableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -518,7 +510,7 @@
 				9B99F1FB1BCB4EA800EC08DC /* TeamColors.swift in Sources */,
 				9B99F1E61BCAFD8F00EC08DC /* Result.swift in Sources */,
 				9B99F1F11BCB05D900EC08DC /* SeugueHandler.swift in Sources */,
-				9B99F1E81BCAFD8F00EC08DC /* MasterViewController.swift in Sources */,
+				9B99F1E81BCAFD8F00EC08DC /* Cubs2015TableViewController.swift in Sources */,
 				9B99F1E31BCAFD8F00EC08DC /* CubsRecord.swift in Sources */,
 				9B99F1F51BCB0B7B00EC08DC /* CubsGameCell.swift in Sources */,
 				9B99F1E51BCAFD8F00EC08DC /* Pitcher.swift in Sources */,
