@@ -78,3 +78,10 @@ class MasterViewController: UITableViewController {
         return cell
     }
 }
+
+extension MasterViewController: SegueHandler {
+    enum SegueIdentifier: String {
+        case
+        showDetail
+    }
+}
