@@ -9,11 +9,15 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
-
+class AppDelegate: UIResponder {
+    
     var window: UIWindow?
 
-    // MARK: - UIApplication Delegate
+}
+
+// MARK: - UIApplication Delegate
+
+extension AppDelegate: UIApplicationDelegate {
 
     func application(application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -31,15 +35,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             splitViewController.delegate = self
             return true
     }
+}
 
-    // MARK: - Split view Delegate
+// MARK: - Split view Delegate
+
+extension AppDelegate: UISplitViewControllerDelegate {
 
     func splitViewController(splitViewController: UISplitViewController,
         collapseSecondaryViewController secondaryViewController:UIViewController,
         ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
         
             guard let secondaryAsNavController = secondaryViewController as? UINavigationController,
-                let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController
+                let topAsDetailController = secondaryAsNavController.topViewController as? GameDetailViewController
                 else {
                 assertionFailure("Trying to grab a detail VC that ain't there")
                 return false
@@ -53,4 +60,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             return false
     }
 }
-
