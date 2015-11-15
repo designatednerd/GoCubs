@@ -17,7 +17,6 @@
 		33BE0EC81BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BE0EC71BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift */; };
 		9B491D711BF8D9C30040FFBD /* CubsGameDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */; };
 		9B491D731BF8D9DC0040FFBD /* cubs2015.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9B491D721BF8D9DC0040FFBD /* cubs2015.csv */; };
-		9B99F1C11BCAFD5E00EC08DC /* GoCubsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1BE1BCAFD5E00EC08DC /* GoCubsTests.swift */; };
 		9B99F1C31BCAFD5E00EC08DC /* ParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1C01BCAFD5E00EC08DC /* ParsingTests.swift */; };
 		9B99F1DB1BCAFD8F00EC08DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1C51BCAFD8F00EC08DC /* AppDelegate.swift */; };
 		9B99F1DC1BCAFD8F00EC08DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B99F1C61BCAFD8F00EC08DC /* Assets.xcassets */; };
@@ -79,7 +78,6 @@
 		6FFB08FC4BF68A03813C5A20 /* Pods-GoCubsKIFTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsKIFTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameDataSource.swift; sourceTree = "<group>"; };
 		9B491D721BF8D9DC0040FFBD /* cubs2015.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cubs2015.csv; sourceTree = "<group>"; };
-		9B99F1BE1BCAFD5E00EC08DC /* GoCubsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoCubsTests.swift; path = GoCubsTests/GoCubsTests.swift; sourceTree = SOURCE_ROOT; };
 		9B99F1BF1BCAFD5E00EC08DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GoCubsTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		9B99F1C01BCAFD5E00EC08DC /* ParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParsingTests.swift; path = GoCubsTests/ParsingTests.swift; sourceTree = SOURCE_ROOT; };
 		9B99F1C51BCAFD8F00EC08DC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,9 +169,8 @@
 		336DA3BF1BBAFFC800B9CBD8 /* GoCubsTests */ = {
 			isa = PBXGroup;
 			children = (
-				9B99F1BE1BCAFD5E00EC08DC /* GoCubsTests.swift */,
-				9B99F1BF1BCAFD5E00EC08DC /* Info.plist */,
 				9B99F1C01BCAFD5E00EC08DC /* ParsingTests.swift */,
+				9B99F1BF1BCAFD5E00EC08DC /* Info.plist */,
 			);
 			name = GoCubsTests;
 			path = Xcode7UITestingTests;
@@ -538,7 +535,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B99F1C31BCAFD5E00EC08DC /* ParsingTests.swift in Sources */,
-				9B99F1C11BCAFD5E00EC08DC /* GoCubsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
