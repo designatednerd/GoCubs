@@ -25,7 +25,7 @@
 		9B99F1E41BCAFD8F00EC08DC /* Opponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D31BCAFD8F00EC08DC /* Opponent.swift */; };
 		9B99F1E51BCAFD8F00EC08DC /* Pitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D41BCAFD8F00EC08DC /* Pitcher.swift */; };
 		9B99F1E61BCAFD8F00EC08DC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D51BCAFD8F00EC08DC /* Result.swift */; };
-		9B99F1E71BCAFD8F00EC08DC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D81BCAFD8F00EC08DC /* DetailViewController.swift */; };
+		9B99F1E71BCAFD8F00EC08DC /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D81BCAFD8F00EC08DC /* GameDetailViewController.swift */; };
 		9B99F1E81BCAFD8F00EC08DC /* Cubs2015TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D91BCAFD8F00EC08DC /* Cubs2015TableViewController.swift */; };
 		9B99F1EB1BCAFDD300EC08DC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B99F1E91BCAFDD300EC08DC /* Launch Screen.storyboard */; };
 		9B99F1F11BCB05D900EC08DC /* SeugueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F01BCB05D900EC08DC /* SeugueHandler.swift */; };
@@ -87,7 +87,7 @@
 		9B99F1D31BCAFD8F00EC08DC /* Opponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opponent.swift; sourceTree = "<group>"; };
 		9B99F1D41BCAFD8F00EC08DC /* Pitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitcher.swift; sourceTree = "<group>"; };
 		9B99F1D51BCAFD8F00EC08DC /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		9B99F1D81BCAFD8F00EC08DC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9B99F1D81BCAFD8F00EC08DC /* GameDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		9B99F1D91BCAFD8F00EC08DC /* Cubs2015TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cubs2015TableViewController.swift; sourceTree = "<group>"; };
 		9B99F1EA1BCAFDD300EC08DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9B99F1F01BCB05D900EC08DC /* SeugueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeugueHandler.swift; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 		9B99F1D71BCAFD8F00EC08DC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9B99F1D81BCAFD8F00EC08DC /* DetailViewController.swift */,
+				9B99F1D81BCAFD8F00EC08DC /* GameDetailViewController.swift */,
 				9B99F1D91BCAFD8F00EC08DC /* Cubs2015TableViewController.swift */,
 			);
 			path = ViewControllers;
@@ -510,7 +510,7 @@
 				9B99F1E31BCAFD8F00EC08DC /* CubsRecord.swift in Sources */,
 				9B99F1F51BCB0B7B00EC08DC /* CubsGameCell.swift in Sources */,
 				9B99F1E51BCAFD8F00EC08DC /* Pitcher.swift in Sources */,
-				9B99F1E71BCAFD8F00EC08DC /* DetailViewController.swift in Sources */,
+				9B99F1E71BCAFD8F00EC08DC /* GameDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

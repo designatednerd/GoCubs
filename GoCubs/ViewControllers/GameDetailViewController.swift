@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  GameDetailViewController.swift
 //  GoCubs
 //
 //  Created by Ellen Shapiro (Vokal) on 9/29/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class GameDetailViewController: UIViewController {
     
     //MARK: - Properties
 

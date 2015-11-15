@@ -50,7 +50,7 @@ class Cubs2015TableViewController: UITableViewController {
         case .showDetail:
             if let
                 navController = segue.destinationViewController as? UINavigationController,
-                controller = navController.topViewController as? DetailViewController,
+                controller = navController.topViewController as? GameDetailViewController,
                 cell = sender as? CubsGameCell {
                     controller.game = self.dataSource.gameForCell(cell, inTableView: self.tableView)
                     controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
