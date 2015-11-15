@@ -60,6 +60,8 @@ class Cubs2015TableViewController: UITableViewController {
     }
 }
 
+//MARK: - SegueHandler
+
 extension Cubs2015TableViewController: SegueHandler {
     enum SegueIdentifier: String {
         case

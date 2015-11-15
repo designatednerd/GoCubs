@@ -42,7 +42,7 @@ class CubsGameCell: UITableViewCell {
         
     }
     
-    //MARK: Cell silliness
+    //MARK: - Cell silliness
     //Override these methods to prevent cell selection from futzing with 
     // the background color of the cell's color views.
     
