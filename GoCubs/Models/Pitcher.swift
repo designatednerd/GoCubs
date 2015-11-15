@@ -22,9 +22,9 @@ struct Pitcher {
         
         let recordString = recordStringWithParen.substringToIndex(recordStringWithParen.endIndex.predecessor())
         
-        let record = recordString.cub_asInts()
         
-        self.wins = record.0
-        self.losses = record.1
+        let record = recordString.cub_asInts()
+        self.wins = record.firstValue
+        self.losses = record.secondValue
     }
 }

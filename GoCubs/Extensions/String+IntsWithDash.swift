@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
 
-    func cub_asInts() -> (Int, Int) {        
+    func cub_asInts() -> (firstValue: Int, secondValue: Int) {
         let separatedByDash = self.componentsSeparatedByString("-")
         
         let firstInt = Int(separatedByDash[0])!
