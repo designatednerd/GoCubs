@@ -13,9 +13,7 @@ enum ResultType: String {
     Win = "W",
     Loss = "L",
     Postponed //Automatically "Postponed"
-    
-    static let rainBlue = UIColor.cub_RGB(158, 206, 208)
-    
+        
     func flagString() -> String {
         switch self {
         case .Postponed:
@@ -32,7 +30,7 @@ enum ResultType: String {
         case .Loss:
             return TeamColors.Cubs.primary()
         case .Postponed:
-            return ResultType.rainBlue
+            return TeamColors.rainoutBlue
         }
     }
     
