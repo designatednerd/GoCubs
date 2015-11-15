@@ -15,12 +15,14 @@ class CubsGameDataSource: NSObject {
     
     init(tableView: UITableView) {
         //Load in the string
-        let path = NSBundle.mainBundle().pathForResource("cubs2015", ofType: "csv")
+        guard let path = NSBundle.mainBundle().pathForResource("cubs2015", ofType: "csv") else {
+            fatalError("Could not create path for CSV!")
+        }
         
         var csvString: String
         
         do {
-            csvString = try NSString(contentsOfFile: path!, encoding: NSUTF8StringEncoding) as String
+            csvString = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
         } catch {
             csvString = ""
         }
@@ -35,6 +37,7 @@ class CubsGameDataSource: NSObject {
             }
         }
 
+        //Sort in reverse date order
         gameBuilder.sortInPlace {
             $0.date.compare($1.date) == NSComparisonResult.OrderedDescending
         }
@@ -47,8 +50,13 @@ class CubsGameDataSource: NSObject {
         tableView.reloadData()
     }
     
+    //MARK: Confgiuration Helper
+    
     func gameForCell(cell: CubsGameCell, inTableView tableView: UITableView) -> CubsGame {
-        let indexPath = tableView.indexPathForCell(cell)!
+        guard let indexPath = tableView.indexPathForCell(cell) else {
+            fatalError("There is no index path for this cell!")
+        }
+        
         return self.games[indexPath.row]
     }
 }
@@ -66,7 +74,9 @@ extension CubsGameDataSource: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(CubsGameCell.identifier) as! CubsGameCell
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(CubsGameCell.identifier) as? CubsGameCell else {
+            fatalError("Wrong  cell type!")
+        }
 
         let game = self.games[indexPath.row]
         cell.configureForGame(game)

@@ -9,11 +9,11 @@
 import UIKit
 
 /*
-Protocol and default implementation inspired by the WWDC 2015 video "Swift in Practice"
-https://developer.apple.com/videos/play/wwdc2015-411/
-Each VC implementing this should create its own enumeration of the segues it can handle
-so that we don't need a giant list of all the segue identifiers in the entire app.
-*/
+ Protocol and default implementation inspired by the WWDC 2015 video "Swift in Practice"
+ https://developer.apple.com/videos/play/wwdc2015-411/
+ Each VC implementing this should create its own enumeration of the segues it can handle
+ so that we don't need a giant list of all the segue identifiers in the entire app.
+ */
 protocol SegueHandler {
     
     /*
@@ -27,10 +27,10 @@ protocol SegueHandler {
  */
 extension SegueHandler where //The default implementation of this protocol WHEN:
     Self: UIViewController, //The item implementing this must be a UIViewController or a subclass of it.
-    SegueIdentifier.RawValue == String { //The raw type of the SegueIdentifier must be a string.
+SegueIdentifier.RawValue == String { //The raw type of the SegueIdentifier must be a string.
     
     /**
-    Performs a segue with the given identifier's raw value.
+     Performs a segue with the given identifier's raw value.
     
     - parameter identifier:    The SegueIdentifier corresponding with the segue you wish to perform.
     - parameter sender:        The object sending this request to perform a segue.
