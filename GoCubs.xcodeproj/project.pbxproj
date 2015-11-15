@@ -11,8 +11,6 @@
 		331C5D641BCCACBB00BFD183 /* GoCubsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D631BCCACBB00BFD183 /* GoCubsUITests.swift */; };
 		33BE0EB51BCD7F3B00E96BF7 /* AccessibilityString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */; };
 		33BE0EB61BCD8C2E00E96BF7 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */; };
-		33BE0EB71BCD90DC00E96BF7 /* CubsRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D11BCAFD8F00EC08DC /* CubsRecord.swift */; };
-		33BE0EB81BCD910600E96BF7 /* String+IntsWithDash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1CD1BCAFD8F00EC08DC /* String+IntsWithDash.swift */; };
 		33BE0EC01BCD9C4500E96BF7 /* GoCubsKIFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BE0EBF1BCD9C4500E96BF7 /* GoCubsKIFTests.swift */; };
 		33BE0EC81BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BE0EC71BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift */; };
 		9B491D711BF8D9C30040FFBD /* CubsGameDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */; };
@@ -489,10 +487,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				331C5D641BCCACBB00BFD183 /* GoCubsUITests.swift in Sources */,
-				33BE0EB81BCD910600E96BF7 /* String+IntsWithDash.swift in Sources */,
 				33BE0EB51BCD7F3B00E96BF7 /* AccessibilityString.swift in Sources */,
 				33BE0EB61BCD8C2E00E96BF7 /* LocalizedString.swift in Sources */,
-				33BE0EB71BCD90DC00E96BF7 /* CubsRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
