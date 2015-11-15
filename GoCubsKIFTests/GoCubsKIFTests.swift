@@ -50,9 +50,11 @@ class GoCubsKIFTests: KIFTestCase {
         if let recordLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.cubsRecord) as? UILabel,
         recordString = recordLabel.text {
             if isPostseason {
-                XCTAssertTrue(recordString.containsString(LocalizedString.inThePostseason))
+                let inThePostseason = LocalizedString.seasonStringForPostseason(true)
+                XCTAssertTrue(recordString.containsString(inThePostseason))
             } else {
-                XCTAssertTrue(recordString.containsString(LocalizedString.onTheSeason))
+                let onTheSeason = LocalizedString.seasonStringForPostseason(false)
+                XCTAssertTrue(recordString.containsString(onTheSeason))
             }
         } else {
             XCTFail("Record label was not found or had no text!")

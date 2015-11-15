@@ -43,4 +43,27 @@ class CubsGame {
         self.winningPitcher = Pitcher(pitcherString: components[4])
         self.losingPitcher = Pitcher(pitcherString: components[5])
     }
+    
+    func resultString(isPostseason: Bool) -> String {
+        switch self.result.type {
+        case .Win:
+            return improve(self.cubsRecord, isPostseason: isPostseason)
+        case .Loss:
+            return self.fall(self.cubsRecord, isPostseason: isPostseason)
+        case .Postponed:
+            return self.remain(self.cubsRecord, isPostseason: isPostseason)
+        }
+    }
+    
+    func improve(record: CubsRecord, isPostseason: Bool) -> String {
+        return NSString.localizedStringWithFormat(LocalizedString.improveFormat, record.wins, record.losses, LocalizedString.seasonStringForPostseason(isPostseason)) as String
+    }
+    
+    func remain(record: CubsRecord, isPostseason: Bool) -> String {
+        return NSString.localizedStringWithFormat(LocalizedString.remainFormat, record.wins, record.losses, LocalizedString.seasonStringForPostseason(isPostseason)) as String
+    }
+    
+    func fall(record: CubsRecord, isPostseason: Bool) -> String {
+        return NSString.localizedStringWithFormat(LocalizedString.fallFormat, record.wins, record.losses, LocalizedString.seasonStringForPostseason(isPostseason)) as String
+    }
 }

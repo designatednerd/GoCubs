@@ -46,9 +46,11 @@ class GoCubsUITests: XCTestCase {
     func checkIsPostseason(app: XCUIApplication, isPostseason: Bool) {
         let recordString = app.staticTexts[AccessibilityString.cubsRecord].label
         if isPostseason {
-            XCTAssertTrue(recordString.containsString(LocalizedString.inThePostseason))
+            let inThePostseason = LocalizedString.seasonStringForPostseason(true)
+            XCTAssertTrue(recordString.containsString(inThePostseason))
         } else {
-            XCTAssertTrue(recordString.containsString(LocalizedString.onTheSeason))
+            let onTheSeason = LocalizedString.seasonStringForPostseason(false)
+            XCTAssertTrue(recordString.containsString(onTheSeason))
         }
     }
     
