@@ -8,29 +8,27 @@
 
 import UIKit
 
-//TODO: Figure out why string literals aren't working.
-
 enum TeamColors: String {
     case
-    Braves, //= "Braves",
-    Brewers, // = "Brewers",
-    Cardinals, // = "Cardinals",
-    Cubs, // = "Cubs",
+    Braves,
+    Brewers,
+    Cardinals,
+    Cubs,
     Diamondbacks = "D-backs",
-    Dodgers, // = "Dodgers",
-    Giants, // = "Giants",
-    Indians, // = "Indians",
-    Marlins, // = "Marlins",
-    Mets, // = "Mets",
-    Nationals, // = "Nationals",
-    Padres, // = "Padres",
-    Phillies, // = "Phillies",
-    Pirates, // = "Pirates",
-    Reds, // = "Reds",
-    Rockies, // = "Rockies",
-    Royals, // = "Royals",
-    Tigers, // = "Tigers",
-    Twins, // = "Twins",
+    Dodgers,
+    Giants,
+    Indians,
+    Marlins, 
+    Mets,
+    Nationals,
+    Padres,
+    Phillies,
+    Pirates,
+    Reds,
+    Rockies,
+    Royals,
+    Tigers,
+    Twins,
     WhiteSox = "White Sox"
     
     //http://teamcolors.arc90.com/
