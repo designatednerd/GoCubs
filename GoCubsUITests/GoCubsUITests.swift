@@ -19,7 +19,7 @@ class GoCubsUITests: XCTestCase {
         continueAfterFailure = false
         
         // Launch the application to be tested.
-        XCUIApplication.launch()
+        XCUIApplication().launch()
         
         // Set the initial state - such as interface orientation - required for tests before they run.
         XCUIDevice.sharedDevice().orientation = .Portrait
