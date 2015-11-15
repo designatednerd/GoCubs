@@ -23,13 +23,20 @@ class CubsGame {
         return formatter
     }()
     
-    
     init(gameString: String) {
         //Format: "Sun, 4/5",Cardinals,L 0-3,0-1,Wainwright(1-0),Lester(0-1)
 
         let components = gameString.componentsSeparatedByString(",")
+        guard components.count == 6 else {
+            fatalError("Malformatted game string: \(gameString)")
+        }
         
-        self.date = self.dateFormatter.dateFromString(components[0])!
+        let dateString = components[0]
+        guard let gameDate = self.dateFormatter.dateFromString(dateString) else {
+            fatalError("Could not parse date string \(dateString)")
+        }
+        
+        self.date = gameDate
         self.opponent = Opponent(name: components[1])
         self.result = Result(resultString: components[2])
         self.cubsRecord = CubsRecord(recordString: components[3])

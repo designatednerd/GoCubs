@@ -24,6 +24,10 @@ struct Opponent {
             self.name = name
         }
         
-        self.colors = TeamColors(rawValue: self.name)!
+        guard let colors = TeamColors(rawValue: self.name) else {
+            fatalError("Couldn't get team colors for team named \(name)")
+        }
+        
+        self.colors = colors
     }
 }

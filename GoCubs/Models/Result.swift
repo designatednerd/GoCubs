@@ -72,6 +72,10 @@ struct Result {
         } else {
             //Parse the win/loss and the score.
             let components = resultString.componentsSeparatedByString(" ")
+            guard components.count == 2 else {
+                fatalError("There should be 2 elements for non-postponed games!")
+            }
+            
             let winOrLoss = components[0]
             switch winOrLoss {
             case ResultType.Win.rawValue:
