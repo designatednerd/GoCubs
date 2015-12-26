@@ -9,26 +9,26 @@
 import Foundation
 
 extension String {
-
-    /**
-     Splits a string with a "x-y" format for things like game scores, team records, 
-     and pitcher records.
-     
-     - return: A tuple with the first value and second value available.
-     */
-    func cub_asInts() -> (firstValue: Int, secondValue: Int) {
-        let separatedByDash = self.componentsSeparatedByString("-")
-        
-        guard separatedByDash.count == 2 else {
-            fatalError("Incorrect object count for \(self)")
-        }
-        
-        guard let
-            firstInt = Int(separatedByDash[0]),
-            secondInt = Int(separatedByDash[1]) else {
-                fatalError("Couldn't unwrap one of the ints!")
-        }
-        
-        return (firstInt, secondInt)
+  
+  /**
+   Splits a string with a "x-y" format for things like game scores, team records,
+   and pitcher records.
+   
+   - return: A tuple with the first value and second value available.
+   */
+  func cub_asInts() -> (firstValue: Int, secondValue: Int) {
+    let separatedByDash = self.componentsSeparatedByString("-")
+    
+    guard separatedByDash.count == 2 else {
+      fatalError("Incorrect object count for \(self)")
     }
+    
+    guard let
+      firstInt = Int(separatedByDash[0]),
+      secondInt = Int(separatedByDash[1]) else {
+        fatalError("Couldn't unwrap one of the ints!")
+    }
+    
+    return (firstInt, secondInt)
+  }
 }

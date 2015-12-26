@@ -58,5 +58,4 @@ enum LocalizedString {
                 comment: "String to append when something has happened during the regular season")
         }
     }
-    
 }

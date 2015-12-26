@@ -9,14 +9,14 @@
 import Foundation
 
 struct CubsRecord {
+  
+  let wins: Int
+  let losses: Int
+  
+  init(recordString: String) {
+    let record = recordString.cub_asInts()
     
-    let wins: Int
-    let losses: Int
-    
-    init(recordString: String) {
-        let record = recordString.cub_asInts()
-        
-        self.wins = record.firstValue
-        self.losses = record.secondValue
-    }
+    self.wins = record.firstValue
+    self.losses = record.secondValue
+  }
 }
