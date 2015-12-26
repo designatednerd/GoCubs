@@ -117,10 +117,40 @@ class GoCubsUITests: XCTestCase {
     }
     
     func testKnownRegularSeasonLoss() {
-    
+        let app = XCUIApplication()
+        let listOfCubsGamesTable = app.tables["List of cubs games"]
+        
+        //Select August 29 game
+        listOfCubsGamesTable.cells.containingType(.StaticText, identifier:"Aug 29").staticTexts["Cubs vs. Dodgers"].tap()
+        
+        //Cubs lost to the Dodgers 4-0 in this game
+        checkResult(app,
+            expectedWinningTeamName: "DODGERS",
+            expectedWinningTeamScore: "5",
+            expectedLosingTeamName: "CUBS",
+            expectedLosingTeamScore: "2")
+        
+        checkIsPostseason(app, isPostseason: false)
+        XCTAssertTrue(app.staticTexts[AccessibilityString.cubsLose].exists)
     }
     
     func testKnownRegularSeasonPostponement() {
         
+        let app = XCUIApplication()
+        let listOfCubsGamesTable = app.tables["List of cubs games"]
+
+        //Go to September 10 game
+        let cubsVsPhilliesStaticText = listOfCubsGamesTable.cells.containingType(.StaticText, identifier:"Sep 10").childrenMatchingType(.StaticText).matchingIdentifier("Cubs vs. Phillies").elementBoundByIndex(0)
+        cubsVsPhilliesStaticText.tap()
+        
+        //This game was rained out. 
+        checkResult(app,
+            expectedWinningTeamName: "CUBS", //Cubs "Win" by default when a game is cancelled.
+            expectedWinningTeamScore: "-",
+            expectedLosingTeamName: "PHILLIES",
+            expectedLosingTeamScore: "-")
+        
+        checkIsPostseason(app, isPostseason: false)
+        XCTAssertTrue(app.staticTexts[AccessibilityString.postponed].exists)
     }    
 }
