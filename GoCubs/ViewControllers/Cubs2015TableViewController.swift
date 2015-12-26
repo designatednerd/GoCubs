@@ -25,7 +25,7 @@ class Cubs2015TableViewController: UITableViewController {
   }
   
   override func viewWillAppear(animated: Bool) {
-    //Clear selection on VWA if the SVC is collapsed.
+    //Clear selection before VWA if the splitviewcontroller is collapsed.
     if let split = self.splitViewController {
       self.clearsSelectionOnViewWillAppear = split.collapsed
     }
@@ -43,28 +43,27 @@ class Cubs2015TableViewController: UITableViewController {
   // MARK: - Segues
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //Make sure we're working with a known segue identifier.
-    let identifier = self.segueIdentifierForSegue(segue)
-    
-    switch identifier {
-    case .showDetail:
-      if let
-        navController = segue.destinationViewController as? UINavigationController,
-        controller = navController.topViewController as? GameDetailViewController,
-        cell = sender as? CubsGameCell {
-          controller.game = self.dataSource.gameForCell(cell, inTableView: self.tableView)
-          controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-          controller.navigationItem.leftItemsSupplementBackButton = true
-      }
+
+    guard let identifierString = segue.identifier else {
+      assertionFailure("Can't get segue identifier!")
+      return
     }
-  }
-}
-
-//MARK: - SegueHandler
-
-extension Cubs2015TableViewController: SegueHandler {
-  enum SegueIdentifier: String {
-    case
-    showDetail
+    
+    switch identifierString {
+    case "showDetail":
+      guard let
+        navController = segue.destinationViewController as? UINavigationController,
+        gameDetailVC = navController.topViewController as? GameDetailViewController,
+        cell = sender as? CubsGameCell else {
+          assertionFailure("Couldn't get either the nav, the detail, or the cell!")
+          return
+      }
+      
+      gameDetailVC.game = self.dataSource.gameForCell(cell, inTableView: self.tableView)
+      gameDetailVC.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+      gameDetailVC.navigationItem.leftItemsSupplementBackButton = true
+    default:
+      assertionFailure("Unhandled segue identifier: \(identifierString)")
+    }
   }
 }
