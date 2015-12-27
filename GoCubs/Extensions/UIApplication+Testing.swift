@@ -8,6 +8,8 @@
 
 import UIKit
 
+//PART3
+
 extension UIApplication {
   
   /**
@@ -28,3 +30,5 @@ extension UIApplication {
     return false
   }
 }
+
+//PART3

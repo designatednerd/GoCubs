@@ -24,12 +24,14 @@ class GameTodayViewController: UIViewController {
     super.viewDidLoad()
     
     self.findOutIfTheresAGameToday()
+//PART1
     self.setupAccessibilityAndLocalization()
   }
   
   private func setupAccessibilityAndLocalization() {
     self.titleLabel.text = LocalizedString.gameTodayTitle
     self.closeButton.accessibilityLabel = AccessibilityString.closeButton
+//PART1
   }
   
   //MARK: - IBActions
@@ -41,6 +43,7 @@ class GameTodayViewController: UIViewController {
   //MARK: - Network
   
   private func findOutIfTheresAGameToday() {
+//PART3
     var gameDate: NSDate
     if let
       month = LaunchEnvironmentKey.MonthToTest.processInfoValue(),
@@ -65,7 +68,8 @@ class GameTodayViewController: UIViewController {
       //Things weren't passed in, actualy use today's date.
       gameDate = NSDate()
     }
-    
+//PART3
+//    let gameDate = NSDate()
     self.findOutIfTheresAGameForDate(gameDate)
   }
   

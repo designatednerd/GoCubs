@@ -22,8 +22,10 @@ class Cubs2015TableViewController: UITableViewController {
     //Setup the data source
     self.dataSource = CubsGameDataSource(tableView: self.tableView)
     
+//PART1
     //Make things localized and accessibile.
     self.setupAccessibilityAndLocalization()
+//PART1
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -34,6 +36,7 @@ class Cubs2015TableViewController: UITableViewController {
     
     super.viewWillAppear(animated)
   }
+//PART1
   
   // MARK: - Localization and acessibility
   
@@ -42,6 +45,7 @@ class Cubs2015TableViewController: UITableViewController {
     self.tableView.accessibilityIdentifier = AccessibilityString.gamesTableview
     self.gameTodayButton.accessibilityLabel = LocalizedString.gameTodayTitle
   }
+//PART1
   
   // MARK: - Segues
   

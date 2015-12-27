@@ -41,6 +41,7 @@ class GameDetailViewController: UIViewController {
     super.viewDidLoad()
     
     self.configureForGame()
+//PART1
     self.setupAccessibilityAndLocalization()
   }
  
@@ -50,6 +51,7 @@ class GameDetailViewController: UIViewController {
     self.winningTeamNameLabel.accessibilityIdentifier = AccessibilityString.winningTeamName
     self.winningTeamScoreLabel.accessibilityIdentifier = AccessibilityString.winningTeamScore
     self.cubsRecordLabel.accessibilityIdentifier = AccessibilityString.cubsRecord
+//PART1
   }
   
   //MARK: - Setup

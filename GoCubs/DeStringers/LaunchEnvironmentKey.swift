@@ -8,6 +8,8 @@
 
 import Foundation
 
+//PART3
+
 enum LaunchEnvironmentKey: String {
   case
   IsUITesting = "IS_UI_TESTING",
@@ -19,3 +21,5 @@ enum LaunchEnvironmentKey: String {
     return NSProcessInfo.processInfo().environment[self.rawValue]
   }  
 }
+
+//PART3
