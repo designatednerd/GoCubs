@@ -22,13 +22,13 @@ class GameTodayViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-   
+    
     self.localizeAndAccessibilize()
     self.findOutIfTheresAGameToday()
   }
   
   private func localizeAndAccessibilize() {
-    self.title = LocalizedString.gameTodayTitle
+    self.titleLabel.text = LocalizedString.gameTodayTitle
     self.closeButton.accessibilityLabel = AccessibilityString.closeButton
   }
   
@@ -41,18 +41,32 @@ class GameTodayViewController: UIViewController {
   //MARK: - Network
   
   private func findOutIfTheresAGameToday() {
-    if false {
-      let today = NSDate()
-      self.findOutIfTheresAGameForDate(today)
+    var gameDate: NSDate
+    if let
+      month = LaunchEnvironmentKey.MonthToTest.processInfoValue(),
+      monthInt = Int(month),
+      day = LaunchEnvironmentKey.DayToTest.processInfoValue(),
+      dayInt = Int(day),
+      year = LaunchEnvironmentKey.YearToTest.processInfoValue(),
+      yearInt = Int(year) {
+        
+        let dateComponents = NSDateComponents()
+        dateComponents.month = monthInt
+        dateComponents.day = dayInt
+        dateComponents.year = yearInt
+        if let date = NSCalendar.currentCalendar().dateFromComponents (dateComponents) {
+          gameDate = date
+        } else {
+          assertionFailure()
+          //In production: Just use today's date
+          gameDate = NSDate()
+        }
     } else {
-      let dateComponents = NSDateComponents()
-      dateComponents.month = 4
-      dateComponents.day = 19
-      dateComponents.year = 2016
-      if let date = NSCalendar.currentCalendar().dateFromComponents(dateComponents) {
-        self.findOutIfTheresAGameForDate(date)
-      }
+      //Things weren't passed in, actualy use today's date.
+      gameDate = NSDate()
     }
+    
+    self.findOutIfTheresAGameForDate(gameDate)
   }
   
   func findOutIfTheresAGameForDate(date: NSDate) {

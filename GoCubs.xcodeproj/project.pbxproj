@@ -29,6 +29,7 @@
 		9B99F1F71BCB0CBC00EC08DC /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */; };
 		9B99F1FB1BCB4EA800EC08DC /* TeamColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1FA1BCB4EA700EC08DC /* TeamColors.swift */; };
 		9BE41DF61C306B3A008DADA2 /* UIApplication+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41DF51C306B3A008DADA2 /* UIApplication+Testing.swift */; };
+		9BE41DF81C307F5E008DADA2 /* GameTodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41DF71C307F5E008DADA2 /* GameTodayUITests.swift */; };
 		9BE41DFA1C3080D8008DADA2 /* LaunchEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41DF91C3080D8008DADA2 /* LaunchEnvironmentKey.swift */; };
 		9BE41DFC1C3081B1008DADA2 /* XCTestCase+UITesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41DFB1C3081B1008DADA2 /* XCTestCase+UITesting.swift */; };
 		9BE41DFE1C308439008DADA2 /* LaunchEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41DF91C3080D8008DADA2 /* LaunchEnvironmentKey.swift */; };
@@ -90,6 +91,7 @@
 		9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		9B99F1FA1BCB4EA700EC08DC /* TeamColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamColors.swift; sourceTree = "<group>"; };
 		9BE41DF51C306B3A008DADA2 /* UIApplication+Testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Testing.swift"; sourceTree = "<group>"; };
+		9BE41DF71C307F5E008DADA2 /* GameTodayUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTodayUITests.swift; sourceTree = "<group>"; };
 		9BE41DF91C3080D8008DADA2 /* LaunchEnvironmentKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnvironmentKey.swift; sourceTree = "<group>"; };
 		9BE41DFB1C3081B1008DADA2 /* XCTestCase+UITesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UITesting.swift"; sourceTree = "<group>"; };
 		9BE41DFF1C308885008DADA2 /* NSDateFormatter+Once.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+Once.swift"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				9BE41DFB1C3081B1008DADA2 /* XCTestCase+UITesting.swift */,
 				331C5D631BCCACBB00BFD183 /* GoCubsUITests.swift */,
+				9BE41DF71C307F5E008DADA2 /* GameTodayUITests.swift */,
 				331C5D651BCCACBB00BFD183 /* Info.plist */,
 			);
 			path = GoCubsUITests;
@@ -413,6 +416,7 @@
 			files = (
 				9BE41DFE1C308439008DADA2 /* LaunchEnvironmentKey.swift in Sources */,
 				331C5D641BCCACBB00BFD183 /* GoCubsUITests.swift in Sources */,
+				9BE41DF81C307F5E008DADA2 /* GameTodayUITests.swift in Sources */,
 				33BE0EB51BCD7F3B00E96BF7 /* AccessibilityString.swift in Sources */,
 				33BE0EB61BCD8C2E00E96BF7 /* LocalizedString.swift in Sources */,
 				9BE41E011C308946008DADA2 /* NSDateFormatter+Once.swift in Sources */,
