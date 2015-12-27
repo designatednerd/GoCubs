@@ -34,6 +34,7 @@
 		9BFA39731C2F4C14008EEFEB /* CubsCalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA39721C2F4C14008EEFEB /* CubsCalendarEvent.swift */; };
 		9BFA397B1C305720008EEFEB /* cubs2015.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9BFA39791C305720008EEFEB /* cubs2015.csv */; };
 		9BFA397C1C305720008EEFEB /* cubs_schedule_full.ics in Resources */ = {isa = PBXBuildFile; fileRef = 9BFA397A1C305720008EEFEB /* cubs_schedule_full.ics */; };
+		9BFA397D1C30579F008EEFEB /* CalendarParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA39741C30549E008EEFEB /* CalendarParsingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		9BFA396E1C2F1A32008EEFEB /* CubsGameChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameChecker.swift; sourceTree = "<group>"; };
 		9BFA39701C2F4AF6008EEFEB /* CalendarParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarParser.swift; sourceTree = "<group>"; };
 		9BFA39721C2F4C14008EEFEB /* CubsCalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsCalendarEvent.swift; sourceTree = "<group>"; };
+		9BFA39741C30549E008EEFEB /* CalendarParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarParsingTests.swift; path = GoCubs/Models/CalendarParsingTests.swift; sourceTree = SOURCE_ROOT; };
 		9BFA39791C305720008EEFEB /* cubs2015.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cubs2015.csv; sourceTree = "<group>"; };
 		9BFA397A1C305720008EEFEB /* cubs_schedule_full.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cubs_schedule_full.ics; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				9B99F1C01BCAFD5E00EC08DC /* CSVParsingTests.swift */,
+				9BFA39741C30549E008EEFEB /* CalendarParsingTests.swift */,
 				9B99F1BF1BCAFD5E00EC08DC /* Info.plist */,
 			);
 			name = GoCubsTests;
@@ -422,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFA397D1C30579F008EEFEB /* CalendarParsingTests.swift in Sources */,
 				9B99F1C31BCAFD5E00EC08DC /* CSVParsingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
