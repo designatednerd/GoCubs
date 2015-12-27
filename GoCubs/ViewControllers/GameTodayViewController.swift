@@ -64,20 +64,17 @@ class GameTodayViewController: UIViewController {
   func findOutIfTheresAGameForDate(date: NSDate) {
     self.dateLabel.text = self.dateFormatter.stringFromDate(date)
 
-    //Since we have to ask the interwebs, show something that loads.
+    //Since we have to ask the interwebs, show something during loading.
     self.yesOrNoLabel.text = LocalizedString.gameTodayLoading
-    CubsGameChecker.isThereAGameForDate(date,
-      success: {
+    CubsGameChecker.isThereAGameForDate(date, failure: {
+      [weak self]
+      error in
+      self?.configureForError(error)
+      }) {
         [weak self]
         isThereAGame, details in
         self?.configureForGame(isThereAGame, details: details)
-      },
-      failure: {
-        [weak self]
-        error in
-        self?.configureForError(error)        
-      }
-    )
+    }
   }
   
   private func configureForGame(isThereAGame: Bool, details: String) {
