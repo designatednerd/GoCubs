@@ -57,45 +57,13 @@ struct CalendarParser {
       }
     }
 
-   return self.eventFromDescription(description,
+   return CubsCalendarEvent.fromDescription(description,
     summary: summary,
     location: location,
     dateTime: dateTime)
   }
   
-  static func eventFromDescription(description: String?,
-    summary: String?,
-    location: String?,
-    dateTime: NSDate?) -> CubsCalendarEvent? {
-      guard let
-        description = description,
-        summary = summary,
-        location = location,
-        dateTime = dateTime else {
-          
-          //Gotta have 'em all.
-          return nil
-      }
-      
-      let components = CalendarParser.Calendar.components([
-        .Month,
-        .Day,
-        .Year
-        ], fromDate: dateTime)
-      
-      let month = components.month
-      let day = components.day
-      let year = components.year
-      
-      return CubsCalendarEvent(month: month,
-        day: day,
-        year: year,
-        description: description,
-        location: location,
-        summary: summary)
-  }
-  
-  static func valueForPrefix(prefix: String, forLine line: String) -> String? {
+  private static func valueForPrefix(prefix: String, forLine line: String) -> String? {
     if line.hasPrefix(prefix) {
       if let
         prefixRange = line.rangeOfString(prefix),

@@ -27,7 +27,7 @@ struct CubsCalendarEvent {
   }
   
   var isAtWrigley: Bool {
-    return false
+    return self.location == "Wrigley Field, Chicago"
   }
   
   func matchesDate(date: NSDate) -> Bool {
@@ -40,5 +40,56 @@ struct CubsCalendarEvent {
     return self.month == components.month
       && self.day == components.day
       && self.year == components.year
+  }
+  
+  //MARK: - Creating from iCal data
+  
+  static let ChicagoCalendar: NSCalendar = {
+    let calendar = NSCalendar.currentCalendar()
+    
+    //We need to make sure everything is converted to Chicago time. 
+    guard let chicagoTime = NSTimeZone(name: "America/Chicago") else {
+      assertionFailure("Can't create time zone!")
+      return calendar
+    }
+    
+    calendar.timeZone = chicagoTime
+    
+    return calendar
+  }()
+  
+  static func fromDescription(description: String?,
+    summary: String?,
+    location: String?,
+    dateTime: NSDate?) -> CubsCalendarEvent? {
+      guard let
+        description = description,
+        summary = summary,
+        location = location,
+        dateTime = dateTime else {
+          
+          //Gotta have 'em all.
+          return nil
+      }
+      
+      //Location comes in with \\ a lot of places
+      let locationToUse = location.stringByReplacingOccurrencesOfString("\\", withString: "")
+      
+      let components = self.ChicagoCalendar.components([
+        .Month,
+        .Day,
+        .Year
+        ], fromDate: dateTime)
+      
+      let month = components.month
+      let day = components.day
+      let year = components.year
+      
+      return CubsCalendarEvent(month: month,
+        day: day,
+        year: year,
+        description: description,
+        location: locationToUse,
+        summary: summary)
   }
 }
