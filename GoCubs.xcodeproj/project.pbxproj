@@ -35,6 +35,7 @@
 		9BE41E011C308946008DADA2 /* NSDateFormatter+Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41DFF1C308885008DADA2 /* NSDateFormatter+Once.swift */; };
 		9BE41E031C308979008DADA2 /* NSCalendar+Chicago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41E021C308979008DADA2 /* NSCalendar+Chicago.swift */; };
 		9BE41E041C308A24008DADA2 /* NSCalendar+Chicago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41E021C308979008DADA2 /* NSCalendar+Chicago.swift */; };
+		9BE41E071C30921B008DADA2 /* CubsGameCheckerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41E051C3091DF008DADA2 /* CubsGameCheckerTests.swift */; };
 		9BFA396C1C2F17FE008EEFEB /* GameTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA396B1C2F17FE008EEFEB /* GameTodayViewController.swift */; };
 		9BFA396F1C2F1A32008EEFEB /* CubsGameChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA396E1C2F1A32008EEFEB /* CubsGameChecker.swift */; };
 		9BFA39711C2F4AF6008EEFEB /* CalendarParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA39701C2F4AF6008EEFEB /* CalendarParser.swift */; };
@@ -91,6 +92,7 @@
 		9BE41DF91C3080D8008DADA2 /* LaunchEnvironmentKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnvironmentKey.swift; sourceTree = "<group>"; };
 		9BE41DFF1C308885008DADA2 /* NSDateFormatter+Once.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+Once.swift"; sourceTree = "<group>"; };
 		9BE41E021C308979008DADA2 /* NSCalendar+Chicago.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Chicago.swift"; sourceTree = "<group>"; };
+		9BE41E051C3091DF008DADA2 /* CubsGameCheckerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CubsGameCheckerTests.swift; path = GoCubs/Extensions/CubsGameCheckerTests.swift; sourceTree = SOURCE_ROOT; };
 		9BFA396B1C2F17FE008EEFEB /* GameTodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTodayViewController.swift; sourceTree = "<group>"; };
 		9BFA396E1C2F1A32008EEFEB /* CubsGameChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameChecker.swift; sourceTree = "<group>"; };
 		9BFA39701C2F4AF6008EEFEB /* CalendarParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarParser.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		336DA3BF1BBAFFC800B9CBD8 /* GoCubsTests */ = {
 			isa = PBXGroup;
 			children = (
+				9BE41E051C3091DF008DADA2 /* CubsGameCheckerTests.swift */,
 				9B99F1C01BCAFD5E00EC08DC /* CSVParsingTests.swift */,
 				9BFA39741C30549E008EEFEB /* CalendarParsingTests.swift */,
 				9B99F1BF1BCAFD5E00EC08DC /* Info.plist */,
@@ -447,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BE41E071C30921B008DADA2 /* CubsGameCheckerTests.swift in Sources */,
 				9BFA397D1C30579F008EEFEB /* CalendarParsingTests.swift in Sources */,
 				9B99F1C31BCAFD5E00EC08DC /* CSVParsingTests.swift in Sources */,
 			);
