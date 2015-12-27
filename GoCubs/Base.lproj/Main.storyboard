@@ -194,28 +194,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dwb-5Y-uoI">
-                                <rect key="frame" x="20" y="244" width="560" height="114"/>
+                                <rect key="frame" x="20" y="220" width="560" height="162"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is there a Cubs game today? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8co-tl-JF6">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="January 1, 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpL-kr-eUr">
-                                        <rect key="frame" x="0.0" y="26" width="560" height="21"/>
+                                        <rect key="frame" x="0.0" y="25.5" width="560" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbn-lE-b2C">
-                                        <rect key="frame" x="0.0" y="51" width="560" height="37"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                        <rect key="frame" x="0.0" y="51" width="560" height="60"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking will actually be possible." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBi-vq-Asu">
+                                        <rect key="frame" x="0.0" y="116" width="560" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Park wherever you want, things are going to get wacky" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggw-nd-VOC">
-                                        <rect key="frame" x="0.0" y="93" width="560" height="21"/>
+                                        <rect key="frame" x="0.0" y="141.5" width="560" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -226,11 +232,13 @@
                                     <constraint firstItem="8co-tl-JF6" firstAttribute="top" secondItem="dwb-5Y-uoI" secondAttribute="top" id="6bA-ZK-jMg"/>
                                     <constraint firstItem="Ggw-nd-VOC" firstAttribute="leading" secondItem="dwb-5Y-uoI" secondAttribute="leading" id="CV7-hH-yCj"/>
                                     <constraint firstAttribute="trailing" secondItem="8co-tl-JF6" secondAttribute="trailing" id="GSW-YV-Fvb"/>
+                                    <constraint firstAttribute="trailing" secondItem="LBi-vq-Asu" secondAttribute="trailing" id="LrN-lM-haG"/>
                                     <constraint firstAttribute="bottom" secondItem="Ggw-nd-VOC" secondAttribute="bottom" id="RKo-oR-ZfI"/>
                                     <constraint firstAttribute="trailing" secondItem="Tbn-lE-b2C" secondAttribute="trailing" id="Roh-fN-DZB"/>
                                     <constraint firstAttribute="trailing" secondItem="hpL-kr-eUr" secondAttribute="trailing" id="cJi-5U-hW0"/>
                                     <constraint firstAttribute="trailing" secondItem="Ggw-nd-VOC" secondAttribute="trailing" id="fgh-ue-Z4a"/>
                                     <constraint firstItem="hpL-kr-eUr" firstAttribute="leading" secondItem="dwb-5Y-uoI" secondAttribute="leading" id="nHZ-co-bDI"/>
+                                    <constraint firstItem="LBi-vq-Asu" firstAttribute="leading" secondItem="dwb-5Y-uoI" secondAttribute="leading" id="oSg-Yt-tsF"/>
                                     <constraint firstItem="8co-tl-JF6" firstAttribute="leading" secondItem="dwb-5Y-uoI" secondAttribute="leading" id="wDc-do-QZj"/>
                                 </constraints>
                             </stackView>
@@ -256,6 +264,7 @@
                         <outlet property="closeButton" destination="UKZ-dI-0bO" id="pr7-7L-DUf"/>
                         <outlet property="dateLabel" destination="hpL-kr-eUr" id="tH5-2N-is3"/>
                         <outlet property="detailsLabel" destination="Ggw-nd-VOC" id="WOK-D4-fF5"/>
+                        <outlet property="parkingLabel" destination="LBi-vq-Asu" id="WHg-3Z-bXJ"/>
                         <outlet property="titleLabel" destination="8co-tl-JF6" id="TlS-Xg-2k8"/>
                         <outlet property="yesOrNoLabel" destination="Tbn-lE-b2C" id="OYA-3h-Wt7"/>
                     </connections>

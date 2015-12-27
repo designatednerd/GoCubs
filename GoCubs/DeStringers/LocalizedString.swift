@@ -75,8 +75,17 @@ enum LocalizedString {
     comment: "What to show when there is a Cubs game today")
   
   static let gameTodayNegative = NSLocalizedString("No",
-    comment: "What to show when there is not a Cubs game today")
+    comment: "What to show when there is not a Cubs home game today")
   
-  static let noGameDetail = NSLocalizedString("No Cubs game at all today! Park wherever you'd like.",
+  static let parkingLoading = NSLocalizedString("Seeing if you have a prayer of finding a parking space...",
+    comment: "Loading indicator for the parking label")
+  
+  static let parkingOK = NSLocalizedString("Park wherever you'd like.",
+    comment: "What to show for parking When no cubs home game")
+  
+  static let parkingTerrible = NSLocalizedString("Good luck finding a legal space.",
+    comment: "What to show for parking when Cubs home game.")
+  
+  static let noGameDetail = NSLocalizedString("No Cubs game at all today!",
     comment: "What to show when there is neither a home or away game today")
 }

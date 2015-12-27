@@ -15,6 +15,7 @@ class GameTodayViewController: UIViewController {
   @IBOutlet var titleLabel: UILabel!
   @IBOutlet var dateLabel: UILabel!
   @IBOutlet var yesOrNoLabel: UILabel!
+  @IBOutlet var parkingLabel: UILabel!
   @IBOutlet var detailsLabel: UILabel!
   @IBOutlet var closeButton: UIButton!
   
@@ -22,6 +23,9 @@ class GameTodayViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    //Clear the initial detail text
+    self.detailsLabel.text = nil
     
     self.findOutIfTheresAGameToday()
 //PART1
@@ -77,8 +81,11 @@ class GameTodayViewController: UIViewController {
     //Show the date we're checking
     self.dateLabel.text = NSDateFormatter.cub_longDateFormatter.stringFromDate(date)
     
-    //Since we have to ask the interwebs, show something during loading.
+    //Since we have to ask the interwebs, show some stuff to indicate loading.
     self.yesOrNoLabel.text = LocalizedString.gameTodayLoading
+    self.parkingLabel.text = LocalizedString.parkingLoading
+    
+    //Actually find out if there's a game.
     CubsGameChecker.isThereAGameForDate(date, failure: {
       [weak self]
       error in
@@ -93,14 +100,19 @@ class GameTodayViewController: UIViewController {
   private func configureForGame(isThereAGame: Bool, details: String) {
     if isThereAGame {
       self.yesOrNoLabel.text = LocalizedString.gameTodayPositive
+      self.yesOrNoLabel.textColor = .blueColor()
+      self.parkingLabel.text = LocalizedString.parkingTerrible
     } else {
       self.yesOrNoLabel.text = LocalizedString.gameTodayNegative
+      self.yesOrNoLabel.textColor = .redColor()
+      self.parkingLabel.text = LocalizedString.parkingOK
     }
     
     self.detailsLabel.text = details
   }
   
   private func configureForError(error: NSError) {
+    self.parkingLabel.text = nil
     self.yesOrNoLabel.text = LocalizedString.gameTodayError
     self.detailsLabel.text = error.localizedDescription
   }
