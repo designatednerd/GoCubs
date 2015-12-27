@@ -33,6 +33,11 @@ extension AppDelegate: UIApplicationDelegate {
       
       navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
       splitViewController.delegate = self
+      
+      if UIApplication.cub_isUITesting() {
+        CubsGameChecker.ShouldUseLiveData = false
+      }
+      
       return true
   }
 }
