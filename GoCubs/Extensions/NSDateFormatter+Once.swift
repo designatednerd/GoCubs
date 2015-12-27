@@ -18,5 +18,10 @@ extension NSDateFormatter {
     formatter.dateStyle = .LongStyle
     return formatter
   }()
-
+  
+  @nonobjc static let cub_monthDayDateFormatter: NSDateFormatter = {
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "M/d"
+    return formatter
+  }()
 }

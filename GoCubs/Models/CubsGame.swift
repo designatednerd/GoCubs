@@ -17,22 +17,15 @@ class CubsGame {
   let winningPitcher: Pitcher
   let losingPitcher: Pitcher
   
-  let dateFormatter: NSDateFormatter = {
-    let formatter = NSDateFormatter()
-    formatter.dateFormat = "M/d"
-    return formatter
-  }()
-  
   init(gameString: String) {
-    //Format: "Sun, 4/5",Cardinals,L 0-3,0-1,Wainwright(1-0),Lester(0-1)
-    
+    //Format: "Sun, 4/5",Cardinals,L 0-3,0-1,Wainwright(1-0),Lester(0-1)    
     let components = gameString.componentsSeparatedByString(",")
     guard components.count == 6 else {
       fatalError("Malformatted game string: \(gameString)")
     }
     
     let dateString = components[0]
-    guard let gameDate = self.dateFormatter.dateFromString(dateString) else {
+    guard let gameDate = NSDateFormatter.cub_monthDayDateFormatter.dateFromString(dateString) else {
       fatalError("Could not parse date string \(dateString)")
     }
     
