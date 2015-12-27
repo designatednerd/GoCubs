@@ -1,5 +1,5 @@
 //
-//  ParsingTests.swift
+//  CSVParsingTests.swift
 //  GoCubs
 //
 //  Created by Ellen Shapiro on 10/11/15.
@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 @testable import GoCubs
 
-class ParsingTests: XCTestCase {
+class CSVParsingTests: XCTestCase {
   
   func testParsingPitcher() {
     let testWinningPitcher = Pitcher(pitcherString: "Arrieta(22-6)")
