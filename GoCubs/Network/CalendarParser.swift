@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ *  Parses iCal-formatted calendar events.
+ */
 struct CalendarParser {
   static let EventStart = "BEGIN:VEVENT"
   static let EventEnd = "END:VEVENT"
@@ -19,21 +22,32 @@ struct CalendarParser {
   
   private static let DateFormatter: NSDateFormatter = {
     let formatter = NSDateFormatter()
-    //20160419T001500Z
+    //Event dates are sent in the format 20160419T001500Z, with the Z indicating UTC.
     formatter.dateFormat = "yyyyMMdd'T'HHmmss'Z'"
+    formatter.timeZone = NSTimeZone(name: "UTC")
     return formatter
   }()
   
-  private static let Calendar: NSCalendar = {
-    return NSCalendar.currentCalendar()
-  }()
-  
+  /**
+   Parse the contents of an entire ics calendar.
+   
+   - parameter calendarString: The string representation of the calendar.
+   
+   - returns: An array of CubsCalendarEvents from the calendar.
+   */
   static func parseCalendarString(calendarString: String) -> [CubsCalendarEvent] {
     let eventStrings = calendarString.componentsSeparatedByString(CalendarParser.EventStart)
     let events = eventStrings.flatMap(parseEvent)
     return events
   }
-  
+
+  /**
+   Parse a single event's string into a CubsCalendarEvent.
+   
+   - parameter eventString: The string representing a single event.
+   
+   - returns: The parsed event, or nil if not all required items are there.
+   */
   static func parseEvent(eventString: String) -> CubsCalendarEvent? {
     let trimmed = eventString.stringByTrimmingCharactersInSet(.newlineCharacterSet())
     let lines = trimmed.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
