@@ -30,6 +30,7 @@
 		9B99F1FB1BCB4EA800EC08DC /* TeamColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1FA1BCB4EA700EC08DC /* TeamColors.swift */; };
 		9BE41DF61C306B3A008DADA2 /* UIApplication+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41DF51C306B3A008DADA2 /* UIApplication+Testing.swift */; };
 		9BE41DFA1C3080D8008DADA2 /* LaunchEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41DF91C3080D8008DADA2 /* LaunchEnvironmentKey.swift */; };
+		9BE41DFC1C3081B1008DADA2 /* XCTestCase+UITesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41DFB1C3081B1008DADA2 /* XCTestCase+UITesting.swift */; };
 		9BE41DFE1C308439008DADA2 /* LaunchEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41DF91C3080D8008DADA2 /* LaunchEnvironmentKey.swift */; };
 		9BE41E001C308885008DADA2 /* NSDateFormatter+Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41DFF1C308885008DADA2 /* NSDateFormatter+Once.swift */; };
 		9BE41E011C308946008DADA2 /* NSDateFormatter+Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41DFF1C308885008DADA2 /* NSDateFormatter+Once.swift */; };
@@ -90,6 +91,7 @@
 		9B99F1FA1BCB4EA700EC08DC /* TeamColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamColors.swift; sourceTree = "<group>"; };
 		9BE41DF51C306B3A008DADA2 /* UIApplication+Testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Testing.swift"; sourceTree = "<group>"; };
 		9BE41DF91C3080D8008DADA2 /* LaunchEnvironmentKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnvironmentKey.swift; sourceTree = "<group>"; };
+		9BE41DFB1C3081B1008DADA2 /* XCTestCase+UITesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UITesting.swift"; sourceTree = "<group>"; };
 		9BE41DFF1C308885008DADA2 /* NSDateFormatter+Once.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+Once.swift"; sourceTree = "<group>"; };
 		9BE41E021C308979008DADA2 /* NSCalendar+Chicago.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Chicago.swift"; sourceTree = "<group>"; };
 		9BE41E051C3091DF008DADA2 /* CubsGameCheckerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CubsGameCheckerTests.swift; path = GoCubs/Extensions/CubsGameCheckerTests.swift; sourceTree = SOURCE_ROOT; };
@@ -130,6 +132,7 @@
 		331C5D621BCCACBB00BFD183 /* GoCubsUITests */ = {
 			isa = PBXGroup;
 			children = (
+				9BE41DFB1C3081B1008DADA2 /* XCTestCase+UITesting.swift */,
 				331C5D631BCCACBB00BFD183 /* GoCubsUITests.swift */,
 				331C5D651BCCACBB00BFD183 /* Info.plist */,
 			);
@@ -413,6 +416,7 @@
 				33BE0EB51BCD7F3B00E96BF7 /* AccessibilityString.swift in Sources */,
 				33BE0EB61BCD8C2E00E96BF7 /* LocalizedString.swift in Sources */,
 				9BE41E011C308946008DADA2 /* NSDateFormatter+Once.swift in Sources */,
+				9BE41DFC1C3081B1008DADA2 /* XCTestCase+UITesting.swift in Sources */,
 				9BE41E041C308A24008DADA2 /* NSCalendar+Chicago.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

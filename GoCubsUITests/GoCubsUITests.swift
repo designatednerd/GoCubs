@@ -13,17 +13,8 @@ class GoCubsUITests: XCTestCase {
   //MARK: - Test Lifecycle
   
   override func setUp() {
-    super.setUp()
-    
-    // Stop immediately when a failure occurs.
-    self.continueAfterFailure = false
-    
-    // Launch the application to be tested.
-    XCUIApplication().launch()
-    
-    // Set the initial state - such as interface orientation - required for tests before they run.
-    XCUIDevice.sharedDevice().orientation = .Portrait
-    
+    super.setUp()    
+    self.cub_launchAppForUITesting()
   }
   
   //MARK: - Helper methods
@@ -150,7 +141,7 @@ class GoCubsUITests: XCTestCase {
       expectedLosingTeamName: "PHILLIES",
       expectedLosingTeamScore: "-")
     
-    checkIsPostseason(app, isPostseason: false)
+    self.checkIsPostseason(app, isPostseason: false)
     XCTAssertTrue(app.staticTexts[AccessibilityString.postponed].exists)
   }
 }
