@@ -12,6 +12,8 @@ class Cubs2015TableViewController: UITableViewController {
   
   var dataSource: CubsGameDataSource!
   
+  @IBOutlet var gameTodayButton: UIBarButtonItem!
+  
   //MARK: - View Lifecycle
   
   override func viewDidLoad() {
@@ -38,6 +40,7 @@ class Cubs2015TableViewController: UITableViewController {
   private func localizeAndAccessibilize() {
     self.title = LocalizedString.listTitle
     self.tableView.accessibilityIdentifier = AccessibilityString.gamesTableview
+    self.gameTodayButton.accessibilityLabel = LocalizedString.gameTodayTitle
   }
   
   // MARK: - Segues
