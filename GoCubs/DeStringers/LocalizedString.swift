@@ -58,4 +58,25 @@ enum LocalizedString {
                 comment: "String to append when something has happened during the regular season")
         }
     }
+  
+  
+  //MARK: - Game today?
+  
+  static let gameTodayTitle = NSLocalizedString("Is there a Cubs game today?",
+    comment: "Title of the game today screen")
+  
+  static let gameTodayLoading = NSLocalizedString("Checking...",
+    comment: "Loading indicator for the game today screen")
+  
+  static let gameTodayError = NSLocalizedString("Error",
+    comment: "Error text for the game today screen")
+  
+  static let gameTodayPositive = NSLocalizedString("Yes",
+    comment: "What to show when there is a Cubs game today")
+  
+  static let gameTodayNegative = NSLocalizedString("No",
+    comment: "What to show when there is not a Cubs game today")
+  
+  static let noGameDetail = NSLocalizedString("No Cubs game at all today! Park wherever you'd like.",
+    comment: "What to show when there is neither a home or away game today")
 }

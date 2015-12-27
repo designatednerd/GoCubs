@@ -50,5 +50,10 @@ enum AccessibilityString {
   
   static let gamesTableview = NSLocalizedString("List of cubs games",
     comment: "Accessibilty games tableview")
+  
+  //MARK: Game Today accessibility
+  
+  static let closeButton = NSLocalizedString("Close",
+    comment: "Accessibility for close button")
 }
     

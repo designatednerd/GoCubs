@@ -62,6 +62,9 @@ class Cubs2015TableViewController: UITableViewController {
       gameDetailVC.game = self.dataSource.gameForCell(cell, inTableView: self.tableView)
       gameDetailVC.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
       gameDetailVC.navigationItem.leftItemsSupplementBackButton = true
+      
+    case "showGameToday":
+      NSLog("Going to game today!")
     default:
       assertionFailure("Unhandled segue identifier: \(identifierString)")
     }
