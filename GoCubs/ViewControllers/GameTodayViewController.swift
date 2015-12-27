@@ -23,11 +23,11 @@ class GameTodayViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.localizeAndAccessibilize()
     self.findOutIfTheresAGameToday()
+    self.setupAccessibilityAndLocalization()
   }
   
-  private func localizeAndAccessibilize() {
+  private func setupAccessibilityAndLocalization() {
     self.titleLabel.text = LocalizedString.gameTodayTitle
     self.closeButton.accessibilityLabel = AccessibilityString.closeButton
   }
@@ -70,6 +70,7 @@ class GameTodayViewController: UIViewController {
   }
   
   func findOutIfTheresAGameForDate(date: NSDate) {
+    //Show the date we're checking
     self.dateLabel.text = NSDateFormatter.cub_longDateFormatter.stringFromDate(date)
     
     //Since we have to ask the interwebs, show something during loading.

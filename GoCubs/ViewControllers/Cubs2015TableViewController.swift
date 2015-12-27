@@ -23,7 +23,7 @@ class Cubs2015TableViewController: UITableViewController {
     self.dataSource = CubsGameDataSource(tableView: self.tableView)
     
     //Make things localized and accessibile.
-    self.localizeAndAccessibilize()
+    self.setupAccessibilityAndLocalization()
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -37,7 +37,7 @@ class Cubs2015TableViewController: UITableViewController {
   
   // MARK: - Localization and acessibility
   
-  private func localizeAndAccessibilize() {
+  private func setupAccessibilityAndLocalization() {
     self.title = LocalizedString.listTitle
     self.tableView.accessibilityIdentifier = AccessibilityString.gamesTableview
     self.gameTodayButton.accessibilityLabel = LocalizedString.gameTodayTitle
@@ -67,7 +67,8 @@ class Cubs2015TableViewController: UITableViewController {
       gameDetailVC.navigationItem.leftItemsSupplementBackButton = true
       
     case "showGameToday":
-      NSLog("Going to game today!")
+      //Nothing to do here, but we want to acknowledge this was handled so:
+      break
     default:
       assertionFailure("Unhandled segue identifier: \(identifierString)")
     }

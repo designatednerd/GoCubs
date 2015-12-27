@@ -41,10 +41,10 @@ class GameDetailViewController: UIViewController {
     super.viewDidLoad()
     
     self.configureForGame()
-    self.addAcessibility()
+    self.setupAccessibilityAndLocalization()
   }
-  
-  private func addAcessibility() {
+ 
+  private func setupAccessibilityAndLocalization() {
     self.losingTeamNameLabel.accessibilityIdentifier = AccessibilityString.losingTeamName
     self.losingTeamScoreLabel.accessibilityIdentifier = AccessibilityString.losingTeamScore
     self.winningTeamNameLabel.accessibilityIdentifier = AccessibilityString.winningTeamName
