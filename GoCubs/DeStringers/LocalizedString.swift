@@ -62,7 +62,7 @@ enum LocalizedString {
   
   //MARK: - Game today?
   
-  static let gameTodayTitle = NSLocalizedString("Is there a Cubs game today?",
+  static let gameTodayTitle = NSLocalizedString("Is There A Cubs Home Game Today?",
     comment: "Title of the game today screen")
   
   static let gameTodayLoading = NSLocalizedString("Checking...",
