@@ -25,17 +25,21 @@ class GoCubsUITests: XCTestCase {
     expectedLosingTeamName: String,
     expectedLosingTeamScore: String) {
       
+      //Is the correct winning team name showing?
+      XCTAssertEqual(app.staticTexts[AccessibilityIdentifier.WinningTeamName.rawValue].label, expectedWinningTeamName)
       
-      XCTAssertEqual(app.staticTexts[AccessibilityString.winningTeamName].label, expectedWinningTeamName)
-      XCTAssertEqual(app.staticTexts[AccessibilityString.losingTeamName].label, expectedLosingTeamName)
+      //Is the correct losing team name showing?
+      XCTAssertEqual(app.staticTexts[AccessibilityIdentifier.LosingTeamName.rawValue].label, expectedLosingTeamName)
       
-      XCTAssertEqual(app.staticTexts[AccessibilityString.winningTeamScore].label, expectedWinningTeamScore)
+      //Is the correct winning team score showing?
+      XCTAssertEqual(app.staticTexts[AccessibilityIdentifier.WinningTeamScore.rawValue].label, expectedWinningTeamScore)
       
-      XCTAssertEqual(app.staticTexts[AccessibilityString.losingTeamScore].label, expectedLosingTeamScore)
+      //Is the corect losing team score showing?
+      XCTAssertEqual(app.staticTexts[AccessibilityIdentifier.LosingTeamScore.rawValue].label, expectedLosingTeamScore)
   }
   
   func checkIsPostseason(app: XCUIApplication, isPostseason: Bool) {
-    let recordString = app.staticTexts[AccessibilityString.cubsRecord].label
+    let recordString = app.staticTexts[AccessibilityIdentifier.CubsRecord.rawValue].label
     if isPostseason {
       let inThePostseason = LocalizedString.seasonStringForPostseason(true)
       XCTAssertTrue(recordString.containsString(inThePostseason))
@@ -68,14 +72,19 @@ class GoCubsUITests: XCTestCase {
     checkIsPostseason(app, isPostseason: true)
     
     //Is the W showing
-    XCTAssertTrue(app.staticTexts[AccessibilityString.cubsWin].exists)
+    XCTAssertTrue(app.staticTexts[AccessibilityLabel.cubsWin].exists)
   }
   
   func testKnownPostseasonLoss() {
     let app = XCUIApplication()
     
     //Select October 9 game
-    let cubsVsCardinalsStaticText = app.tables[AccessibilityString.gamesTableview].cells.containingType(.StaticText, identifier:"Oct 9").staticTexts["Cubs vs. Cardinals"]
+    let cubsVsCardinalsStaticText = app
+      .tables[AccessibilityIdentifier.GamesTableview.rawValue]
+      .cells
+      .containingType(.StaticText, identifier:"Oct 9")
+      .staticTexts["Cubs vs. Cardinals"]
+    
     cubsVsCardinalsStaticText.tap()
     
     //Cubs lost to the cardinals 4-0 in this game
@@ -86,14 +95,18 @@ class GoCubsUITests: XCTestCase {
       expectedLosingTeamScore: "0")
     
     checkIsPostseason(app, isPostseason: true)
-    XCTAssertTrue(app.staticTexts[AccessibilityString.cubsLose].exists)
+    XCTAssertTrue(app.staticTexts[AccessibilityLabel.cubsLose].exists)
   }
   
   func testKnownRegularSeasonWin() {
     let app = XCUIApplication()
     
     //Select October 4 game
-    app.tables[AccessibilityString.gamesTableview].cells.containingType(.StaticText, identifier:"Oct 4").staticTexts["Cubs vs. Brewers"].tap()
+    app.tables[AccessibilityIdentifier.GamesTableview.rawValue]
+      .cells
+      .containingType(.StaticText, identifier:"Oct 4")
+      .staticTexts["Cubs vs. Brewers"]
+      .tap()
     
     //Cubs beat the brewers 3-1 in this game
     checkResult(app,
@@ -104,7 +117,7 @@ class GoCubsUITests: XCTestCase {
     
     checkIsPostseason(app, isPostseason: false)
     
-    XCTAssertTrue(app.staticTexts[AccessibilityString.cubsWin].exists)
+    XCTAssertTrue(app.staticTexts[AccessibilityLabel.cubsWin].exists)
   }
   
   func testKnownRegularSeasonLoss() {
@@ -122,7 +135,7 @@ class GoCubsUITests: XCTestCase {
       expectedLosingTeamScore: "2")
     
     checkIsPostseason(app, isPostseason: false)
-    XCTAssertTrue(app.staticTexts[AccessibilityString.cubsLose].exists)
+    XCTAssertTrue(app.staticTexts[AccessibilityLabel.cubsLose].exists)
   }
   
   func testKnownRegularSeasonPostponement() {
@@ -142,6 +155,6 @@ class GoCubsUITests: XCTestCase {
       expectedLosingTeamScore: "-")
     
     self.checkIsPostseason(app, isPostseason: false)
-    XCTAssertTrue(app.staticTexts[AccessibilityString.postponed].exists)
+    XCTAssertTrue(app.staticTexts[AccessibilityLabel.postponed].exists)
   }
 }

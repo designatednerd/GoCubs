@@ -59,8 +59,10 @@ class GameTodayUITests: XCTestCase {
       XCTAssertTrue(app.staticTexts[expectedDescription].exists)
       
       //Close out the Game Today view.
-      app.buttons[AccessibilityString.closeButton].tap()
-      XCTAssertFalse(app.buttons[AccessibilityString.closeButton].exists)
+      app.buttons[AccessibilityLabel.closeButton].tap()
+      
+      //Is it gone?
+      XCTAssertFalse(app.buttons[AccessibilityLabel.closeButton].exists)
   }
   
   //MARK: - Tests

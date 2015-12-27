@@ -46,11 +46,11 @@ class GameDetailViewController: UIViewController {
   }
  
   private func setupAccessibilityAndLocalization() {
-    self.losingTeamNameLabel.accessibilityIdentifier = AccessibilityString.losingTeamName
-    self.losingTeamScoreLabel.accessibilityIdentifier = AccessibilityString.losingTeamScore
-    self.winningTeamNameLabel.accessibilityIdentifier = AccessibilityString.winningTeamName
-    self.winningTeamScoreLabel.accessibilityIdentifier = AccessibilityString.winningTeamScore
-    self.cubsRecordLabel.accessibilityIdentifier = AccessibilityString.cubsRecord
+    self.losingTeamNameLabel.accessibilityIdentifier = AccessibilityIdentifier.LosingTeamName.rawValue
+    self.losingTeamScoreLabel.accessibilityIdentifier = AccessibilityIdentifier.LosingTeamScore.rawValue
+    self.winningTeamNameLabel.accessibilityIdentifier = AccessibilityIdentifier.WinningTeamName.rawValue
+    self.winningTeamScoreLabel.accessibilityIdentifier = AccessibilityIdentifier.WinningTeamScore.rawValue
+    self.cubsRecordLabel.accessibilityIdentifier = AccessibilityIdentifier.CubsRecord.rawValue
 //PART1
   }
   
@@ -116,6 +116,6 @@ class GameDetailViewController: UIViewController {
     self.flagView.backgroundColor = resultType.flagBackground()
     self.resultLabel.text = resultType.flagString()
     self.resultLabel.textColor = resultType.flagTextColor()
-    self.resultLabel.accessibilityLabel = resultType.accessibilityString()
+    self.resultLabel.accessibilityLabel = resultType.accessibilityLabel()
   }
 }

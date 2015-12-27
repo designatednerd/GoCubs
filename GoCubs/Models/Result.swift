@@ -45,14 +45,14 @@ enum ResultType: String {
     }
   }
   
-  func accessibilityString() -> String {
+  func accessibilityLabel() -> String {
     switch self {
     case .Win:
-      return AccessibilityString.cubsWin
+      return AccessibilityLabel.cubsWin
     case .Loss:
-      return AccessibilityString.cubsLose
+      return AccessibilityLabel.cubsLose
     case .Postponed:
-      return AccessibilityString.postponed
+      return AccessibilityLabel.postponed
     }
   }
 }

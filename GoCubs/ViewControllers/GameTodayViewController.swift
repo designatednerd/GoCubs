@@ -30,7 +30,7 @@ class GameTodayViewController: UIViewController {
   
   private func setupAccessibilityAndLocalization() {
     self.titleLabel.text = LocalizedString.gameTodayTitle
-    self.closeButton.accessibilityLabel = AccessibilityString.closeButton
+    self.closeButton.accessibilityLabel = AccessibilityLabel.closeButton
 //PART1
   }
   

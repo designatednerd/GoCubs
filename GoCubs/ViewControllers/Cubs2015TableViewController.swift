@@ -42,7 +42,7 @@ class Cubs2015TableViewController: UITableViewController {
   
   private func setupAccessibilityAndLocalization() {
     self.title = LocalizedString.listTitle
-    self.tableView.accessibilityIdentifier = AccessibilityString.gamesTableview
+    self.tableView.accessibilityIdentifier = AccessibilityIdentifier.GamesTableview.rawValue
     self.gameTodayButton.accessibilityLabel = LocalizedString.gameTodayTitle
   }
 //PART1

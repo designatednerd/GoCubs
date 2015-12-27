@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		331C5D3E1BCCA4ED00BFD183 /* AccessibilityString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */; };
+		331C5D3E1BCCA4ED00BFD183 /* AccessibilityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D3D1BCCA4ED00BFD183 /* AccessibilityLabel.swift */; };
 		331C5D641BCCACBB00BFD183 /* GoCubsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D631BCCACBB00BFD183 /* GoCubsUITests.swift */; };
-		33BE0EB51BCD7F3B00E96BF7 /* AccessibilityString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */; };
+		33BE0EB51BCD7F3B00E96BF7 /* AccessibilityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D3D1BCCA4ED00BFD183 /* AccessibilityLabel.swift */; };
 		33BE0EB61BCD8C2E00E96BF7 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */; };
 		9B491D711BF8D9C30040FFBD /* CubsGameDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */; };
 		9B99F1C31BCAFD5E00EC08DC /* CSVParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1C01BCAFD5E00EC08DC /* CSVParsingTests.swift */; };
@@ -38,6 +38,8 @@
 		9BE41E031C308979008DADA2 /* NSCalendar+Chicago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41E021C308979008DADA2 /* NSCalendar+Chicago.swift */; };
 		9BE41E041C308A24008DADA2 /* NSCalendar+Chicago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41E021C308979008DADA2 /* NSCalendar+Chicago.swift */; };
 		9BE41E071C30921B008DADA2 /* CubsGameCheckerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41E051C3091DF008DADA2 /* CubsGameCheckerTests.swift */; };
+		9BE41E091C30986B008DADA2 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41E081C30986B008DADA2 /* AccessibilityIdentifier.swift */; };
+		9BE41E0A1C3099CA008DADA2 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41E081C30986B008DADA2 /* AccessibilityIdentifier.swift */; };
 		9BFA396C1C2F17FE008EEFEB /* GameTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA396B1C2F17FE008EEFEB /* GameTodayViewController.swift */; };
 		9BFA396F1C2F1A32008EEFEB /* CubsGameChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA396E1C2F1A32008EEFEB /* CubsGameChecker.swift */; };
 		9BFA39711C2F4AF6008EEFEB /* CalendarParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA39701C2F4AF6008EEFEB /* CalendarParser.swift */; };
@@ -65,7 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityString.swift; sourceTree = "<group>"; };
+		331C5D3D1BCCA4ED00BFD183 /* AccessibilityLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityLabel.swift; sourceTree = "<group>"; };
 		331C5D611BCCACBA00BFD183 /* GoCubsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCubsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		331C5D631BCCACBB00BFD183 /* GoCubsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoCubsUITests.swift; sourceTree = "<group>"; };
 		331C5D651BCCACBB00BFD183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		9BE41DFF1C308885008DADA2 /* NSDateFormatter+Once.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+Once.swift"; sourceTree = "<group>"; };
 		9BE41E021C308979008DADA2 /* NSCalendar+Chicago.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Chicago.swift"; sourceTree = "<group>"; };
 		9BE41E051C3091DF008DADA2 /* CubsGameCheckerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CubsGameCheckerTests.swift; path = GoCubs/Extensions/CubsGameCheckerTests.swift; sourceTree = SOURCE_ROOT; };
+		9BE41E081C30986B008DADA2 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		9BFA396B1C2F17FE008EEFEB /* GameTodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTodayViewController.swift; sourceTree = "<group>"; };
 		9BFA396E1C2F1A32008EEFEB /* CubsGameChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameChecker.swift; sourceTree = "<group>"; };
 		9BFA39701C2F4AF6008EEFEB /* CalendarParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarParser.swift; sourceTree = "<group>"; };
@@ -250,7 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */,
-				331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */,
+				9BE41E081C30986B008DADA2 /* AccessibilityIdentifier.swift */,
+				331C5D3D1BCCA4ED00BFD183 /* AccessibilityLabel.swift */,
 				9BE41DF91C3080D8008DADA2 /* LaunchEnvironmentKey.swift */,
 			);
 			path = DeStringers;
@@ -417,7 +421,8 @@
 				9BE41DFE1C308439008DADA2 /* LaunchEnvironmentKey.swift in Sources */,
 				331C5D641BCCACBB00BFD183 /* GoCubsUITests.swift in Sources */,
 				9BE41DF81C307F5E008DADA2 /* GameTodayUITests.swift in Sources */,
-				33BE0EB51BCD7F3B00E96BF7 /* AccessibilityString.swift in Sources */,
+				33BE0EB51BCD7F3B00E96BF7 /* AccessibilityLabel.swift in Sources */,
+				9BE41E0A1C3099CA008DADA2 /* AccessibilityIdentifier.swift in Sources */,
 				33BE0EB61BCD8C2E00E96BF7 /* LocalizedString.swift in Sources */,
 				9BE41E011C308946008DADA2 /* NSDateFormatter+Once.swift in Sources */,
 				9BE41DFC1C3081B1008DADA2 /* XCTestCase+UITesting.swift in Sources */,
@@ -434,7 +439,7 @@
 				9BFA396F1C2F1A32008EEFEB /* CubsGameChecker.swift in Sources */,
 				9BFA39731C2F4C14008EEFEB /* CubsCalendarEvent.swift in Sources */,
 				9B99F1F71BCB0CBC00EC08DC /* LocalizedString.swift in Sources */,
-				331C5D3E1BCCA4ED00BFD183 /* AccessibilityString.swift in Sources */,
+				331C5D3E1BCCA4ED00BFD183 /* AccessibilityLabel.swift in Sources */,
 				9BE41DFA1C3080D8008DADA2 /* LaunchEnvironmentKey.swift in Sources */,
 				9B99F1E01BCAFD8F00EC08DC /* String+IntsWithDash.swift in Sources */,
 				9B491D711BF8D9C30040FFBD /* CubsGameDataSource.swift in Sources */,
@@ -446,6 +451,7 @@
 				9BE41DF61C306B3A008DADA2 /* UIApplication+Testing.swift in Sources */,
 				9B99F1E61BCAFD8F00EC08DC /* Result.swift in Sources */,
 				9B99F1E81BCAFD8F00EC08DC /* Cubs2015TableViewController.swift in Sources */,
+				9BE41E091C30986B008DADA2 /* AccessibilityIdentifier.swift in Sources */,
 				9B99F1E31BCAFD8F00EC08DC /* CubsRecord.swift in Sources */,
 				9B99F1F51BCB0B7B00EC08DC /* CubsGameCell.swift in Sources */,
 				9B99F1E51BCAFD8F00EC08DC /* Pitcher.swift in Sources */,
