@@ -43,21 +43,7 @@ struct CubsCalendarEvent {
   }
   
   //MARK: - Creating from iCal data
-  
-  static let ChicagoCalendar: NSCalendar = {
-    let calendar = NSCalendar.currentCalendar()
-    
-    //We need to make sure everything is converted to Chicago time. 
-    guard let chicagoTime = NSTimeZone(name: "America/Chicago") else {
-      assertionFailure("Can't create time zone!")
-      return calendar
-    }
-    
-    calendar.timeZone = chicagoTime
-    
-    return calendar
-  }()
-  
+
   static func fromDescription(description: String?,
     summary: String?,
     location: String?,
@@ -75,7 +61,7 @@ struct CubsCalendarEvent {
       //Location comes in with \\ a lot of places
       let locationToUse = location.stringByReplacingOccurrencesOfString("\\", withString: "")
       
-      let components = self.ChicagoCalendar.components([
+      let components = NSCalendar.cub_chicagoCalendar.components([
         .Month,
         .Day,
         .Year

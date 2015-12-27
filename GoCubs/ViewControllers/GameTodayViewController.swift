@@ -18,12 +18,6 @@ class GameTodayViewController: UIViewController {
   @IBOutlet var detailsLabel: UILabel!
   @IBOutlet var closeButton: UIButton!
   
-  private let dateFormatter: NSDateFormatter = {
-    let formatter = NSDateFormatter()
-    formatter.dateStyle = .LongStyle
-    return formatter
-  }()
-  
   //MARK: - View Lifecycle
   
   override func viewDidLoad() {
@@ -62,8 +56,8 @@ class GameTodayViewController: UIViewController {
   }
   
   func findOutIfTheresAGameForDate(date: NSDate) {
-    self.dateLabel.text = self.dateFormatter.stringFromDate(date)
-
+    self.dateLabel.text = NSDateFormatter.cub_longDateFormatter.stringFromDate(date)
+    
     //Since we have to ask the interwebs, show something during loading.
     self.yesOrNoLabel.text = LocalizedString.gameTodayLoading
     CubsGameChecker.isThereAGameForDate(date, failure: {
