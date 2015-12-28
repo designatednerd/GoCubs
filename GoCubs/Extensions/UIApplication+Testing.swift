@@ -23,11 +23,7 @@ extension UIApplication {
    - returns: true if the app is UI testing, false if not. 
    */
   static func cub_isUITesting() -> Bool {    
-    if LaunchEnvironmentKey.IsUITesting.processInfoValue() != nil {
-      return true
-    }
-    
-    return false
+    return LaunchEnvironmentKey.IsUITesting.processInfoValue() != nil
   }
 }
 
