@@ -34,13 +34,7 @@ class GameTodayUITests: XCTestCase {
     
     return NSDateFormatter.cub_longDateFormatter.stringFromDate(date)
   }
-  
-  func tapGameTodayBarButton(app: XCUIApplication) {
-    app.navigationBars["Cubs 2015 Games"]
-      .buttons[LocalizedString.gameTodayTitle]
-      .tap()
-  }
-  
+
   func checkDataAsExpectedForMonth(month: Int, day: Int, year: Int,
     expectedYesOrNo: String,
     expectedDescription: String,
@@ -48,7 +42,9 @@ class GameTodayUITests: XCTestCase {
       
       //Get the app and tap the game today bar.
       let app = XCUIApplication()
-      self.tapGameTodayBarButton(app)
+      app.navigationBars[LocalizedString.listTitle]
+        .buttons[LocalizedString.gameTodayTitle]
+        .tap()
       
       //Does all the correct info display?
       XCTAssertTrue(app.staticTexts[LocalizedString.gameTodayTitle].exists)
