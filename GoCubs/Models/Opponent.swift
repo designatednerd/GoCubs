@@ -15,19 +15,19 @@ struct Opponent {
   let isHomeTeam: Bool
   let colors: TeamColors
   
-  init(name: String) {
-    if name.hasPrefix(at) {
+  init(teamName: String) {
+    if teamName.hasPrefix(at) {
       isHomeTeam = true
-      self.name = name.substringFromIndex(at.endIndex)
+      name = teamName.substringFromIndex(at.endIndex)
     } else {
       isHomeTeam = false
-      self.name = name
+      name = teamName
     }
     
-    guard let colors = TeamColors(rawValue: name) else {
-      fatalError("Couldn't get team colors for team named \(name)")
+    guard let teamColors = TeamColors(rawValue: name) else {
+      fatalError("Couldn't get team colors for team named \(teamName)")
     }
     
-    self.colors = colors
+    self.colors = teamColors
   }
 }

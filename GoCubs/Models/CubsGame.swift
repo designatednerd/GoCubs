@@ -30,7 +30,7 @@ class CubsGame {
     }
     
     date = gameDate
-    opponent = Opponent(name: components[1])
+    opponent = Opponent(teamName: components[1])
     result = Result(resultString: components[2])
     cubsRecord = CubsRecord(recordString: components[3])
     winningPitcher = Pitcher(pitcherString: components[4])

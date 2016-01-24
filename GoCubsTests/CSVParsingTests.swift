@@ -27,12 +27,12 @@ class CSVParsingTests: XCTestCase {
   }
   
   func testParsingOpponent() {
-    let testHomeOpponent = Opponent(name: "Cardinals")
+    let testHomeOpponent = Opponent(teamName: "Cardinals")
     XCTAssertFalse(testHomeOpponent.isHomeTeam)
     XCTAssertEqual(testHomeOpponent.name, "Cardinals")
     XCTAssertEqual(testHomeOpponent.colors, TeamColors.Cardinals)
     
-    let testAwayOpponent = Opponent(name: "at Pirates")
+    let testAwayOpponent = Opponent(teamName: "at Pirates")
     XCTAssertEqual(testAwayOpponent.name, "Pirates")
     XCTAssertTrue(testAwayOpponent.isHomeTeam)
     XCTAssertEqual(testAwayOpponent.colors, TeamColors.Pirates)
