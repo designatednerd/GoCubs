@@ -13,7 +13,7 @@ class GameTodayUITests: XCTestCase {
   //MARK: - Helper methods
   
   private func launchAppWithMonth(month: Int, day: Int, year: Int) {
-    self.launchAppForUITesting(withAdditionalInfo: [
+    launchAppForUITesting(withAdditionalInfo: [
       LaunchEnvironmentKey.MonthToTest.rawValue: String(month),
       LaunchEnvironmentKey.DayToTest.rawValue: String(day),
       LaunchEnvironmentKey.YearToTest.rawValue: String(year),
@@ -49,7 +49,7 @@ class GameTodayUITests: XCTestCase {
       //Does all the correct info display?
       XCTAssertTrue(app.staticTexts[LocalizedString.gameTodayTitle].exists)
 
-      let dateString = self.dateStringForMonth(month, day: day, year: year)
+      let dateString = dateStringForMonth(month, day: day, year: year)
       XCTAssertTrue(app.staticTexts[dateString].exists)
       
       XCTAssertTrue(app.staticTexts[expectedYesOrNo].exists)
@@ -70,9 +70,9 @@ class GameTodayUITests: XCTestCase {
     let month = 4
     let day = 5
     let year = 2015
-    self.launchAppWithMonth(month, day: day, year: year)
+    launchAppWithMonth(month, day: day, year: year)
     
-    self.checkDataAsExpectedForMonth(month, day: day, year: year,
+    checkDataAsExpectedForMonth(month, day: day, year: year,
       expectedYesOrNo: LocalizedString.gameTodayPositive,
       expectedDescription: "FINAL: St. Louis Cardinals 3 - Chicago Cubs 0 Winning Pitcher: Wainwright, Adam Losing Pitcher: Lester, Jon",
       expectedParking: LocalizedString.parkingTerrible)
@@ -84,9 +84,9 @@ class GameTodayUITests: XCTestCase {
     let month = 6
     let day = 30
     let year = 2016
-    self.launchAppWithMonth(month, day: day, year: year)
+    launchAppWithMonth(month, day: day, year: year)
     
-    self.checkDataAsExpectedForMonth(month, day: day, year: year,
+    checkDataAsExpectedForMonth(month, day: day, year: year,
       expectedYesOrNo: LocalizedString.gameTodayNegative,
       expectedDescription: "Chicago Cubs vs. New York Mets First pitch: 7:10:00 PM EDT Citi Field, Flushing",
       expectedParking: LocalizedString.parkingOK)
@@ -97,9 +97,9 @@ class GameTodayUITests: XCTestCase {
     let month = 12
     let day = 25
     let year = 2015
-    self.launchAppWithMonth(month, day: day, year: year)
+    launchAppWithMonth(month, day: day, year: year)
     
-    self.checkDataAsExpectedForMonth(month, day: day, year: year,
+    checkDataAsExpectedForMonth(month, day: day, year: year,
       expectedYesOrNo: LocalizedString.gameTodayNegative,
       expectedDescription: LocalizedString.noGameDetail,
       expectedParking: LocalizedString.parkingOK)

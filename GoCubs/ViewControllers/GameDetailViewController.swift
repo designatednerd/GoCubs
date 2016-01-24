@@ -25,7 +25,7 @@ class GameDetailViewController: UIViewController {
   
   var game: CubsGame? {
     didSet {
-      self.configureForGame()
+      configureForGame()
     }
   }
   
@@ -40,17 +40,17 @@ class GameDetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.configureForGame()
+    configureForGame()
 //PART1
-    self.setupAccessibilityAndLocalization()
+    setupAccessibilityAndLocalization()
   }
  
   private func setupAccessibilityAndLocalization() {
-    self.losingTeamNameLabel.accessibilityIdentifier = AccessibilityIdentifier.LosingTeamName.rawValue
-    self.losingTeamScoreLabel.accessibilityIdentifier = AccessibilityIdentifier.LosingTeamScore.rawValue
-    self.winningTeamNameLabel.accessibilityIdentifier = AccessibilityIdentifier.WinningTeamName.rawValue
-    self.winningTeamScoreLabel.accessibilityIdentifier = AccessibilityIdentifier.WinningTeamScore.rawValue
-    self.cubsRecordLabel.accessibilityIdentifier = AccessibilityIdentifier.CubsRecord.rawValue
+    losingTeamNameLabel.accessibilityIdentifier = AccessibilityIdentifier.LosingTeamName.rawValue
+    losingTeamScoreLabel.accessibilityIdentifier = AccessibilityIdentifier.LosingTeamScore.rawValue
+    winningTeamNameLabel.accessibilityIdentifier = AccessibilityIdentifier.WinningTeamName.rawValue
+    winningTeamScoreLabel.accessibilityIdentifier = AccessibilityIdentifier.WinningTeamScore.rawValue
+    cubsRecordLabel.accessibilityIdentifier = AccessibilityIdentifier.CubsRecord.rawValue
 //PART1
   }
   
@@ -58,9 +58,9 @@ class GameDetailViewController: UIViewController {
   
   func configureForGame() {
     if let
-      cubsGame = self.game,
-      _ = self.flagView { //Make sure the view has loaded
-        self.title = self.dateFormatter.stringFromDate(cubsGame.date)
+      cubsGame = game,
+      _ = flagView { //Make sure the view has loaded
+        title = dateFormatter.stringFromDate(cubsGame.date)
         
         let components = NSCalendar.currentCalendar().components([.Day, .Month], fromDate: cubsGame.date)
         var isPostseason = false
@@ -73,49 +73,49 @@ class GameDetailViewController: UIViewController {
         
         switch cubsGame.result.type {
         case .Win:
-          self.winningTeamNameLabel.text = LocalizedString.cubs.uppercaseString
-          self.winningTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
-          self.winningTeamScoreLabel.text = "\(cubsGame.result.cubsRuns)"
-          self.losingTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
-          self.losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
-          self.losingTeamScoreLabel.text = "\(cubsGame.result.opponentRuns)"
+          winningTeamNameLabel.text = LocalizedString.cubs.uppercaseString
+          winningTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
+          winningTeamScoreLabel.text = "\(cubsGame.result.cubsRuns)"
+          losingTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
+          losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
+          losingTeamScoreLabel.text = "\(cubsGame.result.opponentRuns)"
         case .Loss:
-          self.losingTeamNameLabel.text = LocalizedString.cubs.uppercaseString
-          self.losingTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
-          self.losingTeamScoreLabel.text = "\(cubsGame.result.cubsRuns)"
-          self.winningTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
-          self.winningTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
-          self.winningTeamScoreLabel.text = "\(cubsGame.result.opponentRuns)"
+          losingTeamNameLabel.text = LocalizedString.cubs.uppercaseString
+          losingTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
+          losingTeamScoreLabel.text = "\(cubsGame.result.cubsRuns)"
+          winningTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
+          winningTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
+          winningTeamScoreLabel.text = "\(cubsGame.result.opponentRuns)"
         case .Postponed:
-          self.winningTeamNameLabel.text = LocalizedString.cubs.uppercaseString
-          self.winningTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
-          self.winningTeamScoreLabel.text = LocalizedString.noResult
-          self.losingTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
-          self.losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
-          self.losingTeamScoreLabel.text = LocalizedString.noResult
+          winningTeamNameLabel.text = LocalizedString.cubs.uppercaseString
+          winningTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
+          winningTeamScoreLabel.text = LocalizedString.noResult
+          losingTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
+          losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
+          losingTeamScoreLabel.text = LocalizedString.noResult
         }
         
-        self.cubsRecordLabel.text = cubsGame.resultString(isPostseason)
-        self.configureFlagForResultType(cubsGame.result.type)
-        self.configurePitchersForGame(cubsGame)
+        cubsRecordLabel.text = cubsGame.resultString(isPostseason)
+        configureFlagForResultType(cubsGame.result.type)
+        configurePitchersForGame(cubsGame)
     }
   }
   
   func configurePitchersForGame(game: CubsGame) {
     switch game.result.type {
     case .Postponed:
-      self.winningPitcherNameLabel.text = LocalizedString.noResult
-      self.losingPitcherNameLabel.text = LocalizedString.noResult
+      winningPitcherNameLabel.text = LocalizedString.noResult
+      losingPitcherNameLabel.text = LocalizedString.noResult
     default:
-      self.winningPitcherNameLabel.text = game.winningPitcher.name
-      self.losingPitcherNameLabel.text = game.losingPitcher.name
+      winningPitcherNameLabel.text = game.winningPitcher.name
+      losingPitcherNameLabel.text = game.losingPitcher.name
     }
   }
   
   func configureFlagForResultType(resultType: ResultType) {
-    self.flagView.backgroundColor = resultType.flagBackground()
-    self.resultLabel.text = resultType.flagString()
-    self.resultLabel.textColor = resultType.flagTextColor()
-    self.resultLabel.accessibilityLabel = resultType.accessibilityLabel()
+    flagView.backgroundColor = resultType.flagBackground()
+    resultLabel.text = resultType.flagString()
+    resultLabel.textColor = resultType.flagTextColor()
+    resultLabel.accessibilityLabel = resultType.accessibilityLabel()
   }
 }

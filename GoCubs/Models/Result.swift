@@ -19,7 +19,7 @@ enum ResultType: String {
     case .Postponed:
       return "☔️"
     default:
-      return self.rawValue
+      return rawValue
     }
   }
   
@@ -66,9 +66,9 @@ struct Result {
     //Of the format "W 5-3" OR "Postponed"
     if resultString == ResultType.Postponed.rawValue {
       //This game was postponed
-      self.type = .Postponed
-      self.cubsRuns = 0
-      self.opponentRuns = 0
+      type = .Postponed
+      cubsRuns = 0
+      opponentRuns = 0
     } else {
       //Parse the win/loss and the score.
       let components = resultString.componentsSeparatedByString(" ")
@@ -79,21 +79,21 @@ struct Result {
       let winOrLoss = components[0]
       switch winOrLoss {
       case ResultType.Win.rawValue:
-        self.type = .Win
+        type = .Win
       case ResultType.Loss.rawValue:
-        self.type = .Loss
+        type = .Loss
       default:
         assertionFailure("Postponed should have already been caught!")
         //In production:
-        self.type = .Postponed
+        type = .Postponed
       }
       
       let runsString = components[1]
       let runs = runsString.asInts()
       
       //The first number in the runs is always what the Cubs scored, regardless of result.
-      self.cubsRuns = runs.firstValue
-      self.opponentRuns = runs.secondValue
+      cubsRuns = runs.firstValue
+      opponentRuns = runs.secondValue
     }
   }
 }

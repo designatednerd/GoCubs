@@ -17,7 +17,7 @@ extension XCTestCase {
    */
   func launchAppForUITesting(withAdditionalInfo additionalInfo: [String : String]? = nil) {
     // Stop immediately when a failure occurs.
-    self.continueAfterFailure = false
+    continueAfterFailure = false
     
     //Grab a reference to the app
     let app = XCUIApplication()

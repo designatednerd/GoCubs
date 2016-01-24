@@ -60,13 +60,13 @@ struct CalendarParser {
     lines.forEach {
       line in
       
-      if let desc = self.valueForPrefix(CalendarParser.DescriptionPrefix, forLine: line) {
+      if let desc = valueForPrefix(CalendarParser.DescriptionPrefix, forLine: line) {
         description = desc
-      } else if let sum = self.valueForPrefix(CalendarParser.SummaryPrefix, forLine: line) {
+      } else if let sum = valueForPrefix(CalendarParser.SummaryPrefix, forLine: line) {
         summary = sum
-      } else if let loc = self.valueForPrefix(CalendarParser.LocationPrefix, forLine: line) {
+      } else if let loc = valueForPrefix(CalendarParser.LocationPrefix, forLine: line) {
         location = loc
-      } else if let dt = self.valueForPrefix(CalendarParser.StartTimePrefix, forLine: line) {
+      } else if let dt = valueForPrefix(CalendarParser.StartTimePrefix, forLine: line) {
         dateTime = CalendarParser.DateFormatter.dateFromString(dt)
       }
     }

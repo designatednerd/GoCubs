@@ -17,7 +17,7 @@ extension String {
    - return: A tuple with the first value and second value available.
    */
   func asInts() -> (firstValue: Int, secondValue: Int) {
-    let separatedByDash = self.componentsSeparatedByString("-")
+    let separatedByDash = componentsSeparatedByString("-")
     
     guard separatedByDash.count == 2 else {
       fatalError("Incorrect object count for \(self)")

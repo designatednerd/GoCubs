@@ -23,7 +23,7 @@ extension AppDelegate: UIApplicationDelegate {
     didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
       
       //Setup the Split VC
-      guard let splitViewController = self.window?.rootViewController as? UISplitViewController,
+      guard let splitViewController = window?.rootViewController as? UISplitViewController,
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as? UINavigationController,
         let navigationItem = navigationController.topViewController?.navigationItem else {
           assertionFailure("YOU CANNOT HAS SPLIT VC!")

@@ -29,22 +29,22 @@ class CubsGame {
       fatalError("Could not parse date string \(dateString)")
     }
     
-    self.date = gameDate
-    self.opponent = Opponent(name: components[1])
-    self.result = Result(resultString: components[2])
-    self.cubsRecord = CubsRecord(recordString: components[3])
-    self.winningPitcher = Pitcher(pitcherString: components[4])
-    self.losingPitcher = Pitcher(pitcherString: components[5])
+    date = gameDate
+    opponent = Opponent(name: components[1])
+    result = Result(resultString: components[2])
+    cubsRecord = CubsRecord(recordString: components[3])
+    winningPitcher = Pitcher(pitcherString: components[4])
+    losingPitcher = Pitcher(pitcherString: components[5])
   }
   
   func resultString(isPostseason: Bool) -> String {
-    switch self.result.type {
+    switch result.type {
     case .Win:
-      return improve(self.cubsRecord, isPostseason: isPostseason)
+      return improve(cubsRecord, isPostseason: isPostseason)
     case .Loss:
-      return self.fall(self.cubsRecord, isPostseason: isPostseason)
+      return fall(cubsRecord, isPostseason: isPostseason)
     case .Postponed:
-      return self.remain(self.cubsRecord, isPostseason: isPostseason)
+      return remain(cubsRecord, isPostseason: isPostseason)
     }
   }
   

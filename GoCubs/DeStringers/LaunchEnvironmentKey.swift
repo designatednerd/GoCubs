@@ -18,7 +18,7 @@ enum LaunchEnvironmentKey: String {
   YearToTest = "CUBS_YEAR"
   
   func processInfoValue() -> String? {
-    return NSProcessInfo.processInfo().environment[self.rawValue]
+    return NSProcessInfo.processInfo().environment[rawValue]
   }  
 }
 

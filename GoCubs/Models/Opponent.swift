@@ -17,14 +17,14 @@ struct Opponent {
   
   init(name: String) {
     if name.hasPrefix(at) {
-      self.isHomeTeam = true
+      isHomeTeam = true
       self.name = name.substringFromIndex(at.endIndex)
     } else {
-      self.isHomeTeam = false
+      isHomeTeam = false
       self.name = name
     }
     
-    guard let colors = TeamColors(rawValue: self.name) else {
+    guard let colors = TeamColors(rawValue: name) else {
       fatalError("Couldn't get team colors for team named \(name)")
     }
     

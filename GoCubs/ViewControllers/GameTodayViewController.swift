@@ -25,23 +25,23 @@ class GameTodayViewController: UIViewController {
     super.viewDidLoad()
     
     //Clear the initial detail text
-    self.detailsLabel.text = nil
+    detailsLabel.text = nil
     
-    self.findOutIfTheresAGameToday()
+    findOutIfTheresAGameToday()
 //PART1
-    self.setupAccessibilityAndLocalization()
+    setupAccessibilityAndLocalization()
   }
   
   private func setupAccessibilityAndLocalization() {
-    self.titleLabel.text = LocalizedString.gameTodayTitle
-    self.closeButton.accessibilityLabel = AccessibilityLabel.closeButton
+    titleLabel.text = LocalizedString.gameTodayTitle
+    closeButton.accessibilityLabel = AccessibilityLabel.closeButton
 //PART1
   }
   
   //MARK: - IBActions
   
   @IBAction private func close() {
-    self.dismissViewControllerAnimated(true, completion: nil)
+    dismissViewControllerAnimated(true, completion: nil)
   }
   
   //MARK: - Network
@@ -74,16 +74,16 @@ class GameTodayViewController: UIViewController {
     }
 //PART3
 //    let gameDate = NSDate()
-    self.findOutIfTheresAGameForDate(gameDate)
+    findOutIfTheresAGameForDate(gameDate)
   }
   
   func findOutIfTheresAGameForDate(date: NSDate) {
     //Show the date we're checking
-    self.dateLabel.text = NSDateFormatter.longDateFormatter.stringFromDate(date)
+    dateLabel.text = NSDateFormatter.longDateFormatter.stringFromDate(date)
     
     //Since we have to ask the interwebs, show some stuff to indicate loading.
-    self.yesOrNoLabel.text = LocalizedString.gameTodayLoading
-    self.parkingLabel.text = LocalizedString.parkingLoading
+    yesOrNoLabel.text = LocalizedString.gameTodayLoading
+    parkingLabel.text = LocalizedString.parkingLoading
     
     //Actually find out if there's a game.
     CubsGameChecker.isThereAGameForDate(date, failure: {
@@ -99,21 +99,21 @@ class GameTodayViewController: UIViewController {
   
   private func configureForGame(isThereAGame: Bool, details: String) {
     if isThereAGame {
-      self.yesOrNoLabel.text = LocalizedString.gameTodayPositive
-      self.yesOrNoLabel.textColor = .blueColor()
-      self.parkingLabel.text = LocalizedString.parkingTerrible
+      yesOrNoLabel.text = LocalizedString.gameTodayPositive
+      yesOrNoLabel.textColor = .blueColor()
+      parkingLabel.text = LocalizedString.parkingTerrible
     } else {
-      self.yesOrNoLabel.text = LocalizedString.gameTodayNegative
-      self.yesOrNoLabel.textColor = .redColor()
-      self.parkingLabel.text = LocalizedString.parkingOK
+      yesOrNoLabel.text = LocalizedString.gameTodayNegative
+      yesOrNoLabel.textColor = .redColor()
+      parkingLabel.text = LocalizedString.parkingOK
     }
     
-    self.detailsLabel.text = details
+    detailsLabel.text = details
   }
   
   private func configureForError(error: NSError) {
-    self.parkingLabel.text = nil
-    self.yesOrNoLabel.text = LocalizedString.gameTodayError
-    self.detailsLabel.text = error.localizedDescription
+    parkingLabel.text = nil
+    yesOrNoLabel.text = LocalizedString.gameTodayError
+    detailsLabel.text = error.localizedDescription
   }
 }

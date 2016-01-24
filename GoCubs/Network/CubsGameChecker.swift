@@ -32,13 +32,13 @@ struct CubsGameChecker {
     success: GameTodaySuccessCompletion) {
       
       //First, load up the calendar.
-      self.loadCubsCalendar(failure) {
+      loadCubsCalendar(failure) {
         events in
         
         //Did we actually get any events parsed out?
         guard events.count > 0 else {
           dispatch_async(dispatch_get_main_queue()) {
-            failure(error: self.errorWithDescription("Parsing Error!", code: 668))
+            failure(error: errorWithDescription("Parsing Error!", code: 668))
           }
           
           return
@@ -82,16 +82,16 @@ struct CubsGameChecker {
   static func loadCubsCalendar(failure: GameTodayFailureCompletion,
     success: ScheduleLoadedSuccessCompletion) {
       
-      guard self.ShouldUseLiveData else {
+      guard ShouldUseLiveData else {
         //Load from disk and bail.
-        self.loadCubsCalendarFromDisk(failure, success: success)
+        loadCubsCalendarFromDisk(failure, success: success)
         return
       }
       
       //Keep going with the interwebs.
       guard let url = NSURL(string: CubsGameChecker.CubsCalendarURL) else {
         dispatch_async(dispatch_get_main_queue()) {
-          failure(error: self.errorWithDescription("Couldn't create URL!", code: 666))
+          failure(error: errorWithDescription("Couldn't create URL!", code: 666))
         }
         return
       }
@@ -114,7 +114,7 @@ struct CubsGameChecker {
           data = data,
           dataString = String(data: data, encoding: NSUTF8StringEncoding) else {
             dispatch_async(dispatch_get_main_queue()) {
-              failure(error: self.errorWithDescription("No data returned!", code: 667))
+              failure(error: errorWithDescription("No data returned!", code: 667))
             }
             return
         }
@@ -136,17 +136,17 @@ struct CubsGameChecker {
   static func loadCubsCalendarFromDisk(failure: GameTodayFailureCompletion, success: ScheduleLoadedSuccessCompletion) {
     
     guard let filePath = NSBundle.mainBundle().pathForResource("cubs_schedule_full", ofType: "ics") else {
-      failure(error: self.errorWithDescription("Couldn't create file path!", code: 701))
+      failure(error: errorWithDescription("Couldn't create file path!", code: 701))
       return
     }
     
     guard let calendarData = NSData(contentsOfFile: filePath) else {
-      failure(error: self.errorWithDescription("Couldn't load calendar data!", code: 702))
+      failure(error: errorWithDescription("Couldn't load calendar data!", code: 702))
       return
     }
     
     guard let calendarString = String(data: calendarData, encoding: NSUTF8StringEncoding) else {
-      failure (error: self.errorWithDescription("Couldn't turn calendar data into a string!", code: 703))
+      failure (error: errorWithDescription("Couldn't turn calendar data into a string!", code: 703))
       return
     }
     

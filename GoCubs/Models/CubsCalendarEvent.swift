@@ -18,7 +18,7 @@ struct CubsCalendarEvent {
   let summary: String 
   
   var displayDescription: String {
-    let replacedNewlines = self.description.stringByReplacingOccurrencesOfString("\\n", withString: "\n")
+    let replacedNewlines = description.stringByReplacingOccurrencesOfString("\\n", withString: "\n")
     let lines = replacedNewlines.componentsSeparatedByCharactersInSet(.newlineCharacterSet())
     
     let first3Lines = Array(lines[0...2])
@@ -27,7 +27,7 @@ struct CubsCalendarEvent {
   }
   
   var isAtWrigley: Bool {
-    return self.location == "Wrigley Field, Chicago"
+    return location == "Wrigley Field, Chicago"
   }
   
   func matchesDate(date: NSDate) -> Bool {
@@ -37,9 +37,9 @@ struct CubsCalendarEvent {
       .Year,
       ], fromDate: date)
     
-    return self.month == components.month
-      && self.day == components.day
-      && self.year == components.year
+    return month == components.month
+      && day == components.day
+      && year == components.year
   }
   
   //MARK: - Creating from iCal data

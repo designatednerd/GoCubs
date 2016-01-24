@@ -20,7 +20,7 @@ struct Pitcher {
       fatalError("Unable to parse pitcher string \(pitcherString)")
     }
     
-    self.name = components[0]
+    name = components[0]
     let recordStringWithParen = components[1]
     
     //Grab up to the )
@@ -29,7 +29,7 @@ struct Pitcher {
     
     
     let record = recordString.asInts()
-    self.wins = record.firstValue
-    self.losses = record.secondValue
+    wins = record.firstValue
+    losses = record.secondValue
   }
 }

@@ -42,7 +42,7 @@ class CubsGameDataSource: NSObject {
       $0.date.compare($1.date) == NSComparisonResult.OrderedDescending
     }
     
-    self.games = gameBuilder
+    games = gameBuilder
     
     super.init()
     
@@ -57,7 +57,7 @@ class CubsGameDataSource: NSObject {
       fatalError("There is no index path for this cell!")
     }
     
-    return self.games[indexPath.row]
+    return games[indexPath.row]
   }
 }
 
@@ -70,7 +70,7 @@ extension CubsGameDataSource: UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.games.count
+    return games.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -78,7 +78,7 @@ extension CubsGameDataSource: UITableViewDataSource {
       fatalError("Wrong  cell type!")
     }
     
-    let game = self.games[indexPath.row]
+    let game = games[indexPath.row]
     cell.configureForGame(game)
     return cell
   }

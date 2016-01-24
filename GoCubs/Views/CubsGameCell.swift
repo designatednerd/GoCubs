@@ -23,22 +23,22 @@ class CubsGameCell: UITableViewCell {
   @IBOutlet var secondaryColorView: UIView!
   
   func configureForGame(game: CubsGame) {
-    self.dateLabel.text = CubsGameCell.dateFormatter.stringFromDate(game.date)
+    dateLabel.text = CubsGameCell.dateFormatter.stringFromDate(game.date)
     
     if game.opponent.isHomeTeam {
-      self.vsLabel.text = LocalizedString.versus(LocalizedString.cubs, homeTeam: game.opponent.name)
+      vsLabel.text = LocalizedString.versus(LocalizedString.cubs, homeTeam: game.opponent.name)
     } else {
-      self.vsLabel.text = LocalizedString.versus(game.opponent.name, homeTeam: LocalizedString.cubs)
+      vsLabel.text = LocalizedString.versus(game.opponent.name, homeTeam: LocalizedString.cubs)
     }
     
     if game.result.type == .Postponed {
-      self.vsLabel.alpha = 0.5
+      vsLabel.alpha = 0.5
     } else {
-      self.vsLabel.alpha = 1
+      vsLabel.alpha = 1
     }
     
-    self.primaryColorView.backgroundColor = game.opponent.colors.primary()
-    self.secondaryColorView.backgroundColor = game.opponent.colors.secondary()
+    primaryColorView.backgroundColor = game.opponent.colors.primary()
+    secondaryColorView.backgroundColor = game.opponent.colors.secondary()
     
   }
   
@@ -47,22 +47,22 @@ class CubsGameCell: UITableViewCell {
   // the background color of the cell's color views.
   
   override func setSelected(selected: Bool, animated: Bool) {
-    let primary = self.primaryColorView.backgroundColor
-    let secondary = self.secondaryColorView.backgroundColor
+    let primary = primaryColorView.backgroundColor
+    let secondary = secondaryColorView.backgroundColor
     
     super.setSelected(selected, animated: animated)
     
-    self.primaryColorView.backgroundColor = primary
-    self.secondaryColorView.backgroundColor = secondary
+    primaryColorView.backgroundColor = primary
+    secondaryColorView.backgroundColor = secondary
   }
   
   override func setHighlighted(highlighted: Bool, animated: Bool) {
-    let primary = self.primaryColorView.backgroundColor
-    let secondary = self.secondaryColorView.backgroundColor
+    let primary = primaryColorView.backgroundColor
+    let secondary = secondaryColorView.backgroundColor
     
     super.setHighlighted(highlighted, animated: animated)
     
-    self.primaryColorView.backgroundColor = primary
-    self.secondaryColorView.backgroundColor = secondary
+    primaryColorView.backgroundColor = primary
+    secondaryColorView.backgroundColor = secondary
   }
 }

@@ -15,7 +15,7 @@ class CubsGameCheckerTests: XCTestCase {
   func testLoadingFullCalendarFromInternets() {
     XCTAssertTrue(CubsGameChecker.ShouldUseLiveData)
     
-    let expectation = self.expectationWithDescription("Schedule loaded from internets!")
+    let expectation = expectationWithDescription("Schedule loaded from internets!")
     
     CubsGameChecker.loadCubsCalendar({
       error in
@@ -36,12 +36,12 @@ class CubsGameCheckerTests: XCTestCase {
         expectation.fulfill()
     }
     
-    self.waitForExpectationsWithTimeout(10, handler: nil)
+    waitForExpectationsWithTimeout(10, handler: nil)
   }
 
   func testLoadingFullCalendarFromDisk() {
     //Since this is essentially async, use an expectation
-    let expectation = self.expectationWithDescription("Schedule loaded from disk")
+    let expectation = expectationWithDescription("Schedule loaded from disk")
     
     //Load things up from disk
     CubsGameChecker.loadCubsCalendarFromDisk({
@@ -86,7 +86,7 @@ class CubsGameCheckerTests: XCTestCase {
     }
     
     //Start waiting for the expectation.
-    self.waitForExpectationsWithTimeout(3, handler: nil)
+    waitForExpectationsWithTimeout(3, handler: nil)
   }
 
 }

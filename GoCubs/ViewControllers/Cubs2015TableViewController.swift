@@ -20,18 +20,18 @@ class Cubs2015TableViewController: UITableViewController {
     super.viewDidLoad()
     
     //Setup the data source
-    self.dataSource = CubsGameDataSource(tableView: self.tableView)
+    dataSource = CubsGameDataSource(tableView: tableView)
     
 //PART1
     //Make things localized and accessibile.
-    self.setupAccessibilityAndLocalization()
+    setupAccessibilityAndLocalization()
 //PART1
   }
   
   override func viewWillAppear(animated: Bool) {
     //Clear selection before VWA if the splitviewcontroller is collapsed.
-    if let split = self.splitViewController {
-      self.clearsSelectionOnViewWillAppear = split.collapsed
+    if let split = splitViewController {
+      clearsSelectionOnViewWillAppear = split.collapsed
     }
     
     super.viewWillAppear(animated)
@@ -41,9 +41,9 @@ class Cubs2015TableViewController: UITableViewController {
   // MARK: - Localization and acessibility
   
   private func setupAccessibilityAndLocalization() {
-    self.title = LocalizedString.listTitle
-    self.tableView.accessibilityIdentifier = AccessibilityIdentifier.GamesTableview.rawValue
-    self.gameTodayButton.accessibilityLabel = LocalizedString.gameTodayTitle
+    title = LocalizedString.listTitle
+    tableView.accessibilityIdentifier = AccessibilityIdentifier.GamesTableview.rawValue
+    gameTodayButton.accessibilityLabel = LocalizedString.gameTodayTitle
   }
 //PART1
   
@@ -66,8 +66,8 @@ class Cubs2015TableViewController: UITableViewController {
           return
       }
       
-      gameDetailVC.game = self.dataSource.gameForCell(cell, inTableView: self.tableView)
-      gameDetailVC.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+      gameDetailVC.game = dataSource.gameForCell(cell, inTableView: tableView)
+      gameDetailVC.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
       gameDetailVC.navigationItem.leftItemsSupplementBackButton = true
       
     case "showGameToday":
