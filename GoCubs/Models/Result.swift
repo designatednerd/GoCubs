@@ -89,7 +89,7 @@ struct Result {
       }
       
       let runsString = components[1]
-      let runs = runsString.cub_asInts()
+      let runs = runsString.asInts()
       
       //The first number in the runs is always what the Cubs scored, regardless of result.
       self.cubsRuns = runs.firstValue

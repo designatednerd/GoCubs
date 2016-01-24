@@ -14,7 +14,7 @@ class GoCubsUITests: XCTestCase {
   
   override func setUp() {
     super.setUp()    
-    self.cub_launchAppForUITesting()
+    self.launchAppForUITesting()
   }
   
   //MARK: - Helper methods

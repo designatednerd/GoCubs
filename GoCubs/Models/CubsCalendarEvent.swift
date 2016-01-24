@@ -61,7 +61,7 @@ struct CubsCalendarEvent {
       //Location comes in with escaped commas, which then get re-escaped and look silly. 
       let locationToUse = location.stringByReplacingOccurrencesOfString("\\", withString: "")
       
-      let components = NSCalendar.cub_chicagoCalendar.components([
+      let components = NSCalendar.chicagoCalendar.components([
         .Month,
         .Day,
         .Year

@@ -28,7 +28,7 @@ struct Pitcher {
       .substringToIndex(recordStringWithParen.endIndex.predecessor())
     
     
-    let record = recordString.cub_asInts()
+    let record = recordString.asInts()
     self.wins = record.firstValue
     self.losses = record.secondValue
   }

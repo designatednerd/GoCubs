@@ -79,7 +79,7 @@ class GameTodayViewController: UIViewController {
   
   func findOutIfTheresAGameForDate(date: NSDate) {
     //Show the date we're checking
-    self.dateLabel.text = NSDateFormatter.cub_longDateFormatter.stringFromDate(date)
+    self.dateLabel.text = NSDateFormatter.longDateFormatter.stringFromDate(date)
     
     //Since we have to ask the interwebs, show some stuff to indicate loading.
     self.yesOrNoLabel.text = LocalizedString.gameTodayLoading

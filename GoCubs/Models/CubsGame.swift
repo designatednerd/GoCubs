@@ -25,7 +25,7 @@ class CubsGame {
     }
     
     let dateString = components[0]
-    guard let gameDate = NSDateFormatter.cub_monthDayDateFormatter.dateFromString(dateString) else {
+    guard let gameDate = NSDateFormatter.monthDayDateFormatter.dateFromString(dateString) else {
       fatalError("Could not parse date string \(dateString)")
     }
     

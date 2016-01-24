@@ -13,7 +13,7 @@ class GameTodayUITests: XCTestCase {
   //MARK: - Helper methods
   
   private func launchAppWithMonth(month: Int, day: Int, year: Int) {
-    self.cub_launchAppForUITesting(withAdditionalInfo: [
+    self.launchAppForUITesting(withAdditionalInfo: [
       LaunchEnvironmentKey.MonthToTest.rawValue: String(month),
       LaunchEnvironmentKey.DayToTest.rawValue: String(day),
       LaunchEnvironmentKey.YearToTest.rawValue: String(year),
@@ -27,12 +27,12 @@ class GameTodayUITests: XCTestCase {
     components.month = month
     components.day = day
     components.year = year
-    guard let date = NSCalendar.cub_chicagoCalendar.dateFromComponents(components) else {
+    guard let date = NSCalendar.chicagoCalendar.dateFromComponents(components) else {
       XCTFail("Couldn't create date from components!")
       return ""
     }
     
-    return NSDateFormatter.cub_longDateFormatter.stringFromDate(date)
+    return NSDateFormatter.longDateFormatter.stringFromDate(date)
   }
 
   func checkDataAsExpectedForMonth(month: Int, day: Int, year: Int,

@@ -14,7 +14,7 @@ struct CubsRecord {
   let losses: Int
   
   init(recordString: String) {
-    let record = recordString.cub_asInts()
+    let record = recordString.asInts()
     
     self.wins = record.firstValue
     self.losses = record.secondValue

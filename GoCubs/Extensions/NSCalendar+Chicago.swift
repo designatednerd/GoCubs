@@ -13,7 +13,7 @@ extension NSCalendar {
   //Since NSCalendar inherits from NSObject, you have to mark this
   //as @nonobjc or you'll get an error about how a declaration can't be
   //both final and dynamic.
-  @nonobjc static let cub_chicagoCalendar: NSCalendar = {
+  @nonobjc static let chicagoCalendar: NSCalendar = {
     let calendar = NSCalendar.currentCalendar()
     
     //We need to make sure everything is converted to Chicago time.

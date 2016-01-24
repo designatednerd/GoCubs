@@ -13,13 +13,13 @@ extension NSDateFormatter {
   //Since NSDateFormatter inherits from NSObject, you have to mark this
   //as @nonobjc or you'll get an error about how a declaration can't be 
   //both final and dynamic.
-  @nonobjc static let cub_longDateFormatter: NSDateFormatter = {
+  @nonobjc static let longDateFormatter: NSDateFormatter = {
     let formatter = NSDateFormatter()
     formatter.dateStyle = .LongStyle
     return formatter
   }()
   
-  @nonobjc static let cub_monthDayDateFormatter: NSDateFormatter = {
+  @nonobjc static let monthDayDateFormatter: NSDateFormatter = {
     let formatter = NSDateFormatter()
     formatter.dateFormat = "M/d"
     return formatter

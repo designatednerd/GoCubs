@@ -15,7 +15,7 @@ extension XCTestCase {
    
    - parameter additionalInfo: Any additional info for mocking. Defaults to nil.
    */
-  func cub_launchAppForUITesting(withAdditionalInfo additionalInfo: [String : String]? = nil) {
+  func launchAppForUITesting(withAdditionalInfo additionalInfo: [String : String]? = nil) {
     // Stop immediately when a failure occurs.
     self.continueAfterFailure = false
     

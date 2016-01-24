@@ -16,7 +16,7 @@ extension String {
    
    - return: A tuple with the first value and second value available.
    */
-  func cub_asInts() -> (firstValue: Int, secondValue: Int) {
+  func asInts() -> (firstValue: Int, secondValue: Int) {
     let separatedByDash = self.componentsSeparatedByString("-")
     
     guard separatedByDash.count == 2 else {
