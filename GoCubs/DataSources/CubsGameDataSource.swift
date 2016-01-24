@@ -19,21 +19,16 @@ class CubsGameDataSource: NSObject {
       fatalError("Could not create path for CSV!")
     }
     
-    var csvString: String
+    let csvString = try? NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
+    let lines = (csvString ?? "").componentsSeparatedByCharactersInSet(.newlineCharacterSet())
+    var gameBuilder: [CubsGame] = lines.flatMap { line in
     
-    do {
-      csvString = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
-    } catch {
-      csvString = ""
-    }
-    
-    let lines = csvString.componentsSeparatedByCharactersInSet(.newlineCharacterSet())
-    
-    var gameBuilder = [CubsGame]()
-    for line in lines {
-      if line.endIndex != line.startIndex {
-        let game = CubsGame(gameString: line)
-        gameBuilder.append(game)
+      if (line.endIndex != line.startIndex) {
+        //The line has content
+        return CubsGame(gameString: line)
+      } else {
+        //The line does not have content.
+        return nil
       }
     }
     
