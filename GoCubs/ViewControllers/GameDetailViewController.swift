@@ -57,48 +57,51 @@ class GameDetailViewController: UIViewController {
   //MARK: - Setup
   
   func configureForGame() {
-    if let
-      cubsGame = game,
-      _ = flagView { //Make sure the view has loaded
-        title = dateFormatter.stringFromDate(cubsGame.date)
-        
-        let components = NSCalendar.currentCalendar().components([.Day, .Month], fromDate: cubsGame.date)
-        var isPostseason = false
-        
-        if (components.month > 10 || //Is november OR
-          (components.month == 10 && components.day >= 7)) { //Is October 7th or later
-            isPostseason = true
-        }
-        
-        
-        switch cubsGame.result.type {
-        case .Win:
-          winningTeamNameLabel.text = LocalizedString.cubs.uppercaseString
-          winningTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
-          winningTeamScoreLabel.text = "\(cubsGame.result.cubsRuns)"
-          losingTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
-          losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
-          losingTeamScoreLabel.text = "\(cubsGame.result.opponentRuns)"
-        case .Loss:
-          losingTeamNameLabel.text = LocalizedString.cubs.uppercaseString
-          losingTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
-          losingTeamScoreLabel.text = "\(cubsGame.result.cubsRuns)"
-          winningTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
-          winningTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
-          winningTeamScoreLabel.text = "\(cubsGame.result.opponentRuns)"
-        case .Postponed:
-          winningTeamNameLabel.text = LocalizedString.cubs.uppercaseString
-          winningTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
-          winningTeamScoreLabel.text = LocalizedString.noResult
-          losingTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
-          losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
-          losingTeamScoreLabel.text = LocalizedString.noResult
-        }
-        
-        cubsRecordLabel.text = cubsGame.resultString(isPostseason)
-        configureFlagForResultType(cubsGame.result.type)
-        configurePitchersForGame(cubsGame)
+    guard let cubsGame = game else {
+        //There's nothing to configure yet.
+        return
     }
+    
+    //If the view hasn't been loaded by the VC yet, fire it up. 
+    self.loadViewIfNeeded()
+    
+    title = dateFormatter.stringFromDate(cubsGame.date)
+    
+    let components = NSCalendar.currentCalendar().components([.Day, .Month], fromDate: cubsGame.date)
+    var isPostseason = false
+    
+    if (components.month > 10 || //Is november OR
+      (components.month == 10 && components.day >= 7)) { //Is October 7th or later
+        isPostseason = true
+    }
+    
+    switch cubsGame.result.type {
+    case .Win:
+      winningTeamNameLabel.text = LocalizedString.cubs.uppercaseString
+      winningTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
+      winningTeamScoreLabel.text = "\(cubsGame.result.cubsRuns)"
+      losingTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
+      losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
+      losingTeamScoreLabel.text = "\(cubsGame.result.opponentRuns)"
+    case .Loss:
+      losingTeamNameLabel.text = LocalizedString.cubs.uppercaseString
+      losingTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
+      losingTeamScoreLabel.text = "\(cubsGame.result.cubsRuns)"
+      winningTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
+      winningTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
+      winningTeamScoreLabel.text = "\(cubsGame.result.opponentRuns)"
+    case .Postponed:
+      winningTeamNameLabel.text = LocalizedString.cubs.uppercaseString
+      winningTeamNameLabel.backgroundColor = TeamColors.Cubs.primary()
+      winningTeamScoreLabel.text = LocalizedString.noResult
+      losingTeamNameLabel.text = cubsGame.opponent.name.uppercaseString
+      losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary()
+      losingTeamScoreLabel.text = LocalizedString.noResult
+    }
+    
+    cubsRecordLabel.text = cubsGame.resultString(isPostseason)
+    configureFlagForResultType(cubsGame.result.type)
+    configurePitchersForGame(cubsGame)
   }
   
   func configurePitchersForGame(game: CubsGame) {
