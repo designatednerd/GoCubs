@@ -48,7 +48,7 @@ class GameTodayViewController: UIViewController {
   
   private func findOutIfTheresAGameToday() {
 //PART3
-    var gameDate: NSDate
+    var gameDate = NSDate()
     if let
       month = LaunchEnvironmentKey.MonthToTest.processInfoValue(),
       monthInt = Int(month),
@@ -64,13 +64,8 @@ class GameTodayViewController: UIViewController {
         if let date = NSCalendar.currentCalendar().dateFromComponents (dateComponents) {
           gameDate = date
         } else {
-          assertionFailure()
-          //In production: Just use today's date
-          gameDate = NSDate()
+          assertionFailure("Couldn't create date from components!")
         }
-    } else {
-      //Things weren't passed in, actualy use today's date.
-      gameDate = NSDate()
     }
 //PART3
 //    let gameDate = NSDate()
