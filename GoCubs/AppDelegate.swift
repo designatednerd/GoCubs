@@ -35,7 +35,7 @@ extension AppDelegate: UIApplicationDelegate {
       splitViewController.delegate = self
       
 //PART3
-      if UIApplication.isUITesting() {
+      if LaunchEnvironmentKey.IsUITesting.isInLaunchArguments() {
         CubsGameChecker.ShouldUseLiveData = false
       }
 //PART3

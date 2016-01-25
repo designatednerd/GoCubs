@@ -17,6 +17,10 @@ enum LaunchEnvironmentKey: String {
   DayToTest = "CUBS_DAY",
   YearToTest = "CUBS_YEAR"
   
+  func isInLaunchArguments() -> Bool {
+    return NSProcessInfo.processInfo().arguments.contains(rawValue)
+  }
+  
   func processInfoValue() -> String? {
     return NSProcessInfo.processInfo().environment[rawValue]
   }  

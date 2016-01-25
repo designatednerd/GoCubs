@@ -22,10 +22,8 @@ extension XCTestCase {
     //Grab a reference to the app
     let app = XCUIApplication()
     
-    //Set up the launch environment so the app knows it's testing and has
-    //whatever other info it needs.
-    var launchEnvironment = [ LaunchEnvironmentKey.IsUITesting.rawValue : "yep"]
-  
+    //Set up the launch arguments so the app knows it's testing
+    app.launchArguments = [LaunchEnvironmentKey.IsUITesting.rawValue]
     if let additionalInfo = additionalInfo {
       for (key, value) in additionalInfo {
         launchEnvironment[key] = value
