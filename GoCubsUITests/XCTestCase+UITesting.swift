@@ -24,13 +24,11 @@ extension XCTestCase {
     
     //Set up the launch arguments so the app knows it's testing
     app.launchArguments = [LaunchEnvironmentKey.IsUITesting.rawValue]
-    if let additionalInfo = additionalInfo {
-      for (key, value) in additionalInfo {
-        launchEnvironment[key] = value
-      }
-    }
     
-    app.launchEnvironment = launchEnvironment
+    //...and the environment so it has whatever other info it needs.
+    if let additionalInfo = additionalInfo {
+      app.launchEnvironment = additionalInfo
+    }
     
     // Launch the application to be tested.
     app.launch()
