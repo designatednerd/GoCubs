@@ -18,23 +18,23 @@ class GoCubsKIFTests: KIFTestCase {
     
     override func afterEach() {
         //Back out of the list
-        tester().tapViewWithAccessibilityLabel(LocalizedString.listTitle)
+        tester().tapView(withAccessibilityLabel: LocalizedString.listTitle)
 
         super.afterEach()
     }
     
     //MARK: Helper methods
     
-    private func checkResult(expectedWinningTeamName: String,
+    fileprivate func checkResult(_ expectedWinningTeamName: String,
         expectedWinningTeamScore: String,
         expectedLosingTeamName: String,
         expectedLosingTeamScore: String) {
             
             //Find, unwrap, and cast all the labels
             if let winningTeamLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.winningTeamName) as? UILabel,
-                losingTeamNameLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.losingTeamName) as? UILabel,
-                winningTeamScoreLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.winningTeamScore) as? UILabel,
-                losingTeamScoreLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.losingTeamScore) as? UILabel {
+                let losingTeamNameLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.losingTeamName) as? UILabel,
+                let winningTeamScoreLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.winningTeamScore) as? UILabel,
+                let losingTeamScoreLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.losingTeamScore) as? UILabel {
                     
                     //Check that the labels have the proper text.
                     XCTAssertEqual(winningTeamLabel.text, expectedWinningTeamName)
@@ -46,15 +46,15 @@ class GoCubsKIFTests: KIFTestCase {
             }
     }
     
-    private func checkIsPostseason(isPostseason: Bool) {
+    fileprivate func checkIsPostseason(_ isPostseason: Bool) {
         if let recordLabel = tester().waitForViewWithAccessibilityIdentifier(AccessibilityString.cubsRecord) as? UILabel,
-        recordString = recordLabel.text {
+        let recordString = recordLabel.text {
             if isPostseason {
                 let inThePostseason = LocalizedString.seasonStringForPostseason(true)
-                XCTAssertTrue(recordString.containsString(inThePostseason))
+                XCTAssertTrue(recordString.contains(inThePostseason))
             } else {
                 let onTheSeason = LocalizedString.seasonStringForPostseason(false)
-                XCTAssertTrue(recordString.containsString(onTheSeason))
+                XCTAssertTrue(recordString.contains(onTheSeason))
             }
         } else {
             XCTFail("Record label was not found or had no text!")
@@ -65,11 +65,11 @@ class GoCubsKIFTests: KIFTestCase {
     
     func testKnownPostseasonWin() {
         //Select october 10 game
-        tester().tapRowAtIndexPath(NSIndexPath(forRow: 2, inSection: 0),
+        tester().tapRow(at: IndexPath(row: 2, section: 0),
             inTableViewWithAccessibilityIdentifier: AccessibilityString.gamesTableview)
         
         //Is the W flag showing? 
-        tester().waitForViewWithAccessibilityLabel(AccessibilityString.cubsWin)
+        tester().waitForView(withAccessibilityLabel: AccessibilityString.cubsWin)
         
         //Cubs beat the cardinals 6-3 in this game
         checkResult("CUBS",
@@ -84,11 +84,11 @@ class GoCubsKIFTests: KIFTestCase {
     func testKnownPostseasonLoss() {
         
         //Select october 9 game
-        tester().tapRowAtIndexPath(NSIndexPath(forRow: 3, inSection: 0),
+        tester().tapRow(at: IndexPath(row: 3, section: 0),
             inTableViewWithAccessibilityIdentifier: AccessibilityString.gamesTableview)
         
         //Is the L flag showing? 
-        tester().waitForViewWithAccessibilityLabel(AccessibilityString.cubsLose)
+        tester().waitForView(withAccessibilityLabel: AccessibilityString.cubsLose)
         
         //Cubs lost to the cardinals 4-0 in this game
         checkResult("CARDINALS",
@@ -104,11 +104,11 @@ class GoCubsKIFTests: KIFTestCase {
     func testKnownRegularSeasonPostponement() {
     
         //Select September 10 game
-        tester().tapRowAtIndexPath(NSIndexPath(forRow: 29, inSection: 0),
+        tester().tapRow(at: IndexPath(row: 29, section: 0),
             inTableViewWithAccessibilityIdentifier: AccessibilityString.gamesTableview)
         
         //Is the rain flag showing? 
-        tester().waitForViewWithAccessibilityLabel(AccessibilityString.postponed)
+        tester().waitForView(withAccessibilityLabel: AccessibilityString.postponed)
         
         //Cubs and Phillies were postponed
         checkResult("CUBS",

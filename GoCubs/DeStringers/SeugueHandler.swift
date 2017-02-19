@@ -19,7 +19,7 @@ protocol SegueHandler {
     /*
     Each enum of segue identifiers must be a raw representable.
     */
-    typealias SegueIdentifier: RawRepresentable
+    associatedtype SegueIdentifier: RawRepresentable
 }
 
 /**
@@ -35,8 +35,8 @@ SegueIdentifier.RawValue == String { //The raw type of the SegueIdentifier must 
     - parameter identifier:    The SegueIdentifier corresponding with the segue you wish to perform.
     - parameter sender:        The object sending this request to perform a segue.
     */
-    func performSegueWithSegueIdentifier(identifier: SegueIdentifier, sender: AnyObject?) {
-        self.performSegueWithIdentifier(identifier.rawValue, sender: sender)
+    func performSegueWithSegueIdentifier(_ identifier: SegueIdentifier, sender: AnyObject?) {
+        self.performSegue(withIdentifier: identifier.rawValue, sender: sender)
     }
     
     /**
@@ -46,11 +46,11 @@ SegueIdentifier.RawValue == String { //The raw type of the SegueIdentifier must 
      - parameter segue:  The segue which is about to be performed.
      - returns:          The SegueIdentifier which corresponds to the segue being performed.
      */
-    func segueIdentifierForSegue(segue: UIStoryboardSegue) -> SegueIdentifier {
+    func segueIdentifierForSegue(_ segue: UIStoryboardSegue) -> SegueIdentifier {
         guard let identifierString = segue.identifier,
-            identifier = SegueIdentifier(rawValue: identifierString) else {
+            let identifier = SegueIdentifier(rawValue: identifierString) else {
                 //Fatal error since this will certainly crash on prod anyway if we try it, so let's at least be clear about it.
-                fatalError("No segue found for identifier \(segue.identifier) in view controller \(self.dynamicType)")
+                fatalError("No segue found for identifier \(segue.identifier) in view controller \(type(of: self))")
         }
         
         return identifier

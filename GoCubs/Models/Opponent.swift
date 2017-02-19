@@ -18,7 +18,7 @@ struct Opponent {
     init(name: String) {        
         if name.hasPrefix(at) {
             self.isHomeTeam = true            
-            self.name = name.substringFromIndex(at.endIndex)
+            self.name = name.substring(from: at.endIndex)
         } else {
             self.isHomeTeam = false
             self.name = name

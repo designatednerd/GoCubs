@@ -26,7 +26,7 @@ enum ResultType: String {
     func flagBackground() -> UIColor {
         switch self {
         case .Win:
-            return .whiteColor()
+            return .white
         case .Loss:
             return TeamColors.Cubs.primary()
         case .Postponed:
@@ -39,9 +39,9 @@ enum ResultType: String {
         case .Win:
             return TeamColors.Cubs.primary()
         case .Loss:
-            return .whiteColor()
+            return .white
         case .Postponed:
-            return .blackColor()
+            return .black
         }
     }
     
@@ -71,7 +71,7 @@ struct Result {
             self.opponentRuns = 0
         } else {
             //Parse the win/loss and the score.
-            let components = resultString.componentsSeparatedByString(" ")
+            let components = resultString.components(separatedBy: " ")
             guard components.count == 2 else {
                 fatalError("There should be 2 elements for non-postponed games!")
             }

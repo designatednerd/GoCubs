@@ -66,8 +66,8 @@ class ParsingTests: XCTestCase {
     func testParsingAFullGame() {
         let testLoss = CubsGame(gameString: "4/5,Cardinals,L 0-3,0-1,Wainwright(1-0),Lester(0-1)")
         
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components( [.Month, .Day], fromDate: testLoss.date)
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components( [.month, .day], from: testLoss.date)
         XCTAssertEqual(components.month, 4)
         XCTAssertEqual(components.day, 5)
         XCTAssertEqual(testLoss.result.type, ResultType.Loss)
@@ -83,7 +83,7 @@ class ParsingTests: XCTestCase {
         XCTAssertEqual(testLoss.losingPitcher.losses, 1)
         
         let testPostponement = CubsGame(gameString: "5/30,Royals,Postponed,25-22,Rodney(0-0),Almonte(0-0)")
-        let postponedComponents = calendar.components([.Month, .Day], fromDate: testPostponement.date)
+        let postponedComponents = (calendar as NSCalendar).components([.month, .day], from: testPostponement.date)
         
         XCTAssertEqual(postponedComponents.month, 5)
         XCTAssertEqual(postponedComponents.day, 30)

@@ -22,13 +22,13 @@ class GoCubsUITests: XCTestCase {
         XCUIApplication().launch()
         
         // Set the initial state - such as interface orientation - required for tests before they run.
-        XCUIDevice.sharedDevice().orientation = .Portrait
+        XCUIDevice.shared().orientation = .portrait
 
     }
     
     //MARK: - Helper methods
     
-    private func checkResult(app: XCUIApplication,
+    fileprivate func checkResult(_ app: XCUIApplication,
         expectedWinningTeamName: String,
         expectedWinningTeamScore: String,
         expectedLosingTeamName: String,
@@ -43,14 +43,14 @@ class GoCubsUITests: XCTestCase {
             XCTAssertEqual(app.staticTexts[AccessibilityString.losingTeamScore].label, expectedLosingTeamScore)
     }
     
-    func checkIsPostseason(app: XCUIApplication, isPostseason: Bool) {
+    func checkIsPostseason(_ app: XCUIApplication, isPostseason: Bool) {
         let recordString = app.staticTexts[AccessibilityString.cubsRecord].label
         if isPostseason {
             let inThePostseason = LocalizedString.seasonStringForPostseason(true)
-            XCTAssertTrue(recordString.containsString(inThePostseason))
+            XCTAssertTrue(recordString.contains(inThePostseason))
         } else {
             let onTheSeason = LocalizedString.seasonStringForPostseason(false)
-            XCTAssertTrue(recordString.containsString(onTheSeason))
+            XCTAssertTrue(recordString.contains(onTheSeason))
         }
     }
     
@@ -62,7 +62,7 @@ class GoCubsUITests: XCTestCase {
         //Select october 10 game
         let tablesQuery = app.tables
         tablesQuery.cells
-            .containingType(.StaticText, identifier:"Oct 10")
+            .containing(.staticText, identifier:"Oct 10")
             .staticTexts["Cubs vs. Cardinals"]
             .tap()
         
@@ -84,7 +84,7 @@ class GoCubsUITests: XCTestCase {
         let app = XCUIApplication()
         
         //Select October 9 game
-        let cubsVsCardinalsStaticText = app.tables[AccessibilityString.gamesTableview].cells.containingType(.StaticText, identifier:"Oct 9").staticTexts["Cubs vs. Cardinals"]
+        let cubsVsCardinalsStaticText = app.tables[AccessibilityString.gamesTableview].cells.containing(.staticText, identifier:"Oct 9").staticTexts["Cubs vs. Cardinals"]
         cubsVsCardinalsStaticText.tap()
         
         //Cubs lost to the cardinals 4-0 in this game
@@ -102,7 +102,7 @@ class GoCubsUITests: XCTestCase {
         let app = XCUIApplication()
         
         //Select October 4 game
-        app.tables[AccessibilityString.gamesTableview].cells.containingType(.StaticText, identifier:"Oct 4").staticTexts["Cubs vs. Brewers"].tap()
+        app.tables[AccessibilityString.gamesTableview].cells.containing(.staticText, identifier:"Oct 4").staticTexts["Cubs vs. Brewers"].tap()
         
         //Cubs beat the brewers 3-1 in this game
         checkResult(app,
@@ -121,7 +121,7 @@ class GoCubsUITests: XCTestCase {
         let listOfCubsGamesTable = app.tables["List of cubs games"]
         
         //Select August 29 game
-        listOfCubsGamesTable.cells.containingType(.StaticText, identifier:"Aug 29").staticTexts["Cubs vs. Dodgers"].tap()
+        listOfCubsGamesTable.cells.containing(.staticText, identifier:"Aug 29").staticTexts["Cubs vs. Dodgers"].tap()
         
         //Cubs lost to the Dodgers 4-0 in this game
         checkResult(app,
@@ -140,7 +140,7 @@ class GoCubsUITests: XCTestCase {
         let listOfCubsGamesTable = app.tables["List of cubs games"]
 
         //Go to September 10 game
-        let cubsVsPhilliesStaticText = listOfCubsGamesTable.cells.containingType(.StaticText, identifier:"Sep 10").childrenMatchingType(.StaticText).matchingIdentifier("Cubs vs. Phillies").elementBoundByIndex(0)
+        let cubsVsPhilliesStaticText = listOfCubsGamesTable.cells.containing(.staticText, identifier:"Sep 10").children(matching: .staticText).matching(identifier: "Cubs vs. Phillies").element(boundBy: 0)
         cubsVsPhilliesStaticText.tap()
         
         //This game was rained out. 

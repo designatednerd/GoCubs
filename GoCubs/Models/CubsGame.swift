@@ -10,15 +10,15 @@ import Foundation
 
 class CubsGame {
     
-    let date: NSDate
+    let date: Date
     let opponent: Opponent
     let result: Result
     let cubsRecord: CubsRecord
     let winningPitcher: Pitcher
     let losingPitcher: Pitcher
     
-    let dateFormatter: NSDateFormatter = {
-        let formatter = NSDateFormatter()
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
         formatter.dateFormat = "M/d"
         return formatter
     }()
@@ -26,13 +26,13 @@ class CubsGame {
     init(gameString: String) {
         //Format: "Sun, 4/5",Cardinals,L 0-3,0-1,Wainwright(1-0),Lester(0-1)
 
-        let components = gameString.componentsSeparatedByString(",")
+        let components = gameString.components(separatedBy: ",")
         guard components.count == 6 else {
             fatalError("Malformatted game string: \(gameString)")
         }
         
         let dateString = components[0]
-        guard let gameDate = self.dateFormatter.dateFromString(dateString) else {
+        guard let gameDate = self.dateFormatter.date(from: dateString) else {
             fatalError("Could not parse date string \(dateString)")
         }
         
@@ -44,7 +44,7 @@ class CubsGame {
         self.losingPitcher = Pitcher(pitcherString: components[5])
     }
     
-    func resultString(isPostseason: Bool) -> String {
+    func resultString(_ isPostseason: Bool) -> String {
         switch self.result.type {
         case .Win:
             return improve(self.cubsRecord, isPostseason: isPostseason)
@@ -55,15 +55,15 @@ class CubsGame {
         }
     }
     
-    func improve(record: CubsRecord, isPostseason: Bool) -> String {
-        return NSString.localizedStringWithFormat(LocalizedString.improveFormat, record.wins, record.losses, LocalizedString.seasonStringForPostseason(isPostseason)) as String
+    func improve(_ record: CubsRecord, isPostseason: Bool) -> String {
+        return NSString.localizedStringWithFormat(LocalizedString.improveFormat as NSString, record.wins, record.losses, LocalizedString.seasonStringForPostseason(isPostseason)) as String
     }
     
-    func remain(record: CubsRecord, isPostseason: Bool) -> String {
-        return NSString.localizedStringWithFormat(LocalizedString.remainFormat, record.wins, record.losses, LocalizedString.seasonStringForPostseason(isPostseason)) as String
+    func remain(_ record: CubsRecord, isPostseason: Bool) -> String {
+        return NSString.localizedStringWithFormat(LocalizedString.remainFormat as NSString, record.wins, record.losses, LocalizedString.seasonStringForPostseason(isPostseason)) as String
     }
     
-    func fall(record: CubsRecord, isPostseason: Bool) -> String {
-        return NSString.localizedStringWithFormat(LocalizedString.fallFormat, record.wins, record.losses, LocalizedString.seasonStringForPostseason(isPostseason)) as String
+    func fall(_ record: CubsRecord, isPostseason: Bool) -> String {
+        return NSString.localizedStringWithFormat(LocalizedString.fallFormat as NSString, record.wins, record.losses, LocalizedString.seasonStringForPostseason(isPostseason)) as String
     }
 }

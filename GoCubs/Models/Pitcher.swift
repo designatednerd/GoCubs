@@ -15,7 +15,7 @@ struct Pitcher {
     
     init(pitcherString: String) {
         //Pitcher strings come in with format "Garcia(0-1)"
-        let components = pitcherString.componentsSeparatedByString("(")
+        let components = pitcherString.components(separatedBy: "(")
         guard components.count == 2 else {
             fatalError("Unable to parse pitcher string \(pitcherString)")
         }
@@ -25,7 +25,7 @@ struct Pitcher {
         
         //Grab up to the )
         let recordString = recordStringWithParen
-            .substringToIndex(recordStringWithParen.endIndex.predecessor())
+            .substring(to: recordStringWithParen.characters.index(before: recordStringWithParen.endIndex))
         
         
         let record = recordString.cub_asInts()

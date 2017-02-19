@@ -45,11 +45,11 @@ enum LocalizedString {
     
     //MARK: - Helper functions
     
-    static func versus(awayTeam: String, homeTeam: String) -> String {
-        return NSString.localizedStringWithFormat(versusFormat, awayTeam, homeTeam) as String
+    static func versus(_ awayTeam: String, homeTeam: String) -> String {
+        return NSString.localizedStringWithFormat(versusFormat as NSString, awayTeam, homeTeam) as String
     }
     
-    static func seasonStringForPostseason(isPostseason: Bool) -> String {
+    static func seasonStringForPostseason(_ isPostseason: Bool) -> String {
         if isPostseason {
             return NSLocalizedString("in the postseason",
                 comment: "String to append when something has happened in the ")

@@ -24,10 +24,10 @@ class Cubs2015TableViewController: UITableViewController {
         self.localizeAndAccessibilize()
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         //Clear selection on VWA if the SVC is collapsed.
         if let split = self.splitViewController {
-            self.clearsSelectionOnViewWillAppear = split.collapsed
+            self.clearsSelectionOnViewWillAppear = split.isCollapsed
         }
         
         super.viewWillAppear(animated)
@@ -35,25 +35,25 @@ class Cubs2015TableViewController: UITableViewController {
     
     // MARK: - Localization and acessibility 
     
-    private func localizeAndAccessibilize() {
+    fileprivate func localizeAndAccessibilize() {
         self.title = LocalizedString.listTitle
         self.tableView.accessibilityIdentifier = AccessibilityString.gamesTableview
     }
     
     // MARK: - Segues
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Make sure we're working with a known segue identifier. 
         let identifier = self.segueIdentifierForSegue(segue)
         
         switch identifier {
         case .showDetail:
             if let
-                navController = segue.destinationViewController as? UINavigationController,
-                controller = navController.topViewController as? GameDetailViewController,
-                cell = sender as? CubsGameCell {
+                navController = segue.destination as? UINavigationController,
+                let controller = navController.topViewController as? GameDetailViewController,
+                let cell = sender as? CubsGameCell {
                     controller.game = self.dataSource.gameForCell(cell, inTableView: self.tableView)
-                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                     controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }

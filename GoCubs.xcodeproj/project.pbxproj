@@ -362,17 +362,21 @@
 				TargetAttributes = {
 					331C5D601BCCACBA00BFD183 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 336DA3A51BBAFFC700B9CBD8;
 					};
 					336DA3A51BBAFFC700B9CBD8 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0820;
 					};
 					336DA3BB1BBAFFC800B9CBD8 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 336DA3A51BBAFFC700B9CBD8;
 					};
 					33BE0EBC1BCD9C4500E96BF7 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 336DA3A51BBAFFC700B9CBD8;
 					};
 				};
@@ -578,6 +582,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.GoCubsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = GoCubs;
 				USES_XCTRUNNER = YES;
 			};
@@ -590,6 +595,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.GoCubsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = GoCubs;
 				USES_XCTRUNNER = YES;
 			};
@@ -684,6 +690,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.Xcode7UITesting;
 				PRODUCT_NAME = GoCubs;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -695,6 +702,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.Xcode7UITesting;
 				PRODUCT_NAME = GoCubs;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -707,6 +715,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.Xcode7UITestingTests;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = GoCubs;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoCubs.app/GoCubs";
 			};
 			name = Debug;
@@ -720,6 +729,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.Xcode7UITestingTests;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = GoCubs;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoCubs.app/GoCubs";
 			};
 			name = Release;
@@ -733,6 +743,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.GoCubsKIFTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoCubs.app/GoCubs";
 			};
 			name = Debug;
@@ -746,6 +757,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.GoCubsKIFTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoCubs.app/GoCubs";
 			};
 			name = Release;

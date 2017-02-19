@@ -15,19 +15,19 @@ class CubsGameDataSource: NSObject {
     
     init(tableView: UITableView) {
         //Load in the string
-        guard let path = NSBundle.mainBundle().pathForResource("cubs2015", ofType: "csv") else {
+        guard let path = Bundle.main.path(forResource: "cubs2015", ofType: "csv") else {
             fatalError("Could not create path for CSV!")
         }
         
         var csvString: String
         
         do {
-            csvString = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
+            csvString = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue) as String
         } catch {
             csvString = ""
         }
         
-        let lines = csvString.componentsSeparatedByCharactersInSet(.newlineCharacterSet())
+        let lines = csvString.components(separatedBy: .newlines)
         
         var gameBuilder = [CubsGame]()
         for line in lines {
@@ -38,8 +38,8 @@ class CubsGameDataSource: NSObject {
         }
 
         //Sort in reverse date order
-        gameBuilder.sortInPlace {
-            $0.date.compare($1.date) == NSComparisonResult.OrderedDescending
+        gameBuilder.sort {
+            $0.date.compare($1.date as Date) == ComparisonResult.orderedDescending
         }
         
         self.games = gameBuilder
@@ -52,8 +52,8 @@ class CubsGameDataSource: NSObject {
     
     //MARK: Confgiuration Helper
     
-    func gameForCell(cell: CubsGameCell, inTableView tableView: UITableView) -> CubsGame {
-        guard let indexPath = tableView.indexPathForCell(cell) else {
+    func gameForCell(_ cell: CubsGameCell, inTableView tableView: UITableView) -> CubsGame {
+        guard let indexPath = tableView.indexPath(for: cell) else {
             fatalError("There is no index path for this cell!")
         }
         
@@ -65,16 +65,16 @@ class CubsGameDataSource: NSObject {
 
 extension CubsGameDataSource: UITableViewDataSource {
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.games.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(CubsGameCell.identifier) as? CubsGameCell else {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CubsGameCell.identifier) as? CubsGameCell else {
             fatalError("Wrong  cell type!")
         }
 

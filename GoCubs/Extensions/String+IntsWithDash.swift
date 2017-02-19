@@ -17,7 +17,7 @@ extension String {
      - return: A tuple with the first value and second value available.
      */
     func cub_asInts() -> (firstValue: Int, secondValue: Int) {
-        let separatedByDash = self.componentsSeparatedByString("-")
+        let separatedByDash = self.components(separatedBy: "-")
         
         guard separatedByDash.count == 2 else {
             fatalError("Incorrect object count for \(self)")
@@ -25,7 +25,7 @@ extension String {
         
         guard let
             firstInt = Int(separatedByDash[0]),
-            secondInt = Int(separatedByDash[1]) else {
+            let secondInt = Int(separatedByDash[1]) else {
                 fatalError("Couldn't unwrap one of the ints!")
         }
         

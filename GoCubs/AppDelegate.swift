@@ -19,8 +19,8 @@ class AppDelegate: UIResponder {
 
 extension AppDelegate: UIApplicationDelegate {
 
-    func application(application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
             //Setup the Split VC
             guard let splitViewController = self.window?.rootViewController as? UISplitViewController,
@@ -31,7 +31,7 @@ extension AppDelegate: UIApplicationDelegate {
             }
             
             
-            navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
+            navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
             splitViewController.delegate = self
             return true
     }
@@ -41,9 +41,9 @@ extension AppDelegate: UIApplicationDelegate {
 
 extension AppDelegate: UISplitViewControllerDelegate {
 
-    func splitViewController(splitViewController: UISplitViewController,
-        collapseSecondaryViewController secondaryViewController:UIViewController,
-        ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
+    func splitViewController(_ splitViewController: UISplitViewController,
+        collapseSecondary secondaryViewController:UIViewController,
+        onto primaryViewController:UIViewController) -> Bool {
         
             guard let secondaryAsNavController = secondaryViewController as? UINavigationController,
                 let topAsDetailController = secondaryAsNavController.topViewController as? GameDetailViewController

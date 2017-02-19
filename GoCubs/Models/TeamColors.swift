@@ -48,11 +48,11 @@ enum TeamColors: String {
         case .Dodgers:
             return .cub_RGB(8, 60, 107)
         case .Giants:
-            return .blackColor()
+            return .black
         case .Indians:
             return .cub_RGB(0, 51, 102)
         case .Marlins:
-            return .blackColor()
+            return .black
         case .Mets:
             return .cub_RGB(0, 44, 119)
         case .Nationals:
@@ -60,7 +60,7 @@ enum TeamColors: String {
         case .Padres:
             return .cub_RGB(0, 33, 71)
         case .Pirates:
-            return .blackColor()
+            return .black
         case .Phillies:
             return .cub_RGB(186, 12, 47)
         case .Reds:
@@ -74,7 +74,7 @@ enum TeamColors: String {
         case .Twins:
             return .cub_RGB(7, 39, 84)
         case .WhiteSox:
-            return .blackColor()
+            return .black
         }
     }
     
@@ -89,9 +89,9 @@ enum TeamColors: String {
         case .Cubs:
             return .cub_RGB(204, 0, 51)
         case .Diamondbacks:
-            return .blackColor()
+            return .black
         case .Dodgers:
-            return .redColor()
+            return .red
         case .Giants:
             return .cub_RGB(242, 85, 44)
         case .Indians:
@@ -109,7 +109,7 @@ enum TeamColors: String {
         case .Pirates:
             return .cub_RGB(253, 184, 41)
         case .Reds:
-            return .blackColor()
+            return .black
         case .Rockies:
             return .cub_RGB(192, 192, 192)
         case .Royals:
@@ -127,7 +127,7 @@ enum TeamColors: String {
 }
 
 private extension UIColor {
-    static func cub_RGB(r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> UIColor {
+    static func cub_RGB(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> UIColor {
         return UIColor(red: CGFloat(r / 255.0),
             green: CGFloat(g / 255.0),
             blue: CGFloat(b / 255.0),

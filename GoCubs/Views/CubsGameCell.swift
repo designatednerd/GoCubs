@@ -11,8 +11,8 @@ import UIKit
 class CubsGameCell: UITableViewCell {
     
     static let identifier = "CubsGameCell"
-    static let dateFormatter: NSDateFormatter = {
-        let formatter = NSDateFormatter()
+    static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
         formatter.dateFormat = "MMM d"
         return formatter
     }()
@@ -22,8 +22,8 @@ class CubsGameCell: UITableViewCell {
     @IBOutlet var primaryColorView: UIView!
     @IBOutlet var secondaryColorView: UIView!
     
-    func configureForGame(game: CubsGame) {
-        self.dateLabel.text = CubsGameCell.dateFormatter.stringFromDate(game.date)
+    func configureForGame(_ game: CubsGame) {
+        self.dateLabel.text = CubsGameCell.dateFormatter.string(from: game.date as Date)
 
         if game.opponent.isHomeTeam {
             self.vsLabel.text = LocalizedString.versus(LocalizedString.cubs, homeTeam: game.opponent.name)
@@ -46,7 +46,7 @@ class CubsGameCell: UITableViewCell {
     //Override these methods to prevent cell selection from futzing with 
     // the background color of the cell's color views.
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         let primary = self.primaryColorView.backgroundColor
         let secondary = self.secondaryColorView.backgroundColor
         
@@ -56,7 +56,7 @@ class CubsGameCell: UITableViewCell {
         self.secondaryColorView.backgroundColor = secondary
     }
     
-    override func setHighlighted(highlighted: Bool, animated: Bool) {
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         let primary = self.primaryColorView.backgroundColor
         let secondary = self.secondaryColorView.backgroundColor
         
