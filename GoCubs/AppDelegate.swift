@@ -20,16 +20,16 @@ class AppDelegate: UIResponder {
 extension AppDelegate: UIApplicationDelegate {
 
     func application(_ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
             //Setup the Split VC
-            guard let splitViewController = self.window?.rootViewController as? UISplitViewController,
+            guard
+                let splitViewController = self.window?.rootViewController as? UISplitViewController,
                 let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as? UINavigationController,
                 let navigationItem = navigationController.topViewController?.navigationItem else {
                     assertionFailure("YOU CANNOT HAS SPLIT VC!")
                     return true
             }
-            
             
             navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
             splitViewController.delegate = self
@@ -42,14 +42,14 @@ extension AppDelegate: UIApplicationDelegate {
 extension AppDelegate: UISplitViewControllerDelegate {
 
     func splitViewController(_ splitViewController: UISplitViewController,
-        collapseSecondary secondaryViewController:UIViewController,
-        onto primaryViewController:UIViewController) -> Bool {
+                             collapseSecondary secondaryViewController:UIViewController,
+                             onto primaryViewController:UIViewController) -> Bool {
         
-            guard let secondaryAsNavController = secondaryViewController as? UINavigationController,
-                let topAsDetailController = secondaryAsNavController.topViewController as? GameDetailViewController
-                else {
-                assertionFailure("Trying to grab a detail VC that ain't there")
-                return false
+            guard
+                let secondaryAsNavController = secondaryViewController as? UINavigationController,
+                let topAsDetailController = secondaryAsNavController.topViewController as? GameDetailViewController else {
+                    assertionFailure("Trying to grab a detail VC that ain't there")
+                    return false
             }
             
             if topAsDetailController.game == nil {
