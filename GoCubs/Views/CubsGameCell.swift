@@ -11,7 +11,9 @@ import UIKit
 class CubsGameCell: UITableViewCell {
     
     static let identifier = "CubsGameCell"
-    static let dateFormatter: DateFormatter = {
+    
+    // Use a static let so this only gets instantiated once across all cells.
+    private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d"
         return formatter
@@ -22,7 +24,7 @@ class CubsGameCell: UITableViewCell {
     @IBOutlet var primaryColorView: UIView!
     @IBOutlet var secondaryColorView: UIView!
     
-    func configureForGame(_ game: CubsGame) {
+    func configure(forGame game: CubsGame) {
         self.dateLabel.text = CubsGameCell.dateFormatter.string(from: game.date as Date)
 
         if game.opponent.isHomeTeam {

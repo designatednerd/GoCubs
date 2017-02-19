@@ -52,7 +52,7 @@ class Cubs2015TableViewController: UITableViewController {
                 navController = segue.destination as? UINavigationController,
                 let controller = navController.topViewController as? GameDetailViewController,
                 let cell = sender as? CubsGameCell {
-                    controller.game = self.dataSource.gameForCell(cell, inTableView: self.tableView)
+                    controller.game = self.dataSource.game(forCell: cell, in: self.tableView)
                     controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                     controller.navigationItem.leftItemsSupplementBackButton = true
             }

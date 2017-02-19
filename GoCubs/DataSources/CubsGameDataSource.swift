@@ -52,7 +52,7 @@ class CubsGameDataSource: NSObject {
     
     //MARK: Confgiuration Helper
     
-    func gameForCell(_ cell: CubsGameCell, inTableView tableView: UITableView) -> CubsGame {
+    func game(forCell cell: CubsGameCell, in tableView: UITableView) -> CubsGame {
         guard let indexPath = tableView.indexPath(for: cell) else {
             fatalError("There is no index path for this cell!")
         }
@@ -79,7 +79,7 @@ extension CubsGameDataSource: UITableViewDataSource {
         }
 
         let game = self.games[indexPath.row]
-        cell.configureForGame(game)
+        cell.configure(forGame: game)
         return cell
     }
 }

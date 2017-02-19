@@ -17,7 +17,7 @@ class CubsGame {
     let winningPitcher: Pitcher
     let losingPitcher: Pitcher
     
-    let dateFormatter: DateFormatter = {
+    private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "M/d"
         return formatter
@@ -25,7 +25,6 @@ class CubsGame {
     
     init(gameString: String) {
         //Format: "Sun, 4/5",Cardinals,L 0-3,0-1,Wainwright(1-0),Lester(0-1)
-
         let components = gameString.components(separatedBy: ",")
         guard components.count == 6 else {
             fatalError("Malformatted game string: \(gameString)")

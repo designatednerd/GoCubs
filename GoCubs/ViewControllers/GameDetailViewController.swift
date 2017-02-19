@@ -29,7 +29,7 @@ class GameDetailViewController: UIViewController {
         }
     }
     
-    let dateFormatter: DateFormatter = {
+    private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d"
         return formatter
@@ -94,12 +94,12 @@ class GameDetailViewController: UIViewController {
                 }
                 
                 self.cubsRecordLabel.text = cubsGame.resultString(isPostseason)
-                self.configurePitchersForGame(cubsGame)
                 self.configureFlag(forResult: cubsGame.result.type)
+                self.configurePitchers(forGame: cubsGame)
         }
     }
     
-    func configurePitchersForGame(_ game: CubsGame) {
+    func configurePitchers(forGame game: CubsGame) {
         switch game.result.type {
         case .postponed:
             self.winningPitcherNameLabel.text = LocalizedString.noResult
