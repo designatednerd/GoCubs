@@ -580,7 +580,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = GoCubsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.GoCubsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.GoCubsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = GoCubs;
@@ -593,7 +593,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = GoCubsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.GoCubsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.GoCubsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = GoCubs;
@@ -693,7 +693,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GoCubs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.Xcode7UITesting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.Xcode7UITesting;
 				PRODUCT_NAME = GoCubs;
 				SWIFT_VERSION = 3.0;
 			};
@@ -705,7 +705,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GoCubs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.Xcode7UITesting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.Xcode7UITesting;
 				PRODUCT_NAME = GoCubs;
 				SWIFT_VERSION = 3.0;
 			};
@@ -717,7 +717,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GoCubsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.Xcode7UITestingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.Xcode7UITestingTests;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = GoCubs;
 				SWIFT_VERSION = 3.0;
@@ -731,7 +731,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GoCubsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.Xcode7UITestingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.Xcode7UITestingTests;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)Tests";
 				PRODUCT_NAME = GoCubs;
 				SWIFT_VERSION = 3.0;
@@ -746,7 +746,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GoCubsKIFTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.GoCubsKIFTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.GoCubsKIFTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoCubs.app/GoCubs";
@@ -760,7 +760,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GoCubsKIFTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vokal.GoCubsKIFTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.GoCubsKIFTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoCubs.app/GoCubs";

@@ -3,7 +3,7 @@
 //  GoCubs
 //
 //  Created by Ellen Shapiro on 10/11/15.
-//  Copyright © 2015 Vokal. All rights reserved.
+//  Copyright © 2015 Designated Nerd Software. All rights reserved.
 //
 
 import UIKit

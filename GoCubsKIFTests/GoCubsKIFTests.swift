@@ -2,8 +2,8 @@
 //  GoCubsKIFTests.swift
 //  GoCubsKIFTests
 //
-//  Created by Ellen Shapiro (Vokal) on 10/13/15.
-//  Copyright © 2015 Vokal. All rights reserved.
+//  Created by Ellen Shapiro on 10/13/15.
+//  Copyright © 2015 Designated Nerd Software. All rights reserved.
 //
 
 import XCTest
