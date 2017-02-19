@@ -4,7 +4,7 @@ platform :ios, '9.0'
 
 use_frameworks!
 
-target ‘GoCubsKIFTests’, :exclusive => true do
+target "GoCubsKIFTests" do
     # Put UI-testing-only pods here
     pod 'KIF'
 end

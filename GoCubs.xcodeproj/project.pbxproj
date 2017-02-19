@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011E6F4475C19CC9CA1CBB79 /* Pods_GoCubsKIFTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA53D0C81EAA3107DC08020B /* Pods_GoCubsKIFTests.framework */; };
 		331C5D3E1BCCA4ED00BFD183 /* AccessibilityString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */; };
 		331C5D641BCCACBB00BFD183 /* GoCubsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D631BCCACBB00BFD183 /* GoCubsUITests.swift */; };
 		33BE0EB51BCD7F3B00E96BF7 /* AccessibilityString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */; };
@@ -32,7 +33,6 @@
 		9B99F1F51BCB0B7B00EC08DC /* CubsGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F41BCB0B7B00EC08DC /* CubsGameCell.swift */; };
 		9B99F1F71BCB0CBC00EC08DC /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */; };
 		9B99F1FB1BCB4EA800EC08DC /* TeamColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1FA1BCB4EA700EC08DC /* TeamColors.swift */; };
-		A145F30534BF22AC692A5F5A /* Pods_GoCubsKIFTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C19B7787666A7BEF9E9B9A /* Pods_GoCubsKIFTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +70,7 @@
 		33BE0EBF1BCD9C4500E96BF7 /* GoCubsKIFTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoCubsKIFTests.swift; sourceTree = "<group>"; };
 		33BE0EC11BCD9C4500E96BF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33BE0EC71BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+KIFTester.swift"; sourceTree = "<group>"; };
-		35C19B7787666A7BEF9E9B9A /* Pods_GoCubsKIFTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoCubsKIFTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F1BFBC4CC9AA4ED101EBD98 /* Pods-GoCubsKIFTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsKIFTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6FFB08FC4BF68A03813C5A20 /* Pods-GoCubsKIFTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsKIFTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests.release.xcconfig"; sourceTree = "<group>"; };
+		5D4051E2C21D8CB702457AA3 /* Pods-GoCubsKIFTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsKIFTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameDataSource.swift; sourceTree = "<group>"; };
 		9B491D721BF8D9DC0040FFBD /* cubs2015.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cubs2015.csv; sourceTree = "<group>"; };
 		9B99F1BF1BCAFD5E00EC08DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GoCubsTests/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -94,6 +92,8 @@
 		9B99F1F41BCB0B7B00EC08DC /* CubsGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameCell.swift; sourceTree = "<group>"; };
 		9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		9B99F1FA1BCB4EA700EC08DC /* TeamColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamColors.swift; sourceTree = "<group>"; };
+		D843428D9B331C19F08888E3 /* Pods-GoCubsKIFTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsKIFTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EA53D0C81EAA3107DC08020B /* Pods_GoCubsKIFTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoCubsKIFTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A145F30534BF22AC692A5F5A /* Pods_GoCubsKIFTests.framework in Frameworks */,
+				011E6F4475C19CC9CA1CBB79 /* Pods_GoCubsKIFTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +146,8 @@
 				331C5D621BCCACBB00BFD183 /* GoCubsUITests */,
 				33BE0EBE1BCD9C4500E96BF7 /* GoCubsKIFTests */,
 				336DA3A71BBAFFC800B9CBD8 /* Products */,
-				C8BDECD86C76C84B082125AF /* Pods */,
-				ACE90B3DCF8E062177975A00 /* Frameworks */,
+				5F8AD1E993986C1FB67232AC /* Pods */,
+				B3C6D775622B9B47872BFF00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +180,15 @@
 				33BE0EC11BCD9C4500E96BF7 /* Info.plist */,
 			);
 			path = GoCubsKIFTests;
+			sourceTree = "<group>";
+		};
+		5F8AD1E993986C1FB67232AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D843428D9B331C19F08888E3 /* Pods-GoCubsKIFTests.debug.xcconfig */,
+				5D4051E2C21D8CB702457AA3 /* Pods-GoCubsKIFTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		9B491D6F1BF8D9C30040FFBD /* DataSources */ = {
@@ -257,21 +266,12 @@
 			path = DeStringers;
 			sourceTree = "<group>";
 		};
-		ACE90B3DCF8E062177975A00 /* Frameworks */ = {
+		B3C6D775622B9B47872BFF00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				35C19B7787666A7BEF9E9B9A /* Pods_GoCubsKIFTests.framework */,
+				EA53D0C81EAA3107DC08020B /* Pods_GoCubsKIFTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C8BDECD86C76C84B082125AF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3F1BFBC4CC9AA4ED101EBD98 /* Pods-GoCubsKIFTests.debug.xcconfig */,
-				6FFB08FC4BF68A03813C5A20 /* Pods-GoCubsKIFTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,12 +334,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33BE0EC61BCD9C4500E96BF7 /* Build configuration list for PBXNativeTarget "GoCubsKIFTests" */;
 			buildPhases = (
-				EEF7616F086470F84352D676 /* Check Pods Manifest.lock */,
+				33128229808D6B30AA822C25 /* [CP] Check Pods Manifest.lock */,
 				33BE0EB91BCD9C4500E96BF7 /* Sources */,
 				33BE0EBA1BCD9C4500E96BF7 /* Frameworks */,
 				33BE0EBB1BCD9C4500E96BF7 /* Resources */,
-				2CD582F13AF58FA8770CAA5C /* Embed Pods Frameworks */,
-				C3C4ADF114911DED50BD7684 /* Copy Pods Resources */,
+				3AE4299F52CA040703A0AA65 /* [CP] Embed Pods Frameworks */,
+				2552EFB685F2D69621B6D7DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -434,29 +434,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2CD582F13AF58FA8770CAA5C /* Embed Pods Frameworks */ = {
+		2552EFB685F2D69621B6D7DE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C3C4ADF114911DED50BD7684 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,19 +449,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EEF7616F086470F84352D676 /* Check Pods Manifest.lock */ = {
+		33128229808D6B30AA822C25 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3AE4299F52CA040703A0AA65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -726,7 +726,7 @@
 		};
 		33BE0EC41BCD9C4500E96BF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F1BFBC4CC9AA4ED101EBD98 /* Pods-GoCubsKIFTests.debug.xcconfig */;
+			baseConfigurationReference = D843428D9B331C19F08888E3 /* Pods-GoCubsKIFTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GoCubsKIFTests/Info.plist;
@@ -739,7 +739,7 @@
 		};
 		33BE0EC51BCD9C4500E96BF7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FFB08FC4BF68A03813C5A20 /* Pods-GoCubsKIFTests.release.xcconfig */;
+			baseConfigurationReference = 5D4051E2C21D8CB702457AA3 /* Pods-GoCubsKIFTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GoCubsKIFTests/Info.plist;
