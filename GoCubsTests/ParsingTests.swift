@@ -40,15 +40,15 @@ class ParsingTests: XCTestCase {
     
     func testParsingResult() {
         let testParsingRainout = Result(resultString: "Postponed")
-        XCTAssertEqual(testParsingRainout.type, ResultType.Postponed)
+        XCTAssertEqual(testParsingRainout.type, ResultType.postponed)
 
         let testParsingLoss = Result(resultString: "L 1-4")
-        XCTAssertEqual(testParsingLoss.type, ResultType.Loss)
+        XCTAssertEqual(testParsingLoss.type, ResultType.loss)
         XCTAssertEqual(testParsingLoss.cubsRuns, 1)
         XCTAssertEqual(testParsingLoss.opponentRuns, 4)
 
         let testParsingWin = Result(resultString: "W 7-3")
-        XCTAssertEqual(testParsingWin.type, ResultType.Win)
+        XCTAssertEqual(testParsingWin.type, ResultType.win)
         XCTAssertEqual(testParsingWin.cubsRuns, 7)
         XCTAssertEqual(testParsingWin.opponentRuns, 3)
     }
@@ -70,7 +70,7 @@ class ParsingTests: XCTestCase {
         let components = (calendar as NSCalendar).components( [.month, .day], from: testLoss.date)
         XCTAssertEqual(components.month, 4)
         XCTAssertEqual(components.day, 5)
-        XCTAssertEqual(testLoss.result.type, ResultType.Loss)
+        XCTAssertEqual(testLoss.result.type, ResultType.loss)
         XCTAssertEqual(testLoss.result.cubsRuns, 0)
         XCTAssertEqual(testLoss.result.opponentRuns, 3)
         XCTAssertEqual(testLoss.cubsRecord.wins, 0)
@@ -88,7 +88,7 @@ class ParsingTests: XCTestCase {
         XCTAssertEqual(postponedComponents.month, 5)
         XCTAssertEqual(postponedComponents.day, 30)
         XCTAssertEqual(testPostponement.opponent.colors, TeamColors.Royals)
-        XCTAssertEqual(testPostponement.result.type, ResultType.Postponed)
+        XCTAssertEqual(testPostponement.result.type, ResultType.postponed)
         XCTAssertEqual(testPostponement.cubsRecord.wins, 25)
         XCTAssertEqual(testPostponement.cubsRecord.losses, 22)
     
