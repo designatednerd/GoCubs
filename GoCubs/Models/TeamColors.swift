@@ -33,7 +33,7 @@ enum TeamColors: String {
     
     //http://teamcolors.arc90.com/
     
-    func primary() -> UIColor {
+    var primary: UIColor {
         switch self {
         case .Braves:
             return .cub_RGB(0, 47, 95)
@@ -78,7 +78,7 @@ enum TeamColors: String {
         }
     }
     
-    func secondary() -> UIColor {
+    var secondary: UIColor {
         switch self {
         case .Braves:
             return .cub_RGB(183, 18, 52)

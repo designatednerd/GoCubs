@@ -10,48 +10,48 @@ import UIKit
 
 enum ResultType: String {
     case
-    Win = "W",
-    Loss = "L",
-    Postponed //Automatically "Postponed"
+    win = "W",
+    loss = "L",
+    postponed = "Postponed"
         
-    func flagString() -> String {
+    var flagString: String {
         switch self {
-        case .Postponed:
+        case .postponed:
             return "☔️"
         default:
             return self.rawValue
         }
     }
     
-    func flagBackground() -> UIColor {
+    var flagBackground: UIColor {
         switch self {
-        case .Win:
+        case .win:
             return .white
-        case .Loss:
-            return TeamColors.Cubs.primary()
-        case .Postponed:
+        case .loss:
+            return TeamColors.Cubs.primary
+        case .postponed:
             return TeamColors.rainoutBlue
         }
     }
     
-    func flagTextColor() -> UIColor {
+    var flagTextColor: UIColor {
         switch self {
-        case .Win:
-            return TeamColors.Cubs.primary()
-        case .Loss:
+        case .win:
+            return TeamColors.Cubs.primary
+        case .loss:
             return .white
-        case .Postponed:
+        case .postponed:
             return .black
         }
     }
     
-    func accessibilityString() -> String {
+    var accessibilityString: String {
         switch self {
-        case .Win:
+        case .win:
             return AccessibilityString.cubsWin
-        case .Loss:
+        case .loss:
             return AccessibilityString.cubsLose
-        case .Postponed:
+        case .postponed:
             return AccessibilityString.postponed
         }
     }
@@ -64,9 +64,9 @@ struct Result {
     
     init(resultString: String) {
         //Of the format "W 5-3" OR "Postponed"
-        if resultString == ResultType.Postponed.rawValue {
+        if resultString == ResultType.postponed.rawValue {
             //This game was postponed
-            self.type = .Postponed
+            self.type = .postponed
             self.cubsRuns = 0
             self.opponentRuns = 0
         } else {
@@ -78,14 +78,14 @@ struct Result {
             
             let winOrLoss = components[0]
             switch winOrLoss {
-            case ResultType.Win.rawValue:
-                self.type = .Win
-            case ResultType.Loss.rawValue:
-                self.type = .Loss
+            case ResultType.win.rawValue:
+                self.type = .win
+            case ResultType.loss.rawValue:
+                self.type = .loss
             default:
                 assertionFailure("Postponed should have already been caught!")                
                 //In production:
-                self.type = .Postponed
+                self.type = .postponed
             }
             
             let runsString = components[1]

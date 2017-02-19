@@ -31,19 +31,19 @@ class CubsGameCell: UITableViewCell {
             self.vsLabel.text = LocalizedString.versus(game.opponent.name, homeTeam: LocalizedString.cubs)
         }
         
-        if game.result.type == .Postponed {
+        if game.result.type == .postponed {
             self.vsLabel.alpha = 0.5
         } else {
             self.vsLabel.alpha = 1
         }
         
-        self.primaryColorView.backgroundColor = game.opponent.colors.primary()
-        self.secondaryColorView.backgroundColor = game.opponent.colors.secondary()
+        self.primaryColorView.backgroundColor = game.opponent.colors.primary
+        self.secondaryColorView.backgroundColor = game.opponent.colors.secondary
         
     }
     
     //MARK: - Cell silliness
-    //Override these methods to prevent cell selection from futzing with 
+    // Override these methods to prevent cell selection from futzing with
     // the background color of the cell's color views.
     
     override func setSelected(_ selected: Bool, animated: Bool) {

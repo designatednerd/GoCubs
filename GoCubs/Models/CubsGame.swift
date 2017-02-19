@@ -46,11 +46,11 @@ class CubsGame {
     
     func resultString(_ isPostseason: Bool) -> String {
         switch self.result.type {
-        case .Win:
+        case .win:
             return improve(self.cubsRecord, isPostseason: isPostseason)
-        case .Loss:
+        case .loss:
             return self.fall(self.cubsRecord, isPostseason: isPostseason)
-        case .Postponed:
+        case .postponed:
             return self.remain(self.cubsRecord, isPostseason: isPostseason)
         }
     }
