@@ -34,16 +34,23 @@ enum LocalizedString {
     
     //MARK: - Formats
     
-    static let improveFormat = NSLocalizedString("Cubs improve to %1$d and %2$d %3$@",
-                                                 comment: "Format with placeholders with wins, losses, and whether it's the season or postseason when cubs win")
+    private static let recordFormat = NSLocalizedString("%1$d and %2$d",
+                                                        comment: "Format with placeholders for wins and losses")
     
-    static let fallFormat = NSLocalizedString("Cubs fall to %1$d and %2$d %3$@",
-                                              comment: "Format with placeholders for wins, losses, and whether it's the season or postseason when the cubs lose")
+    static func recordString(wins: Int, losses: Int) -> String {
+        return NSString.localizedStringWithFormat(LocalizedString.recordFormat as NSString, wins, losses) as String
+    }
+    
+    static let improveFormat = NSLocalizedString("Cubs improve to %1$@ %2$@",
+                                                 comment: "Format with placeholders for the record and whether it's the season or postseason when cubs win")
+    
+    static let fallFormat = NSLocalizedString("Cubs fall to %1$@ %2$@",
+                                              comment: "Format with placeholders the record, and whether it's the season or postseason when the cubs lose")
 
-    static let remainFormat = NSLocalizedString("Cubs remain at %1$d and %2$d %3$@",
-                                                comment: "Format with placeholders for wins, losses, and whether it's the season or postseason when the game is postponed")
+    static let remainFormat = NSLocalizedString("Cubs remain at %1$@ %2$@",
+                                                comment: "Format with placeholders for the record and whether it's the season or postseason when the game is postponed")
     
-    static let versusFormat = NSLocalizedString("%1$@ vs. %2$@",
+    private static let versusFormat = NSLocalizedString("%1$@ vs. %2$@",
                                                 comment: "format for 'x vs. y' with placeholders for the away and home teams")
     
     //MARK: - Helper functions
@@ -52,14 +59,17 @@ enum LocalizedString {
         return NSString.localizedStringWithFormat(versusFormat as NSString, awayTeam, homeTeam) as String
     }
     
+    static let postseasonString = NSLocalizedString("in the postseason",
+                                                    comment: "String to append when something has happened in the postseason")
+    
+    static let regularSeasonString = NSLocalizedString("on the season",
+                                                       comment: "String to append when something has happened during the regular season")
+    
     static func seasonStringForPostseason(_ isPostseason: Bool) -> String {
         if isPostseason {
-            return NSLocalizedString("in the postseason",
-                                     comment: "String to append when something has happened in the postseason")
+            return self.postseasonString
         } else {
-            return NSLocalizedString("on the season",
-                                     comment: "String to append when something has happened during the regular season")
+            return self.regularSeasonString
         }
     }
-    
 }

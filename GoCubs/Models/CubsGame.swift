@@ -46,7 +46,7 @@ class CubsGame {
     func resultString(_ isPostseason: Bool) -> String {
         switch self.result.type {
         case .win:
-            return improve(self.cubsRecord, isPostseason: isPostseason)
+            return self.improve(self.cubsRecord, isPostseason: isPostseason)
         case .loss:
             return self.fall(self.cubsRecord, isPostseason: isPostseason)
         case .postponed:
@@ -54,15 +54,22 @@ class CubsGame {
         }
     }
     
+    private func recordString(for record: CubsRecord) -> String {
+        return LocalizedString.recordString(wins: record.wins, losses: record.losses)
+    }
+    
     func improve(_ record: CubsRecord, isPostseason: Bool) -> String {
-        return NSString.localizedStringWithFormat(LocalizedString.improveFormat as NSString, record.wins, record.losses, LocalizedString.seasonStringForPostseason(isPostseason)) as String
+        let recordString = self.recordString(for: record)
+        return NSString.localizedStringWithFormat(LocalizedString.improveFormat as NSString, recordString, LocalizedString.seasonStringForPostseason(isPostseason)) as String
     }
     
     func remain(_ record: CubsRecord, isPostseason: Bool) -> String {
-        return NSString.localizedStringWithFormat(LocalizedString.remainFormat as NSString, record.wins, record.losses, LocalizedString.seasonStringForPostseason(isPostseason)) as String
+        let recordString = self.recordString(for: record)
+        return NSString.localizedStringWithFormat(LocalizedString.remainFormat as NSString, recordString, LocalizedString.seasonStringForPostseason(isPostseason)) as String
     }
     
     func fall(_ record: CubsRecord, isPostseason: Bool) -> String {
-        return NSString.localizedStringWithFormat(LocalizedString.fallFormat as NSString, record.wins, record.losses, LocalizedString.seasonStringForPostseason(isPostseason)) as String
+        let recordString = self.recordString(for: record)
+        return NSString.localizedStringWithFormat(LocalizedString.fallFormat as NSString, recordString, LocalizedString.seasonStringForPostseason(isPostseason)) as String
     }
 }
