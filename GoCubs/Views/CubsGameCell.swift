@@ -39,8 +39,8 @@ class CubsGameCell: UITableViewCell {
             self.vsLabel.alpha = 1
         }
         
-        self.primaryColorView.backgroundColor = game.opponent.colors.primary
-        self.secondaryColorView.backgroundColor = game.opponent.colors.secondary
+        self.primaryColorView.backgroundColor = game.opponent.team.primaryColor
+        self.secondaryColorView.backgroundColor = game.opponent.team.secondaryColor
         
     }
     

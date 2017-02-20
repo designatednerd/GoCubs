@@ -72,24 +72,24 @@ class GameDetailViewController: UIViewController {
                 switch cubsGame.result.type {
                 case .win:
                     self.winningTeamNameLabel.text = LocalizedString.cubs.uppercased()
-                    self.winningTeamNameLabel.backgroundColor = TeamColors.Cubs.primary
+                    self.winningTeamNameLabel.backgroundColor = Team.Cubs.primaryColor
                     self.winningTeamScoreLabel.text = "\(cubsGame.result.cubsRuns)"
                     self.losingTeamNameLabel.text = cubsGame.opponent.name.uppercased()
-                    self.losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary
+                    self.losingTeamNameLabel.backgroundColor = cubsGame.opponent.team.primaryColor
                     self.losingTeamScoreLabel.text = "\(cubsGame.result.opponentRuns)"
                 case .loss:
                     self.losingTeamNameLabel.text = LocalizedString.cubs.uppercased()
-                    self.losingTeamNameLabel.backgroundColor = TeamColors.Cubs.primary
+                    self.losingTeamNameLabel.backgroundColor = Team.Cubs.primaryColor
                     self.losingTeamScoreLabel.text = "\(cubsGame.result.cubsRuns)"
                     self.winningTeamNameLabel.text = cubsGame.opponent.name.uppercased()
-                    self.winningTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary
+                    self.winningTeamNameLabel.backgroundColor = cubsGame.opponent.team.primaryColor
                     self.winningTeamScoreLabel.text = "\(cubsGame.result.opponentRuns)"
                 case .postponed:
                     self.winningTeamNameLabel.text = LocalizedString.cubs.uppercased()
-                    self.winningTeamNameLabel.backgroundColor = TeamColors.Cubs.primary
+                    self.winningTeamNameLabel.backgroundColor = Team.Cubs.primaryColor
                     self.winningTeamScoreLabel.text = LocalizedString.noResult
                     self.losingTeamNameLabel.text = cubsGame.opponent.name.uppercased()
-                    self.losingTeamNameLabel.backgroundColor = cubsGame.opponent.colors.primary
+                    self.losingTeamNameLabel.backgroundColor = cubsGame.opponent.team.primaryColor
                     self.losingTeamScoreLabel.text = LocalizedString.noResult
                 }
                 

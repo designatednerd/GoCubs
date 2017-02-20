@@ -11,23 +11,27 @@ import UIKit
 
 struct Opponent {
     let at = "at "
-    let name: String
     let isHomeTeam: Bool
-    let colors: TeamColors
+    let team: Team
     
-    init(name: String) {        
+    var name: String {
+        return self.team.rawValue
+    }
+    
+    init(name: String) {
+        var nameToUse: String
         if name.hasPrefix(at) {
             self.isHomeTeam = true            
-            self.name = name.substring(from: at.endIndex)
+            nameToUse = name.substring(from: at.endIndex)
         } else {
             self.isHomeTeam = false
-            self.name = name
+            nameToUse = name
         }
         
-        guard let colors = TeamColors(rawValue: self.name) else {
-            fatalError("Couldn't get team colors for team named \(name)")
+        guard let team = Team(rawValue: nameToUse) else {
+            fatalError("Couldn't get team colors for team named \(nameToUse)")
         }
         
-        self.colors = colors
+        self.team = team
     }
 }

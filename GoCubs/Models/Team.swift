@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum TeamColors: String {
+enum Team: String {
     case
     Braves,
     Brewers,
@@ -33,7 +33,7 @@ enum TeamColors: String {
     
     //http://teamcolors.arc90.com/
     
-    var primary: UIColor {
+    var primaryColor: UIColor {
         switch self {
         case .Braves:
             return .cub_RGB(0, 47, 95)
@@ -78,7 +78,7 @@ enum TeamColors: String {
         }
     }
     
-    var secondary: UIColor {
+    var secondaryColor: UIColor {
         switch self {
         case .Braves:
             return .cub_RGB(183, 18, 52)

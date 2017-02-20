@@ -28,16 +28,16 @@ enum ResultType: String {
         case .win:
             return .white
         case .loss:
-            return TeamColors.Cubs.primary
+            return Team.Cubs.primaryColor
         case .postponed:
-            return TeamColors.rainoutBlue
+            return Team.rainoutBlue
         }
     }
     
     var flagTextColor: UIColor {
         switch self {
         case .win:
-            return TeamColors.Cubs.primary
+            return Team.Cubs.primaryColor
         case .loss:
             return .white
         case .postponed:

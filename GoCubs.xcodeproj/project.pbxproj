@@ -32,7 +32,7 @@
 		9B99F1F11BCB05D900EC08DC /* SeugueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F01BCB05D900EC08DC /* SeugueHandler.swift */; };
 		9B99F1F51BCB0B7B00EC08DC /* CubsGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F41BCB0B7B00EC08DC /* CubsGameCell.swift */; };
 		9B99F1F71BCB0CBC00EC08DC /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */; };
-		9B99F1FB1BCB4EA800EC08DC /* TeamColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1FA1BCB4EA700EC08DC /* TeamColors.swift */; };
+		9B99F1FB1BCB4EA800EC08DC /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1FA1BCB4EA700EC08DC /* Team.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +91,7 @@
 		9B99F1F01BCB05D900EC08DC /* SeugueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeugueHandler.swift; sourceTree = "<group>"; };
 		9B99F1F41BCB0B7B00EC08DC /* CubsGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameCell.swift; sourceTree = "<group>"; };
 		9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
-		9B99F1FA1BCB4EA700EC08DC /* TeamColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamColors.swift; sourceTree = "<group>"; };
+		9B99F1FA1BCB4EA700EC08DC /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		D843428D9B331C19F08888E3 /* Pods-GoCubsKIFTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsKIFTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA53D0C81EAA3107DC08020B /* Pods_GoCubsKIFTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoCubsKIFTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -234,7 +234,7 @@
 				9B99F1D31BCAFD8F00EC08DC /* Opponent.swift */,
 				9B99F1D41BCAFD8F00EC08DC /* Pitcher.swift */,
 				9B99F1D51BCAFD8F00EC08DC /* Result.swift */,
-				9B99F1FA1BCB4EA700EC08DC /* TeamColors.swift */,
+				9B99F1FA1BCB4EA700EC08DC /* Team.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -507,7 +507,7 @@
 				9B491D711BF8D9C30040FFBD /* CubsGameDataSource.swift in Sources */,
 				9B99F1E41BCAFD8F00EC08DC /* Opponent.swift in Sources */,
 				9B99F1DB1BCAFD8F00EC08DC /* AppDelegate.swift in Sources */,
-				9B99F1FB1BCB4EA800EC08DC /* TeamColors.swift in Sources */,
+				9B99F1FB1BCB4EA800EC08DC /* Team.swift in Sources */,
 				9B99F1E61BCAFD8F00EC08DC /* Result.swift in Sources */,
 				9B99F1F11BCB05D900EC08DC /* SeugueHandler.swift in Sources */,
 				9B99F1E81BCAFD8F00EC08DC /* Cubs2015TableViewController.swift in Sources */,
