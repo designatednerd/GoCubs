@@ -30,7 +30,7 @@ enum ResultType: String {
         case .loss:
             return Team.Cubs.primaryColor
         case .postponed:
-            return Team.rainoutBlue
+            return ResultType.rainoutBlue
         }
     }
     
@@ -55,6 +55,8 @@ enum ResultType: String {
             return AccessibilityString.postponed
         }
     }
+    
+    static let rainoutBlue: UIColor = .cub_RGB(158, 206, 208)
 }
 
 struct Result {
