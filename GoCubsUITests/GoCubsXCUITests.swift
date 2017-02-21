@@ -10,13 +10,14 @@ import XCTest
 
 class GoCubsXCUITests: XCTestCase, RobotTests {
     
-    var basicRobot: BasicRobot = XCUIRobot()
+    var basicRobot: XCUIRobot = XCUIRobot()
     var listRobot: GameListRobot = XCUIRobot()
     var detailRobot: GameDetailRobot = XCUIRobot()
 
     override func setUp() {
         super.setUp()
-        self.launchToGameList()
+        self.continueAfterFailure = false
+        self.basicRobot.launchApplication()
     }
     
     //MARK: - Actual Tests

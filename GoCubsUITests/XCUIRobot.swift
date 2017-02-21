@@ -47,13 +47,8 @@ struct XCUIRobot: BasicRobot {
         let labelElement = app.staticTexts[text]
 
         testInfo.testCase.expectation(for: self.existsPredicate,
-                             evaluatedWith: labelElement)
-        testInfo.testCase.waitForExpectations(timeout: self.waitTimeout) {
-            error in
-            XCTFail("Could not find label with text: \(text)",
-                    file: testInfo.file,
-                    line: testInfo.line)
-        }
+                                      evaluatedWith: labelElement)
+        testInfo.testCase.waitForExpectations(timeout: self.waitTimeout)
     }
     
     func waitForView(withAccessibilityIdentifier identifier: String,
@@ -72,8 +67,8 @@ struct XCUIRobot: BasicRobot {
         let tableElement = app.tables[identifier]
         
         testInfo.testCase.expectation(for: self.existsPredicate,
-                             evaluatedWith: tableElement)
-        testInfo.testCase.waitForExpectations(timeout: self.waitTimeout * 10)
+                                      evaluatedWith: tableElement)
+        testInfo.testCase.waitForExpectations(timeout: self.waitTimeout)
     }
     
     func labelText(forLabelWithAccessibilityIdentifier identifier: String,

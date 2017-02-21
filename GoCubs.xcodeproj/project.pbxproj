@@ -17,6 +17,11 @@
 		9B6C23971E5BADC900C16866 /* RobotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C23951E5BADA100C16866 /* RobotTests.swift */; };
 		9B6C23981E5BADCA00C16866 /* RobotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C23951E5BADA100C16866 /* RobotTests.swift */; };
 		9B6C239A1E5BAEB400C16866 /* KIFRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C23991E5BAEB400C16866 /* KIFRobot.swift */; };
+		9B6C239B1E5BE16400C16866 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1F61BCB0CBC00EC08DC /* LocalizedString.swift */; };
+		9B6C239C1E5BE16400C16866 /* AccessibilityString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */; };
+		9B6C239D1E5BE17E00C16866 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1D51BCAFD8F00EC08DC /* Result.swift */; };
+		9B6C239E1E5BE18200C16866 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1FA1BCB4EA700EC08DC /* Team.swift */; };
+		9B6C239F1E5BE19900C16866 /* String+IntsWithDash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1CD1BCAFD8F00EC08DC /* String+IntsWithDash.swift */; };
 		9B99F1C31BCAFD5E00EC08DC /* ParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1C01BCAFD5E00EC08DC /* ParsingTests.swift */; };
 		9B99F1DB1BCAFD8F00EC08DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B99F1C51BCAFD8F00EC08DC /* AppDelegate.swift */; };
 		9B99F1DC1BCAFD8F00EC08DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B99F1C61BCAFD8F00EC08DC /* Assets.xcassets */; };
@@ -526,8 +531,13 @@
 				9B9AE7921E5B77320099AB77 /* XCUIRobot.swift in Sources */,
 				9B9AE78C1E5B6A6F0099AB77 /* GameDetailRobot.swift in Sources */,
 				9B6C23971E5BADC900C16866 /* RobotTests.swift in Sources */,
+				9B6C239F1E5BE19900C16866 /* String+IntsWithDash.swift in Sources */,
 				9B9AE7881E5B68C00099AB77 /* DateFormatter+Months.swift in Sources */,
 				9B9AE7841E5B46970099AB77 /* GameListRobot.swift in Sources */,
+				9B6C239D1E5BE17E00C16866 /* Result.swift in Sources */,
+				9B6C239B1E5BE16400C16866 /* LocalizedString.swift in Sources */,
+				9B6C239E1E5BE18200C16866 /* Team.swift in Sources */,
+				9B6C239C1E5BE16400C16866 /* AccessibilityString.swift in Sources */,
 				9B9AE7801E5B46210099AB77 /* BasicRobot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

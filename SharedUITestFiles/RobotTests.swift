@@ -11,7 +11,6 @@ import XCTest
 @testable import GoCubs 
 
 protocol RobotTests {
-    var basicRobot: BasicRobot { get }
     var listRobot: GameListRobot { get }
     var detailRobot: GameDetailRobot { get }
 }
@@ -24,13 +23,6 @@ extension RobotTests where Self: XCTestCase {
         return TestInfo(testCase: self,
                         file: file,
                         line: line)
-    }
-    
-    //MARK: - Test Lifecycle
-    
-    func launchToGameList() {
-        self.basicRobot.launchApplication()
-        self.listRobot.verifyOnGameList(testInfo: self.currentLineTestInfo())
     }
     
     //MARK: - Common test code

@@ -99,7 +99,7 @@ extension GameDetailRobot {
                    testInfo: TestInfo) {
         NSLog("Check Flag")
         self.waitForLabel(withText: result.accessibilityString,
-                         testInfo: testInfo)
+                          testInfo: testInfo)
     }
     
     func verifyRainoutScoreAgainst(team: Team,
