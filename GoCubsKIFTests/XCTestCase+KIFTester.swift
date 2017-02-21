@@ -33,15 +33,10 @@ extension KIFUITestActor {
     @discardableResult
     func waitForView(withAccessibilityIdentifier accessibilityIdentifier: String, tappable: Bool = false) -> UIView? {
         var view: UIView? = nil
-
-        let waitStart = Date()
-        
         self.wait(for: nil,
             view: &view,
             withIdentifier: accessibilityIdentifier,
             tappable: tappable)
-        
-        NSLog("Waited \(-waitStart.timeIntervalSinceNow) seconds")
         return view;
     }
 }
