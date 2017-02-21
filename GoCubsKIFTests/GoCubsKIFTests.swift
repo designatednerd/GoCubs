@@ -19,7 +19,7 @@ class GoCubsKIFTests: KIFTestCase, RobotTests {
     
     override func setUp() {
         super.setUp()
-        self.launchToGameList()
+        self.listRobot.verifyOnGameList(testInfo: self.currentLineTestInfo())
     }
 
     override func tearDown() {
