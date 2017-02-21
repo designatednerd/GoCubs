@@ -1,31 +1,22 @@
 //
-//  GoCubsKIFTests.swift
-//  GoCubsKIFTests
+//  GoCubsUITests.swift
+//  GoCubsUITests
 //
-//  Created by Ellen Shapiro on 10/13/15.
+//  Created by Ellen Shapiro on 10/12/15.
 //  Copyright © 2015 Designated Nerd Software. All rights reserved.
 //
 
 import XCTest
-import KIF
 
-class GoCubsKIFTests: KIFTestCase, RobotTests {
+class GoCubsXCUITests: XCTestCase, RobotTests {
     
-    var basicRobot: BasicRobot = KIFRobot()
-    var listRobot: GameListRobot = KIFRobot()
-    var detailRobot: GameDetailRobot = KIFRobot()
-    
-    //MARK: Test Lifecycle
-    
+    var basicRobot: BasicRobot = XCUIRobot()
+    var listRobot: GameListRobot = XCUIRobot()
+    var detailRobot: GameDetailRobot = XCUIRobot()
+
     override func setUp() {
         super.setUp()
         self.launchToGameList()
-    }
-
-    override func tearDown() {
-        self.detailRobot.goBackToList(testInfo: self.currentLineTestInfo())
-        self.listRobot.verifyOnGameList(testInfo: self.currentLineTestInfo())
-        super.tearDown()
     }
     
     //MARK: - Actual Tests
@@ -49,5 +40,4 @@ class GoCubsKIFTests: KIFTestCase, RobotTests {
     func testKnownRegularSeasonPostponement() {
         self.verifyKnownRegularSeasonPostponement()
     }
-    
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		011E6F4475C19CC9CA1CBB79 /* Pods_GoCubsKIFTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA53D0C81EAA3107DC08020B /* Pods_GoCubsKIFTests.framework */; };
 		331C5D3E1BCCA4ED00BFD183 /* AccessibilityString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */; };
+		331C5D641BCCACBB00BFD183 /* GoCubsXCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D631BCCACBB00BFD183 /* GoCubsXCUITests.swift */; };
 		33BE0EC01BCD9C4500E96BF7 /* GoCubsKIFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BE0EBF1BCD9C4500E96BF7 /* GoCubsKIFTests.swift */; };
 		33BE0EC81BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BE0EC71BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift */; };
 		9B491D711BF8D9C30040FFBD /* CubsGameDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */; };
@@ -41,6 +42,7 @@
 		9B9AE7891E5B68C00099AB77 /* DateFormatter+Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE7861E5B68C00099AB77 /* DateFormatter+Months.swift */; };
 		9B9AE78C1E5B6A6F0099AB77 /* GameDetailRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE78A1E5B6A6F0099AB77 /* GameDetailRobot.swift */; };
 		9B9AE78D1E5B6A6F0099AB77 /* GameDetailRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE78A1E5B6A6F0099AB77 /* GameDetailRobot.swift */; };
+		9B9AE7921E5B77320099AB77 /* XCUIRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE78E1E5B77030099AB77 /* XCUIRobot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +72,7 @@
 /* Begin PBXFileReference section */
 		331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityString.swift; sourceTree = "<group>"; };
 		331C5D611BCCACBA00BFD183 /* GoCubsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCubsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		331C5D631BCCACBB00BFD183 /* GoCubsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoCubsUITests.swift; sourceTree = "<group>"; };
+		331C5D631BCCACBB00BFD183 /* GoCubsXCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoCubsXCUITests.swift; sourceTree = "<group>"; };
 		331C5D651BCCACBB00BFD183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		336DA3A61BBAFFC800B9CBD8 /* GoCubs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoCubs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		336DA3BC1BBAFFC800B9CBD8 /* GoCubs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCubs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 		9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameDataSource.swift; sourceTree = "<group>"; };
 		9B491D721BF8D9DC0040FFBD /* cubs2015.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cubs2015.csv; sourceTree = "<group>"; };
 		9B6C23951E5BADA100C16866 /* RobotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotTests.swift; sourceTree = "<group>"; };
+		9B6C23991E5BAEB400C16866 /* KIFRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KIFRobot.swift; sourceTree = "<group>"; };
 		9B99F1BF1BCAFD5E00EC08DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GoCubsTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		9B99F1C01BCAFD5E00EC08DC /* ParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParsingTests.swift; path = GoCubsTests/ParsingTests.swift; sourceTree = SOURCE_ROOT; };
 		9B99F1C51BCAFD8F00EC08DC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		9B9AE7821E5B46970099AB77 /* GameListRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListRobot.swift; sourceTree = "<group>"; };
 		9B9AE7861E5B68C00099AB77 /* DateFormatter+Months.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Months.swift"; sourceTree = "<group>"; };
 		9B9AE78A1E5B6A6F0099AB77 /* GameDetailRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDetailRobot.swift; sourceTree = "<group>"; };
+		9B9AE78E1E5B77030099AB77 /* XCUIRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIRobot.swift; sourceTree = "<group>"; };
 		D843428D9B331C19F08888E3 /* Pods-GoCubsKIFTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsKIFTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA53D0C81EAA3107DC08020B /* Pods_GoCubsKIFTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoCubsKIFTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,7 +149,8 @@
 		331C5D621BCCACBB00BFD183 /* GoCubsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				331C5D631BCCACBB00BFD183 /* GoCubsUITests.swift */,
+				9B9AE78E1E5B77030099AB77 /* XCUIRobot.swift */,
+				331C5D631BCCACBB00BFD183 /* GoCubsXCUITests.swift */,
 				331C5D651BCCACBB00BFD183 /* Info.plist */,
 			);
 			path = GoCubsUITests;
@@ -189,6 +194,7 @@
 		33BE0EBE1BCD9C4500E96BF7 /* GoCubsKIFTests */ = {
 			isa = PBXGroup;
 			children = (
+				9B6C23991E5BAEB400C16866 /* KIFRobot.swift */,
 				33BE0EC71BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift */,
 				33BE0EBF1BCD9C4500E96BF7 /* GoCubsKIFTests.swift */,
 				33BE0EC11BCD9C4500E96BF7 /* Info.plist */,
@@ -516,7 +522,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				331C5D641BCCACBB00BFD183 /* GoCubsUITests.swift in Sources */,
+				331C5D641BCCACBB00BFD183 /* GoCubsXCUITests.swift in Sources */,
+				9B9AE7921E5B77320099AB77 /* XCUIRobot.swift in Sources */,
 				9B9AE78C1E5B6A6F0099AB77 /* GameDetailRobot.swift in Sources */,
 				9B6C23971E5BADC900C16866 /* RobotTests.swift in Sources */,
 				9B9AE7881E5B68C00099AB77 /* DateFormatter+Months.swift in Sources */,
@@ -564,6 +571,7 @@
 				9B6C23981E5BADCA00C16866 /* RobotTests.swift in Sources */,
 				9B9AE7891E5B68C00099AB77 /* DateFormatter+Months.swift in Sources */,
 				9B9AE7851E5B46970099AB77 /* GameListRobot.swift in Sources */,
+				9B6C239A1E5BAEB400C16866 /* KIFRobot.swift in Sources */,
 				33BE0EC01BCD9C4500E96BF7 /* GoCubsKIFTests.swift in Sources */,
 				9B9AE78D1E5B6A6F0099AB77 /* GameDetailRobot.swift in Sources */,
 			);
