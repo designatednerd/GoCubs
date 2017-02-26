@@ -9,3 +9,6 @@ target "GoCubsKIFTests" do
     pod 'KIF'
 end
 
+target "GoCubsEarlGreyTests" do
+    pod 'EarlGrey'
+end 

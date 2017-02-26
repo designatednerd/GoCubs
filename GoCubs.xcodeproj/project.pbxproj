@@ -12,6 +12,8 @@
 		331C5D641BCCACBB00BFD183 /* GoCubsXCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D631BCCACBB00BFD183 /* GoCubsXCUITests.swift */; };
 		33BE0EC01BCD9C4500E96BF7 /* GoCubsKIFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BE0EBF1BCD9C4500E96BF7 /* GoCubsKIFTests.swift */; };
 		33BE0EC81BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BE0EC71BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift */; };
+		9B4330E71E6237110050F90E /* GoCubsEarlGreyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330E61E6237110050F90E /* GoCubsEarlGreyTests.swift */; };
+		9B4330F61E6239410050F90E /* EarlGrey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330F51E6239410050F90E /* EarlGrey.swift */; };
 		9B491D711BF8D9C30040FFBD /* CubsGameDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */; };
 		9B491D731BF8D9DC0040FFBD /* cubs2015.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9B491D721BF8D9DC0040FFBD /* cubs2015.csv */; };
 		9B6C23971E5BADC900C16866 /* RobotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C23951E5BADA100C16866 /* RobotTests.swift */; };
@@ -48,6 +50,7 @@
 		9B9AE78C1E5B6A6F0099AB77 /* GameDetailRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE78A1E5B6A6F0099AB77 /* GameDetailRobot.swift */; };
 		9B9AE78D1E5B6A6F0099AB77 /* GameDetailRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE78A1E5B6A6F0099AB77 /* GameDetailRobot.swift */; };
 		9B9AE7921E5B77320099AB77 /* XCUIRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE78E1E5B77030099AB77 /* XCUIRobot.swift */; };
+		EE1589B1288B0E12A1FAEFC6 /* Pods_GoCubsEarlGreyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8410489F8B5D4F1FBE46BB /* Pods_GoCubsEarlGreyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,9 +75,17 @@
 			remoteGlobalIDString = 336DA3A51BBAFFC700B9CBD8;
 			remoteInfo = GoCubs;
 		};
+		9B4330E91E6237110050F90E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 336DA39E1BBAFFC700B9CBD8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 336DA3A51BBAFFC700B9CBD8;
+			remoteInfo = GoCubs;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B8410489F8B5D4F1FBE46BB /* Pods_GoCubsEarlGreyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoCubsEarlGreyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityString.swift; sourceTree = "<group>"; };
 		331C5D611BCCACBA00BFD183 /* GoCubsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCubsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		331C5D631BCCACBB00BFD183 /* GoCubsXCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoCubsXCUITests.swift; sourceTree = "<group>"; };
@@ -86,6 +97,11 @@
 		33BE0EC11BCD9C4500E96BF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33BE0EC71BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+KIFTester.swift"; sourceTree = "<group>"; };
 		5D4051E2C21D8CB702457AA3 /* Pods-GoCubsKIFTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsKIFTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests.release.xcconfig"; sourceTree = "<group>"; };
+		97B6818FDDF90D413D63CF6F /* Pods-GoCubsEarlGreyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsEarlGreyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsEarlGreyTests/Pods-GoCubsEarlGreyTests.release.xcconfig"; sourceTree = "<group>"; };
+		9B4330E41E6237110050F90E /* GoCubsEarlGreyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCubsEarlGreyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4330E61E6237110050F90E /* GoCubsEarlGreyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoCubsEarlGreyTests.swift; sourceTree = "<group>"; };
+		9B4330E81E6237110050F90E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B4330F51E6239410050F90E /* EarlGrey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
 		9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameDataSource.swift; sourceTree = "<group>"; };
 		9B491D721BF8D9DC0040FFBD /* cubs2015.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cubs2015.csv; sourceTree = "<group>"; };
 		9B6C23951E5BADA100C16866 /* RobotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotTests.swift; sourceTree = "<group>"; };
@@ -114,6 +130,7 @@
 		9B9AE7861E5B68C00099AB77 /* DateFormatter+Months.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Months.swift"; sourceTree = "<group>"; };
 		9B9AE78A1E5B6A6F0099AB77 /* GameDetailRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDetailRobot.swift; sourceTree = "<group>"; };
 		9B9AE78E1E5B77030099AB77 /* XCUIRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIRobot.swift; sourceTree = "<group>"; };
+		A2388CF521F33FFFC59281F6 /* Pods-GoCubsEarlGreyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsEarlGreyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsEarlGreyTests/Pods-GoCubsEarlGreyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D843428D9B331C19F08888E3 /* Pods-GoCubsKIFTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsKIFTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA53D0C81EAA3107DC08020B /* Pods_GoCubsKIFTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoCubsKIFTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -148,6 +165,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9B4330E11E6237110050F90E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE1589B1288B0E12A1FAEFC6 /* Pods_GoCubsEarlGreyTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -169,6 +194,7 @@
 				9B9AE77D1E5B45E60099AB77 /* SharedUITestFiles */,
 				331C5D621BCCACBB00BFD183 /* GoCubsUITests */,
 				33BE0EBE1BCD9C4500E96BF7 /* GoCubsKIFTests */,
+				9B4330E51E6237110050F90E /* GoCubsEarlGreyTests */,
 				336DA3A71BBAFFC800B9CBD8 /* Products */,
 				5F8AD1E993986C1FB67232AC /* Pods */,
 				B3C6D775622B9B47872BFF00 /* Frameworks */,
@@ -182,6 +208,7 @@
 				336DA3BC1BBAFFC800B9CBD8 /* GoCubs.xctest */,
 				331C5D611BCCACBA00BFD183 /* GoCubsUITests.xctest */,
 				33BE0EBD1BCD9C4500E96BF7 /* GoCubsKIFTests.xctest */,
+				9B4330E41E6237110050F90E /* GoCubsEarlGreyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,8 +239,20 @@
 			children = (
 				D843428D9B331C19F08888E3 /* Pods-GoCubsKIFTests.debug.xcconfig */,
 				5D4051E2C21D8CB702457AA3 /* Pods-GoCubsKIFTests.release.xcconfig */,
+				A2388CF521F33FFFC59281F6 /* Pods-GoCubsEarlGreyTests.debug.xcconfig */,
+				97B6818FDDF90D413D63CF6F /* Pods-GoCubsEarlGreyTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B4330E51E6237110050F90E /* GoCubsEarlGreyTests */ = {
+			isa = PBXGroup;
+			children = (
+				9B4330F51E6239410050F90E /* EarlGrey.swift */,
+				9B4330E61E6237110050F90E /* GoCubsEarlGreyTests.swift */,
+				9B4330E81E6237110050F90E /* Info.plist */,
+			);
+			path = GoCubsEarlGreyTests;
 			sourceTree = "<group>";
 		};
 		9B491D6F1BF8D9C30040FFBD /* DataSources */ = {
@@ -307,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				EA53D0C81EAA3107DC08020B /* Pods_GoCubsKIFTests.framework */,
+				0B8410489F8B5D4F1FBE46BB /* Pods_GoCubsEarlGreyTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -388,12 +428,34 @@
 			productReference = 33BE0EBD1BCD9C4500E96BF7 /* GoCubsKIFTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		9B4330E31E6237110050F90E /* GoCubsEarlGreyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B4330ED1E6237110050F90E /* Build configuration list for PBXNativeTarget "GoCubsEarlGreyTests" */;
+			buildPhases = (
+				30AB668854264E1EF688B830 /* [CP] Check Pods Manifest.lock */,
+				9B4330E01E6237110050F90E /* Sources */,
+				9B4330E11E6237110050F90E /* Frameworks */,
+				9B4330E21E6237110050F90E /* Resources */,
+				E9110B8EECE94559AD874D18 /* [CP] Embed Pods Frameworks */,
+				49A197FAC02B6452120A597C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B4330EA1E6237110050F90E /* PBXTargetDependency */,
+			);
+			name = GoCubsEarlGreyTests;
+			productName = GoCubsEarlGreyTests;
+			productReference = 9B4330E41E6237110050F90E /* GoCubsEarlGreyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		336DA39E1BBAFFC700B9CBD8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Vokal;
 				TargetAttributes = {
@@ -416,6 +478,11 @@
 						LastSwiftMigration = 0820;
 						TestTargetID = 336DA3A51BBAFFC700B9CBD8;
 					};
+					9B4330E31E6237110050F90E = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 336DA3A51BBAFFC700B9CBD8;
+					};
 				};
 			};
 			buildConfigurationList = 336DA3A11BBAFFC700B9CBD8 /* Build configuration list for PBXProject "GoCubs" */;
@@ -435,6 +502,7 @@
 				336DA3BB1BBAFFC800B9CBD8 /* GoCubsTests */,
 				331C5D601BCCACBA00BFD183 /* GoCubsUITests */,
 				33BE0EBC1BCD9C4500E96BF7 /* GoCubsKIFTests */,
+				9B4330E31E6237110050F90E /* GoCubsEarlGreyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -472,6 +540,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9B4330E21E6237110050F90E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -488,6 +563,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30AB668854264E1EF688B830 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		33128229808D6B30AA822C25 /* [CP] Check Pods Manifest.lock */ = {
@@ -518,6 +608,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49A197FAC02B6452120A597C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoCubsEarlGreyTests/Pods-GoCubsEarlGreyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9110B8EECE94559AD874D18 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoCubsEarlGreyTests/Pods-GoCubsEarlGreyTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -587,6 +707,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9B4330E01E6237110050F90E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B4330E71E6237110050F90E /* GoCubsEarlGreyTests.swift in Sources */,
+				9B4330F61E6239410050F90E /* EarlGrey.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -604,6 +733,11 @@
 			isa = PBXTargetDependency;
 			target = 336DA3A51BBAFFC700B9CBD8 /* GoCubs */;
 			targetProxy = 33BE0EC21BCD9C4500E96BF7 /* PBXContainerItemProxy */;
+		};
+		9B4330EA1E6237110050F90E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 336DA3A51BBAFFC700B9CBD8 /* GoCubs */;
+			targetProxy = 9B4330E91E6237110050F90E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -819,6 +953,41 @@
 			};
 			name = Release;
 		};
+		9B4330EB1E6237110050F90E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2388CF521F33FFFC59281F6 /* Pods-GoCubsEarlGreyTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = GoCubsEarlGreyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.GoCubsEarlGreyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoCubs.app/GoCubs";
+			};
+			name = Debug;
+		};
+		9B4330EC1E6237110050F90E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97B6818FDDF90D413D63CF6F /* Pods-GoCubsEarlGreyTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = GoCubsEarlGreyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.GoCubsEarlGreyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoCubs.app/GoCubs";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -863,6 +1032,15 @@
 			buildConfigurations = (
 				33BE0EC41BCD9C4500E96BF7 /* Debug */,
 				33BE0EC51BCD9C4500E96BF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B4330ED1E6237110050F90E /* Build configuration list for PBXNativeTarget "GoCubsEarlGreyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B4330EB1E6237110050F90E /* Debug */,
+				9B4330EC1E6237110050F90E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
