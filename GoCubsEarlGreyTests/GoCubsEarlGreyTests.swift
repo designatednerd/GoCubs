@@ -23,8 +23,8 @@ class GoCubsEarlGreyTests: XCTestCase, RobotTests {
     }
     
     override func tearDown() {
-//        self.detailRobot.goBackToList(testInfo: self.currentLineTestInfo())
-//        self.listRobot.verifyOnGameList(testInfo: self.currentLineTestInfo())
+        (self.detailRobot as? EarlGreyRobot)?.goBackToList(testInfo: self.currentLineTestInfo())
+        self.listRobot.verifyOnGameList(testInfo: self.currentLineTestInfo())
         super.tearDown()
     }
     
