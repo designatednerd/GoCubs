@@ -13,6 +13,12 @@
 		33BE0EC01BCD9C4500E96BF7 /* GoCubsKIFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BE0EBF1BCD9C4500E96BF7 /* GoCubsKIFTests.swift */; };
 		33BE0EC81BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BE0EC71BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift */; };
 		9B4330E71E6237110050F90E /* GoCubsEarlGreyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330E61E6237110050F90E /* GoCubsEarlGreyTests.swift */; };
+		9B4330EF1E6237260050F90E /* EarlGreyRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330EE1E6237260050F90E /* EarlGreyRobot.swift */; };
+		9B4330F01E6237400050F90E /* BasicRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE77E1E5B46210099AB77 /* BasicRobot.swift */; };
+		9B4330F11E6237400050F90E /* GameListRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE7821E5B46970099AB77 /* GameListRobot.swift */; };
+		9B4330F21E6237400050F90E /* GameDetailRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE78A1E5B6A6F0099AB77 /* GameDetailRobot.swift */; };
+		9B4330F31E6237400050F90E /* DateFormatter+Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE7861E5B68C00099AB77 /* DateFormatter+Months.swift */; };
+		9B4330F41E6237400050F90E /* RobotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C23951E5BADA100C16866 /* RobotTests.swift */; };
 		9B4330F61E6239410050F90E /* EarlGrey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330F51E6239410050F90E /* EarlGrey.swift */; };
 		9B491D711BF8D9C30040FFBD /* CubsGameDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */; };
 		9B491D731BF8D9DC0040FFBD /* cubs2015.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9B491D721BF8D9DC0040FFBD /* cubs2015.csv */; };
@@ -101,6 +107,7 @@
 		9B4330E41E6237110050F90E /* GoCubsEarlGreyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCubsEarlGreyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4330E61E6237110050F90E /* GoCubsEarlGreyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoCubsEarlGreyTests.swift; sourceTree = "<group>"; };
 		9B4330E81E6237110050F90E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B4330EE1E6237260050F90E /* EarlGreyRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarlGreyRobot.swift; sourceTree = "<group>"; };
 		9B4330F51E6239410050F90E /* EarlGrey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
 		9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameDataSource.swift; sourceTree = "<group>"; };
 		9B491D721BF8D9DC0040FFBD /* cubs2015.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cubs2015.csv; sourceTree = "<group>"; };
@@ -248,6 +255,7 @@
 		9B4330E51E6237110050F90E /* GoCubsEarlGreyTests */ = {
 			isa = PBXGroup;
 			children = (
+				9B4330EE1E6237260050F90E /* EarlGreyRobot.swift */,
 				9B4330F51E6239410050F90E /* EarlGrey.swift */,
 				9B4330E61E6237110050F90E /* GoCubsEarlGreyTests.swift */,
 				9B4330E81E6237110050F90E /* Info.plist */,
@@ -712,7 +720,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B4330E71E6237110050F90E /* GoCubsEarlGreyTests.swift in Sources */,
+				9B4330F31E6237400050F90E /* DateFormatter+Months.swift in Sources */,
+				9B4330F01E6237400050F90E /* BasicRobot.swift in Sources */,
+				9B4330F21E6237400050F90E /* GameDetailRobot.swift in Sources */,
 				9B4330F61E6239410050F90E /* EarlGrey.swift in Sources */,
+				9B4330F41E6237400050F90E /* RobotTests.swift in Sources */,
+				9B4330F11E6237400050F90E /* GameListRobot.swift in Sources */,
+				9B4330EF1E6237260050F90E /* EarlGreyRobot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
