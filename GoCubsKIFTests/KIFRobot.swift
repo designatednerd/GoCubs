@@ -65,32 +65,25 @@ extension KIFRobot: GameListRobot {
                  testInfo: TestInfo) {
         guard
             let tableView = testInfo.kifTester.waitForView(withAccessibilityIdentifier: AccessibilityString.gamesTableview) as? UITableView,
-            let dataSource = tableView.dataSource,
-            let sections = dataSource.numberOfSections?(in: tableView) else {
-                XCTFail("Could not determine how many sections are in table view",
+            let indexPaths = tableView.cub_allAvailableIndexPaths else {
+                XCTFail("Couldn't get all index paths!",
                         file: testInfo.file,
                         line: testInfo.line)
-            return
+                return
         }
-        
-        //Make index paths for all sections
-        var indexPaths = [IndexPath]()
-        for section in 0..<sections {
-            let rows = dataSource.tableView(tableView, numberOfRowsInSection: section)
-            for row in 0..<rows {
-                indexPaths.append(IndexPath(row: row, section: section))
-            }
-        }
-        
+    
         //Figure out which one we need to tap.
         guard let indexPathToTap = indexPaths.first(where: {
             indexPath in
             
             guard
-                let cell = dataSource.tableView(tableView, cellForRowAt: indexPath) as? CubsGameCell,
+                let cell = tableView.dataSource?.tableView(tableView, cellForRowAt: indexPath) as? CubsGameCell,
                 let vsText = cell.vsLabel.text,
                 let cellDateText = cell.dateLabel.text else {
-                return false
+                    XCTFail("Couldn't find labels to compare",
+                            file: testInfo.file,
+                            line: testInfo.line)
+                    return false
             }
             
             // Are both sets of text the same?
@@ -101,7 +94,6 @@ extension KIFRobot: GameListRobot {
                     line: testInfo.line)
             return
         }
-        
 
         testInfo.kifTester.tapRow(at: indexPathToTap, in: tableView)
     }
