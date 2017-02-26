@@ -11,7 +11,7 @@ import EarlGrey
 
 class GoCubsEarlGreyTests: XCTestCase, RobotTests {
     
-    var basicRobot: BasicRobot = EarlGreyRobot()
+    var basicRobot = EarlGreyRobot()
     var listRobot: GameListRobot = EarlGreyRobot()
     var detailRobot: GameDetailRobot = EarlGreyRobot()
     

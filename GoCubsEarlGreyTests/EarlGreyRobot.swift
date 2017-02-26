@@ -34,7 +34,10 @@ struct EarlGreyRobot: BasicRobot {
     func tapButton(withAccessibilityLabel label: String,
                    testInfo: TestInfo) {
         earlWithInfo(testInfo)
-            .selectElement(with: grey_accessibilityLabel(label))
+            .selectElement(with: grey_allOfMatchers([
+                    grey_accessibilityTrait(UIAccessibilityTraitButton),
+                    grey_accessibilityLabel(label),
+                ]))
             .perform(grey_tap())
     }
     
@@ -104,4 +107,10 @@ extension EarlGreyRobot: GameListRobot {
     }
 }
 
-extension EarlGreyRobot: GameDetailRobot { /* mix-in */ }
+extension EarlGreyRobot: GameDetailRobot {
+
+    func goBackToList(testInfo: TestInfo) {
+        self.tapButton(withAccessibilityLabel: LocalizedString.listTitle,
+                       testInfo: testInfo)
+    }
+}
