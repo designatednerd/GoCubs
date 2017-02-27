@@ -18,7 +18,7 @@ enum LocalizedString {
     
     //MARK: - List of games strings
     
-    static let listTitle = NSLocalizedString("Cubs 2015 Games",
+    static let listTitle = NSLocalizedString("Cubs 2016 Games",
                                              comment: "Title for the main list view")
     
     //MARK: - Game detail strings

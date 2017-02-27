@@ -15,7 +15,7 @@ class CubsGameDataSource: NSObject {
     
     init(tableView: UITableView) {
         //Load in the string
-        guard let path = Bundle.main.path(forResource: "cubs2015", ofType: "csv") else {
+        guard let path = Bundle.main.path(forResource: "cubs2016", ofType: "csv") else {
             fatalError("Could not create path for CSV!")
         }
         
