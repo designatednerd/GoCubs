@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		011E6F4475C19CC9CA1CBB79 /* Pods_GoCubsKIFTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA53D0C81EAA3107DC08020B /* Pods_GoCubsKIFTests.framework */; };
 		331C5D3E1BCCA4ED00BFD183 /* AccessibilityString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */; };
-		331C5D641BCCACBB00BFD183 /* GoCubsXCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C5D631BCCACBB00BFD183 /* GoCubsXCUITests.swift */; };
 		33BE0EC01BCD9C4500E96BF7 /* GoCubsKIFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BE0EBF1BCD9C4500E96BF7 /* GoCubsKIFTests.swift */; };
 		33BE0EC81BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BE0EC71BCD9C9500E96BF7 /* XCTestCase+KIFTester.swift */; };
 		9B4330E71E6237110050F90E /* GoCubsEarlGreyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330E61E6237110050F90E /* GoCubsEarlGreyTests.swift */; };
@@ -23,6 +22,8 @@
 		9B4330F81E6296580050F90E /* UITableView+IndexPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330F71E6296580050F90E /* UITableView+IndexPaths.swift */; };
 		9B4330F91E6297E30050F90E /* UITableView+IndexPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330F71E6296580050F90E /* UITableView+IndexPaths.swift */; };
 		9B4330FA1E6297E40050F90E /* UITableView+IndexPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330F71E6296580050F90E /* UITableView+IndexPaths.swift */; };
+		9B4330FF1E63AF420050F90E /* GoCubsXCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330FC1E63AF420050F90E /* GoCubsXCUITests.swift */; };
+		9B4331011E63AF420050F90E /* XCUIRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330FE1E63AF420050F90E /* XCUIRobot.swift */; };
 		9B491D711BF8D9C30040FFBD /* CubsGameDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */; };
 		9B491D731BF8D9DC0040FFBD /* cubs2015.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9B491D721BF8D9DC0040FFBD /* cubs2015.csv */; };
 		9B6C23971E5BADC900C16866 /* RobotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C23951E5BADA100C16866 /* RobotTests.swift */; };
@@ -58,7 +59,6 @@
 		9B9AE7891E5B68C00099AB77 /* DateFormatter+Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE7861E5B68C00099AB77 /* DateFormatter+Months.swift */; };
 		9B9AE78C1E5B6A6F0099AB77 /* GameDetailRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE78A1E5B6A6F0099AB77 /* GameDetailRobot.swift */; };
 		9B9AE78D1E5B6A6F0099AB77 /* GameDetailRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE78A1E5B6A6F0099AB77 /* GameDetailRobot.swift */; };
-		9B9AE7921E5B77320099AB77 /* XCUIRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AE78E1E5B77030099AB77 /* XCUIRobot.swift */; };
 		EE1589B1288B0E12A1FAEFC6 /* Pods_GoCubsEarlGreyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8410489F8B5D4F1FBE46BB /* Pods_GoCubsEarlGreyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,9 +96,7 @@
 /* Begin PBXFileReference section */
 		0B8410489F8B5D4F1FBE46BB /* Pods_GoCubsEarlGreyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoCubsEarlGreyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		331C5D3D1BCCA4ED00BFD183 /* AccessibilityString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessibilityString.swift; sourceTree = "<group>"; };
-		331C5D611BCCACBA00BFD183 /* GoCubsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCubsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		331C5D631BCCACBB00BFD183 /* GoCubsXCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoCubsXCUITests.swift; sourceTree = "<group>"; };
-		331C5D651BCCACBB00BFD183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		331C5D611BCCACBA00BFD183 /* GoCubsXCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCubsXCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		336DA3A61BBAFFC800B9CBD8 /* GoCubs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoCubs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		336DA3BC1BBAFFC800B9CBD8 /* GoCubs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCubs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33BE0EBD1BCD9C4500E96BF7 /* GoCubsKIFTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoCubsKIFTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +111,9 @@
 		9B4330EE1E6237260050F90E /* EarlGreyRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarlGreyRobot.swift; sourceTree = "<group>"; };
 		9B4330F51E6239410050F90E /* EarlGrey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
 		9B4330F71E6296580050F90E /* UITableView+IndexPaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+IndexPaths.swift"; sourceTree = "<group>"; };
+		9B4330FC1E63AF420050F90E /* GoCubsXCUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoCubsXCUITests.swift; sourceTree = "<group>"; };
+		9B4330FD1E63AF420050F90E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B4330FE1E63AF420050F90E /* XCUIRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIRobot.swift; sourceTree = "<group>"; };
 		9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameDataSource.swift; sourceTree = "<group>"; };
 		9B491D721BF8D9DC0040FFBD /* cubs2015.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cubs2015.csv; sourceTree = "<group>"; };
 		9B6C23951E5BADA100C16866 /* RobotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotTests.swift; sourceTree = "<group>"; };
@@ -140,7 +141,6 @@
 		9B9AE7821E5B46970099AB77 /* GameListRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListRobot.swift; sourceTree = "<group>"; };
 		9B9AE7861E5B68C00099AB77 /* DateFormatter+Months.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Months.swift"; sourceTree = "<group>"; };
 		9B9AE78A1E5B6A6F0099AB77 /* GameDetailRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDetailRobot.swift; sourceTree = "<group>"; };
-		9B9AE78E1E5B77030099AB77 /* XCUIRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIRobot.swift; sourceTree = "<group>"; };
 		A2388CF521F33FFFC59281F6 /* Pods-GoCubsEarlGreyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsEarlGreyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsEarlGreyTests/Pods-GoCubsEarlGreyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D843428D9B331C19F08888E3 /* Pods-GoCubsKIFTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCubsKIFTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoCubsKIFTests/Pods-GoCubsKIFTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA53D0C81EAA3107DC08020B /* Pods_GoCubsKIFTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoCubsKIFTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,23 +187,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		331C5D621BCCACBB00BFD183 /* GoCubsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9B9AE78E1E5B77030099AB77 /* XCUIRobot.swift */,
-				331C5D631BCCACBB00BFD183 /* GoCubsXCUITests.swift */,
-				331C5D651BCCACBB00BFD183 /* Info.plist */,
-			);
-			path = GoCubsUITests;
-			sourceTree = "<group>";
-		};
 		336DA39D1BBAFFC700B9CBD8 = {
 			isa = PBXGroup;
 			children = (
 				9B99F1C41BCAFD8F00EC08DC /* GoCubs */,
 				336DA3BF1BBAFFC800B9CBD8 /* GoCubsTests */,
 				9B9AE77D1E5B45E60099AB77 /* SharedUITestFiles */,
-				331C5D621BCCACBB00BFD183 /* GoCubsUITests */,
+				9B4330FB1E63AF420050F90E /* GoCubsXCUITests */,
 				33BE0EBE1BCD9C4500E96BF7 /* GoCubsKIFTests */,
 				9B4330E51E6237110050F90E /* GoCubsEarlGreyTests */,
 				336DA3A71BBAFFC800B9CBD8 /* Products */,
@@ -217,7 +207,7 @@
 			children = (
 				336DA3A61BBAFFC800B9CBD8 /* GoCubs.app */,
 				336DA3BC1BBAFFC800B9CBD8 /* GoCubs.xctest */,
-				331C5D611BCCACBA00BFD183 /* GoCubsUITests.xctest */,
+				331C5D611BCCACBA00BFD183 /* GoCubsXCUITests.xctest */,
 				33BE0EBD1BCD9C4500E96BF7 /* GoCubsKIFTests.xctest */,
 				9B4330E41E6237110050F90E /* GoCubsEarlGreyTests.xctest */,
 			);
@@ -265,6 +255,16 @@
 				9B4330E81E6237110050F90E /* Info.plist */,
 			);
 			path = GoCubsEarlGreyTests;
+			sourceTree = "<group>";
+		};
+		9B4330FB1E63AF420050F90E /* GoCubsXCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9B4330FE1E63AF420050F90E /* XCUIRobot.swift */,
+				9B4330FC1E63AF420050F90E /* GoCubsXCUITests.swift */,
+				9B4330FD1E63AF420050F90E /* Info.plist */,
+			);
+			path = GoCubsXCUITests;
 			sourceTree = "<group>";
 		};
 		9B491D6F1BF8D9C30040FFBD /* DataSources */ = {
@@ -367,9 +367,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		331C5D601BCCACBA00BFD183 /* GoCubsUITests */ = {
+		331C5D601BCCACBA00BFD183 /* GoCubsXCUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 331C5D681BCCACBB00BFD183 /* Build configuration list for PBXNativeTarget "GoCubsUITests" */;
+			buildConfigurationList = 331C5D681BCCACBB00BFD183 /* Build configuration list for PBXNativeTarget "GoCubsXCUITests" */;
 			buildPhases = (
 				331C5D5D1BCCACBA00BFD183 /* Sources */,
 				331C5D5E1BCCACBA00BFD183 /* Frameworks */,
@@ -380,9 +380,9 @@
 			dependencies = (
 				331C5D671BCCACBB00BFD183 /* PBXTargetDependency */,
 			);
-			name = GoCubsUITests;
+			name = GoCubsXCUITests;
 			productName = GoCubsUITests;
-			productReference = 331C5D611BCCACBA00BFD183 /* GoCubsUITests.xctest */;
+			productReference = 331C5D611BCCACBA00BFD183 /* GoCubsXCUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		336DA3A51BBAFFC700B9CBD8 /* GoCubs */ = {
@@ -470,7 +470,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = Vokal;
+				ORGANIZATIONNAME = "Designated Nerd Software";
 				TargetAttributes = {
 					331C5D601BCCACBA00BFD183 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -513,7 +513,7 @@
 			targets = (
 				336DA3A51BBAFFC700B9CBD8 /* GoCubs */,
 				336DA3BB1BBAFFC800B9CBD8 /* GoCubsTests */,
-				331C5D601BCCACBA00BFD183 /* GoCubsUITests */,
+				331C5D601BCCACBA00BFD183 /* GoCubsXCUITests */,
 				33BE0EBC1BCD9C4500E96BF7 /* GoCubsKIFTests */,
 				9B4330E31E6237110050F90E /* GoCubsEarlGreyTests */,
 			);
@@ -661,14 +661,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B4330FA1E6297E40050F90E /* UITableView+IndexPaths.swift in Sources */,
-				331C5D641BCCACBB00BFD183 /* GoCubsXCUITests.swift in Sources */,
-				9B9AE7921E5B77320099AB77 /* XCUIRobot.swift in Sources */,
 				9B9AE78C1E5B6A6F0099AB77 /* GameDetailRobot.swift in Sources */,
 				9B6C23971E5BADC900C16866 /* RobotTests.swift in Sources */,
 				9B6C239F1E5BE19900C16866 /* String+IntsWithDash.swift in Sources */,
 				9B9AE7881E5B68C00099AB77 /* DateFormatter+Months.swift in Sources */,
+				9B4331011E63AF420050F90E /* XCUIRobot.swift in Sources */,
 				9B9AE7841E5B46970099AB77 /* GameListRobot.swift in Sources */,
 				9B6C239D1E5BE17E00C16866 /* Result.swift in Sources */,
+				9B4330FF1E63AF420050F90E /* GoCubsXCUITests.swift in Sources */,
 				9B6C239B1E5BE16400C16866 /* LocalizedString.swift in Sources */,
 				9B6C239E1E5BE18200C16866 /* Team.swift in Sources */,
 				9B6C239C1E5BE16400C16866 /* AccessibilityString.swift in Sources */,
@@ -786,9 +786,9 @@
 		331C5D691BCCACBB00BFD183 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = GoCubsUITests/Info.plist;
+				INFOPLIST_FILE = GoCubsXCUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.GoCubsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.GoCubsXCUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = GoCubs;
@@ -799,9 +799,9 @@
 		331C5D6A1BCCACBB00BFD183 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = GoCubsUITests/Info.plist;
+				INFOPLIST_FILE = GoCubsXCUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.GoCubsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.GoCubsXCUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = GoCubs;
@@ -1013,7 +1013,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		331C5D681BCCACBB00BFD183 /* Build configuration list for PBXNativeTarget "GoCubsUITests" */ = {
+		331C5D681BCCACBB00BFD183 /* Build configuration list for PBXNativeTarget "GoCubsXCUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				331C5D691BCCACBB00BFD183 /* Debug */,

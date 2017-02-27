@@ -3,7 +3,7 @@
 //  GoCubs
 //
 //  Created by Ellen Shapiro on 2/20/17.
-//  Copyright © 2017 Vokal. All rights reserved.
+//  Copyright © 2017 Designated Nerd Software. All rights reserved.
 //
 
 import XCTest
@@ -41,18 +41,18 @@ struct XCUIRobot: BasicRobot {
         buttonElement.tap()
     }
     
-    func waitForLabel(withText text: String,
-                      testInfo: TestInfo) {
+    func checkViewIsVisible(withAccessibilityLabel label: String,
+                            testInfo: TestInfo) {
         let app = XCUIApplication()
-        let labelElement = app.staticTexts[text]
+        let labelElement = app.staticTexts[label]
 
         testInfo.testCase.expectation(for: self.existsPredicate,
                                       evaluatedWith: labelElement)
         testInfo.testCase.waitForExpectations(timeout: self.waitTimeout)
     }
     
-    func waitForView(withAccessibilityIdentifier identifier: String,
-                     testInfo: TestInfo) {
+    func checkViewIsVisible(withAccessibilityIdentifier identifier: String,
+                            testInfo: TestInfo) {
         let app = XCUIApplication()
         let labelElement = app.staticTexts[identifier]
         
@@ -61,8 +61,8 @@ struct XCUIRobot: BasicRobot {
         testInfo.testCase.waitForExpectations(timeout: self.waitTimeout)
     }
     
-    func waitForTableView(withAccessibilityIdentifier identifier: String,
-                          testInfo: TestInfo) {
+    func checkTableViewIsVisible(withAccessibilityIdentifier identifier: String,
+                                 testInfo: TestInfo) {
         let app = XCUIApplication()
         let tableElement = app.tables[identifier]
         
