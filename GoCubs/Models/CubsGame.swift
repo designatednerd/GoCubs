@@ -49,7 +49,8 @@ class CubsGame {
             return self.improve(self.cubsRecord, isPostseason: isPostseason)
         case .loss:
             return self.fall(self.cubsRecord, isPostseason: isPostseason)
-        case .postponed:
+        case .postponed,
+             .tie:
             return self.remain(self.cubsRecord, isPostseason: isPostseason)
         }
     }

@@ -12,12 +12,15 @@ enum ResultType: String {
     case
     win = "W",
     loss = "L",
+    tie = "T", //Doesn't happen often, but: http://m.mlb.com/news/article/204121484/cubs-pirates-game-suspended-ends-in-tie/?game_pk=449244
     postponed = "Postponed"
         
     var flagString: String {
         switch self {
         case .postponed:
             return "☔️"
+        case .tie:
+            return "¯\\_(ツ)_/¯"
         default:
             return self.rawValue
         }
@@ -25,7 +28,8 @@ enum ResultType: String {
     
     var flagBackground: UIColor {
         switch self {
-        case .win:
+        case .win,
+             .tie:
             return .white
         case .loss:
             return Team.Cubs.primaryColor
@@ -40,7 +44,8 @@ enum ResultType: String {
             return Team.Cubs.primaryColor
         case .loss:
             return .white
-        case .postponed:
+        case .postponed,
+             .tie:
             return .black
         }
     }
@@ -51,6 +56,8 @@ enum ResultType: String {
             return AccessibilityString.cubsWin
         case .loss:
             return AccessibilityString.cubsLose
+        case .tie:
+            return AccessibilityString.tieGame
         case .postponed:
             return AccessibilityString.postponed
         }
@@ -66,30 +73,22 @@ struct Result {
     
     init(resultString: String) {
         //Of the format "W 5-3" OR "Postponed"
-        if resultString == ResultType.postponed.rawValue {
-            //This game was postponed
-            self.type = .postponed
+        let components = resultString.components(separatedBy: " ")
+        let result = components[0]
+        guard let resultType = ResultType(rawValue: result) else {
+            fatalError("Not a real result type")
+        }
+        
+        self.type = resultType
+        switch self.type {
+        case .postponed:
             self.cubsRuns = 0
             self.opponentRuns = 0
-        } else {
-            //Parse the win/loss and the score.
-            let components = resultString.components(separatedBy: " ")
+        default:
             guard components.count == 2 else {
                 fatalError("There should be 2 elements for non-postponed games!")
             }
-            
-            let winOrLoss = components[0]
-            switch winOrLoss {
-            case ResultType.win.rawValue:
-                self.type = .win
-            case ResultType.loss.rawValue:
-                self.type = .loss
-            default:
-                assertionFailure("Postponed should have already been caught!")                
-                //In production:
-                self.type = .postponed
-            }
-            
+        
             let runsString = components[1]
             let runs = runsString.cub_asInts()
             

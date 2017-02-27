@@ -43,6 +43,9 @@ enum AccessibilityString {
     static let cubsLose = NSLocalizedString("Cubs lost.",
                                             comment: "Accessibility for lose flag")
     
+    static let tieGame = NSLocalizedString("Tie game! That's unusual.",
+                                           comment: "Accessibility for tie flag")
+    
     static let postponed = NSLocalizedString("The game was postponed.",
                                              comment: "Accessibility for postponed flag")
     

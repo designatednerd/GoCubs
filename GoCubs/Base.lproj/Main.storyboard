@@ -14,6 +14,7 @@
             <objects>
                 <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -74,8 +75,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOT-pJ-Ezc">
                                 <rect key="frame" x="75" y="275" width="225" height="117.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSj-33-Rym">
-                                        <rect key="frame" x="72.5" y="8" width="81.5" height="100.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XSj-33-Rym">
+                                        <rect key="frame" x="10" y="0.0" width="205" height="117.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="84"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -83,9 +84,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="XSj-33-Rym" firstAttribute="centerX" secondItem="BOT-pJ-Ezc" secondAttribute="centerX" id="14C-zP-zaU"/>
+                                    <constraint firstAttribute="bottom" secondItem="XSj-33-Rym" secondAttribute="bottom" id="6yj-Qp-yqc"/>
+                                    <constraint firstItem="XSj-33-Rym" firstAttribute="top" secondItem="BOT-pJ-Ezc" secondAttribute="top" id="IY8-Ld-V6U"/>
                                     <constraint firstAttribute="width" secondItem="BOT-pJ-Ezc" secondAttribute="height" multiplier="90:47" id="Wpo-wN-H5I"/>
-                                    <constraint firstItem="XSj-33-Rym" firstAttribute="centerY" secondItem="BOT-pJ-Ezc" secondAttribute="centerY" id="jFx-kH-9ax"/>
+                                    <constraint firstItem="XSj-33-Rym" firstAttribute="leading" secondItem="BOT-pJ-Ezc" secondAttribute="leading" constant="10" id="xKE-xS-mKa"/>
+                                    <constraint firstAttribute="trailing" secondItem="XSj-33-Rym" secondAttribute="trailing" constant="10" id="yO5-rt-PuA"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cubs Record: 100-200" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-ge-9Z7">
@@ -158,10 +161,12 @@
                     <connections>
                         <outlet property="cubsRecordLabel" destination="4HY-ge-9Z7" id="Ikt-9j-Ude"/>
                         <outlet property="flagView" destination="BOT-pJ-Ezc" id="eVd-PL-anK"/>
+                        <outlet property="losingPitcherLabel" destination="fYD-a9-mnM" id="UmF-R6-ERA"/>
                         <outlet property="losingPitcherNameLabel" destination="5aB-K8-By2" id="Ut3-O9-7qp"/>
                         <outlet property="losingTeamNameLabel" destination="v7d-ay-Eqt" id="hg4-tO-0MB"/>
                         <outlet property="losingTeamScoreLabel" destination="5nV-Tq-kXv" id="yck-12-VJz"/>
                         <outlet property="resultLabel" destination="XSj-33-Rym" id="ahc-Uz-SMZ"/>
+                        <outlet property="winningPitcherLabel" destination="Brs-hq-A61" id="3zl-8H-4md"/>
                         <outlet property="winningPitcherNameLabel" destination="xl1-qY-cvy" id="gc3-GU-Gla"/>
                         <outlet property="winningTeamNameLabel" destination="KGr-hT-b6F" id="0TF-Bi-QiB"/>
                         <outlet property="winningTeamScoreLabel" destination="Rjv-HS-gQZ" id="TV2-rA-dCO"/>
@@ -198,7 +203,7 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(date)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gn0-L2-7je">
@@ -272,6 +277,7 @@
             <objects>
                 <navigationController id="vC3-pB-5Vb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

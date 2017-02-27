@@ -32,7 +32,20 @@ enum LocalizedString {
     static let noResult = NSLocalizedString("-",
                                             comment: "String for no result score")
     
+    static let winningPitcher = NSLocalizedString("Winning Pitcher",
+                                                  comment: "Title for winning pitcher label")
+    
+    static let losingPitcher = NSLocalizedString("Losing Pitcher",
+                                                 comment: "Title for losing pitcher label")
+    
     //MARK: - Formats
+    
+    private static let pitcherForTeamFormat = NSLocalizedString("%@ Pitcher",
+                                                                comment: "Title for pitcher for a specific team when nobody won or lost")
+    
+    static func pitcher(for teamName: String) -> String {
+        return NSString.localizedStringWithFormat(LocalizedString.pitcherForTeamFormat as NSString, teamName) as String
+    }
     
     private static let recordFormat = NSLocalizedString("%1$d and %2$d",
                                                         comment: "Format with placeholders for wins and losses")
