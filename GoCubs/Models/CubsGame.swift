@@ -16,6 +16,7 @@ class CubsGame {
     let cubsRecord: CubsRecord
     let winningPitcher: Pitcher
     let losingPitcher: Pitcher
+    let portionOfYear: PortionOfYear
     
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -36,6 +37,7 @@ class CubsGame {
         }
         
         self.date = gameDate
+        self.portionOfYear = PortionOfYear.forDate(gameDate)
         self.opponent = Opponent(name: components[1])
         self.result = Result(resultString: components[2])
         self.cubsRecord = CubsRecord(recordString: components[3])
@@ -43,15 +45,15 @@ class CubsGame {
         self.losingPitcher = Pitcher(pitcherString: components[5])
     }
     
-    func resultString(_ isPostseason: Bool) -> String {
+    var resultString: String {
         switch self.result.type {
         case .win:
-            return self.improve(self.cubsRecord, isPostseason: isPostseason)
+            return self.improve(self.cubsRecord)
         case .loss:
-            return self.fall(self.cubsRecord, isPostseason: isPostseason)
+            return self.fall(self.cubsRecord)
         case .postponed,
              .tie:
-            return self.remain(self.cubsRecord, isPostseason: isPostseason)
+            return self.remain(self.cubsRecord)
         }
     }
     
@@ -59,18 +61,41 @@ class CubsGame {
         return LocalizedString.recordString(wins: record.wins, losses: record.losses)
     }
     
-    func improve(_ record: CubsRecord, isPostseason: Bool) -> String {
-        let recordString = self.recordString(for: record)
-        return NSString.localizedStringWithFormat(LocalizedString.improveFormat as NSString, recordString, LocalizedString.seasonStringForPostseason(isPostseason)) as String
+    func improve(_ record: CubsRecord) -> String {
+        let recordString = self.recordString(for: record)        
+        guard record.wins == self.portionOfYear.gamesRequiredToWinSeries else {
+            return NSString.localizedStringWithFormat(LocalizedString.improveFormat as NSString,
+                                                      recordString,
+                                                      self.portionOfYear.seasonStringSeparator,
+                                                      self.portionOfYear.localizedName) as String
+        }
+        
+        return NSString.localizedStringWithFormat(LocalizedString.winSeriesFormat as NSString,
+                                                  self.portionOfYear.localizedName,
+                                                  recordString) as String
+
     }
     
-    func remain(_ record: CubsRecord, isPostseason: Bool) -> String {
+    func remain(_ record: CubsRecord) -> String {
         let recordString = self.recordString(for: record)
-        return NSString.localizedStringWithFormat(LocalizedString.remainFormat as NSString, recordString, LocalizedString.seasonStringForPostseason(isPostseason)) as String
+        return NSString.localizedStringWithFormat(LocalizedString.remainFormat as NSString,
+                                                  recordString,
+                                                  self.portionOfYear.seasonStringSeparator,
+                                                  self.portionOfYear.localizedName) as String
     }
     
-    func fall(_ record: CubsRecord, isPostseason: Bool) -> String {
+    func fall(_ record: CubsRecord) -> String {
         let recordString = self.recordString(for: record)
-        return NSString.localizedStringWithFormat(LocalizedString.fallFormat as NSString, recordString, LocalizedString.seasonStringForPostseason(isPostseason)) as String
+        
+        guard record.losses == self.portionOfYear.gamesRequiredToWinSeries else {
+            return NSString.localizedStringWithFormat(LocalizedString.fallFormat as NSString,
+                                                      recordString,
+                                                      self.portionOfYear.seasonStringSeparator,
+                                                      self.portionOfYear.localizedName) as String
+        }
+        
+        return NSString.localizedStringWithFormat(LocalizedString.loseSeriesFormat as NSString,
+                                                  self.portionOfYear.localizedName,
+                                                  recordString) as String
     }
 }

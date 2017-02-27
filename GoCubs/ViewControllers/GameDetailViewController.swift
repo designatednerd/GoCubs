@@ -62,15 +62,8 @@ class GameDetailViewController: UIViewController {
                 //Hasn't loaded yet
                 return
         }
+        
         self.title = self.dateFormatter.string(from: cubsGame.date as Date)
-        
-        let components = (Calendar.current as NSCalendar).components([.day, .month], from: cubsGame.date as Date)
-        var isPostseason = false
-        
-        if (components.month! > 10 || //Is november OR
-            (components.month! == 10 && components.day! >= 7)) { //Is October 7th or later
-            isPostseason = true
-        }
         
         switch cubsGame.result.type {
         case .win:
@@ -107,7 +100,7 @@ class GameDetailViewController: UIViewController {
             }
         }
         
-        self.cubsRecordLabel.text = cubsGame.resultString(isPostseason)
+        self.cubsRecordLabel.text = cubsGame.resultString
         self.winningPitcherNameLabel.text = cubsGame.winningPitcher.name
         self.losingPitcherNameLabel.text = cubsGame.losingPitcher.name
         

@@ -23,9 +23,6 @@ enum LocalizedString {
     
     //MARK: - Game detail strings
     
-    static let cubs = NSLocalizedString("Cubs",
-                                        comment: "Cubs team name")
-    
     static let gamePostponed = NSLocalizedString("Game postponed",
                                                  comment: "String indicating the game was postponed")
     
@@ -38,30 +35,45 @@ enum LocalizedString {
     static let losingPitcher = NSLocalizedString("Losing Pitcher",
                                                  comment: "Title for losing pitcher label")
     
+    static let regularSeason = NSLocalizedString("season",
+                                                 comment: "Display name of the regular season")
+    
+    static let NLDS = NSLocalizedString("National League Division Series",
+                                        comment: "Full name of the division series the Cubs would play in")
+    
+    static let NLCS = NSLocalizedString("National League Championship Series",
+                                        comment: "Full name of the league championship series the Cubs would play in")
+    
+    static let worldSeries = NSLocalizedString("World Series",
+                                                comment: "YOU GUYS THE WORLD SERIES!!!!")
+    static let inThe = NSLocalizedString("in the",
+                                         comment: "String to add when a game should be referred to as within someting")
+    
+    static let onThe = NSLocalizedString("on the",
+                                         comment: "String to add when a game should be referred to as on something")
+    
     //MARK: - Formats
     
     private static let pitcherForTeamFormat = NSLocalizedString("%@ Pitcher",
                                                                 comment: "Title for pitcher for a specific team when nobody won or lost")
-    
-    static func pitcher(for teamName: String) -> String {
-        return NSString.localizedStringWithFormat(LocalizedString.pitcherForTeamFormat as NSString, teamName) as String
-    }
-    
-    private static let recordFormat = NSLocalizedString("%1$d and %2$d",
+
+    private static let recordFormat = NSLocalizedString("%1$d-%2$d",
                                                         comment: "Format with placeholders for wins and losses")
     
-    static func recordString(wins: Int, losses: Int) -> String {
-        return NSString.localizedStringWithFormat(LocalizedString.recordFormat as NSString, wins, losses) as String
-    }
+    static let winSeriesFormat = NSLocalizedString("Cubs win the %1$@ %2$@",
+                                                   comment: "Format with placeholders for the portion of the year and the record when the cubs win a series")
     
-    static let improveFormat = NSLocalizedString("Cubs improve to %1$@ %2$@",
-                                                 comment: "Format with placeholders for the record and whether it's the season or postseason when cubs win")
+    static let loseSeriesFormat = NSLocalizedString("Cubs lose the %1$@ %2$@",
+                                                    comment: "Format with placeholders for the portion of the year and the record when the cubs lose a series")
     
-    static let fallFormat = NSLocalizedString("Cubs fall to %1$@ %2$@",
-                                              comment: "Format with placeholders the record, and whether it's the season or postseason when the cubs lose")
+    static let improveFormat = NSLocalizedString("Cubs improve to %1$@ %2$@ %3$@",
+                                                 comment: "Format with placeholders for the record, in the/on the, and the portion of the year when the cubs win")
+    
+    static let fallFormat = NSLocalizedString("Cubs fall to %1$@ %2$@ %3$@",
+                                              comment: "Format with placeholders the record, in the/on the, and the portion of the year when the cubs lose")
 
-    static let remainFormat = NSLocalizedString("Cubs remain at %1$@ %2$@",
-                                                comment: "Format with placeholders for the record and whether it's the season or postseason when the game is postponed")
+    static let remainFormat = NSLocalizedString("Cubs remain at %1$@ %2$@ %3$@",
+                                                comment: "Format with placeholders for the record, in the/on the, and the portion of the year when the game is postponed or tied")
     
     private static let versusFormat = NSLocalizedString("%1$@ vs. %2$@",
                                                 comment: "format for 'x vs. y' with placeholders for the away and home teams")
@@ -72,17 +84,11 @@ enum LocalizedString {
         return NSString.localizedStringWithFormat(versusFormat as NSString, awayTeam, homeTeam) as String
     }
     
-    static let postseasonString = NSLocalizedString("in the postseason",
-                                                    comment: "String to append when something has happened in the postseason")
+    static func pitcher(for teamName: String) -> String {
+        return NSString.localizedStringWithFormat(pitcherForTeamFormat as NSString, teamName) as String
+    }
     
-    static let regularSeasonString = NSLocalizedString("on the season",
-                                                       comment: "String to append when something has happened during the regular season")
-    
-    static func seasonStringForPostseason(_ isPostseason: Bool) -> String {
-        if isPostseason {
-            return self.postseasonString
-        } else {
-            return self.regularSeasonString
-        }
+    static func recordString(wins: Int, losses: Int) -> String {
+        return NSString.localizedStringWithFormat(recordFormat as NSString, wins, losses) as String
     }
 }

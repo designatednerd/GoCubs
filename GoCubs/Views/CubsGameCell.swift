@@ -28,9 +28,9 @@ class CubsGameCell: UITableViewCell {
         self.dateLabel.text = CubsGameCell.dateFormatter.string(from: game.date as Date)
 
         if game.opponent.isHomeTeam {
-            self.vsLabel.text = LocalizedString.versus(LocalizedString.cubs, homeTeam: game.opponent.name)
+            self.vsLabel.text = LocalizedString.versus(Team.Cubs.rawValue, homeTeam: game.opponent.name)
         } else {
-            self.vsLabel.text = LocalizedString.versus(game.opponent.name, homeTeam: LocalizedString.cubs)
+            self.vsLabel.text = LocalizedString.versus(game.opponent.name, homeTeam: Team.Cubs.rawValue)
         }
         
         if game.result.type == .postponed {
@@ -41,7 +41,6 @@ class CubsGameCell: UITableViewCell {
         
         self.primaryColorView.backgroundColor = game.opponent.team.primaryColor
         self.secondaryColorView.backgroundColor = game.opponent.team.secondaryColor
-        
     }
     
     //MARK: - Cell silliness

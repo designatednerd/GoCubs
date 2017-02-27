@@ -25,6 +25,8 @@
 		9B4330FF1E63AF420050F90E /* GoCubsXCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330FC1E63AF420050F90E /* GoCubsXCUITests.swift */; };
 		9B4331011E63AF420050F90E /* XCUIRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4330FE1E63AF420050F90E /* XCUIRobot.swift */; };
 		9B4331031E63B2C70050F90E /* cubs2016.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9B4331021E63B2C70050F90E /* cubs2016.csv */; };
+		9B4331051E63D07F0050F90E /* PortionOfYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4331041E63D07F0050F90E /* PortionOfYear.swift */; };
+		9B4331061E63E7470050F90E /* PortionOfYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4331041E63D07F0050F90E /* PortionOfYear.swift */; };
 		9B491D711BF8D9C30040FFBD /* CubsGameDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */; };
 		9B491D731BF8D9DC0040FFBD /* cubs2015.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9B491D721BF8D9DC0040FFBD /* cubs2015.csv */; };
 		9B6C23971E5BADC900C16866 /* RobotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C23951E5BADA100C16866 /* RobotTests.swift */; };
@@ -116,6 +118,7 @@
 		9B4330FD1E63AF420050F90E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B4330FE1E63AF420050F90E /* XCUIRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIRobot.swift; sourceTree = "<group>"; };
 		9B4331021E63B2C70050F90E /* cubs2016.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cubs2016.csv; sourceTree = "<group>"; };
+		9B4331041E63D07F0050F90E /* PortionOfYear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortionOfYear.swift; sourceTree = "<group>"; };
 		9B491D701BF8D9C30040FFBD /* CubsGameDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubsGameDataSource.swift; sourceTree = "<group>"; };
 		9B491D721BF8D9DC0040FFBD /* cubs2015.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cubs2015.csv; sourceTree = "<group>"; };
 		9B6C23951E5BADA100C16866 /* RobotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotTests.swift; sourceTree = "<group>"; };
@@ -312,6 +315,7 @@
 				9B99F1D11BCAFD8F00EC08DC /* CubsRecord.swift */,
 				9B99F1D31BCAFD8F00EC08DC /* Opponent.swift */,
 				9B99F1D41BCAFD8F00EC08DC /* Pitcher.swift */,
+				9B4331041E63D07F0050F90E /* PortionOfYear.swift */,
 				9B99F1D51BCAFD8F00EC08DC /* Result.swift */,
 				9B99F1FA1BCB4EA700EC08DC /* Team.swift */,
 			);
@@ -673,6 +677,7 @@
 				9B9AE7841E5B46970099AB77 /* GameListRobot.swift in Sources */,
 				9B6C239D1E5BE17E00C16866 /* Result.swift in Sources */,
 				9B4330FF1E63AF420050F90E /* GoCubsXCUITests.swift in Sources */,
+				9B4331061E63E7470050F90E /* PortionOfYear.swift in Sources */,
 				9B6C239B1E5BE16400C16866 /* LocalizedString.swift in Sources */,
 				9B6C239E1E5BE18200C16866 /* Team.swift in Sources */,
 				9B6C239C1E5BE16400C16866 /* AccessibilityString.swift in Sources */,
@@ -699,6 +704,7 @@
 				9B99F1F51BCB0B7B00EC08DC /* CubsGameCell.swift in Sources */,
 				9B99F1E51BCAFD8F00EC08DC /* Pitcher.swift in Sources */,
 				9B99F1E71BCAFD8F00EC08DC /* GameDetailViewController.swift in Sources */,
+				9B4331051E63D07F0050F90E /* PortionOfYear.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
