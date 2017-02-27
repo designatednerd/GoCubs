@@ -8,7 +8,12 @@
 
 import Foundation
 import XCTest
+
+//NOTE: @testable imports will no-op in XCUI bundles.
+// Any file you use from the main app should also be added to the XCUI target.
 @testable import GoCubs
+
+//MARK: Game List Robot Protocol
 
 protocol GameListRobot: BasicRobot {
     
@@ -17,11 +22,13 @@ protocol GameListRobot: BasicRobot {
                  testInfo: TestInfo)
 }
 
+//MARK: - Game List Robot default implementation
+
 extension GameListRobot {
     
     func verifyOnGameList(testInfo: TestInfo) {
         NSLog("Verify on game list")
-        self.waitForTableView(withAccessibilityIdentifier: AccessibilityString.gamesTableview,
+        self.checkTableViewIsVisible(withAccessibilityIdentifier: AccessibilityString.gamesTableview,
                               testInfo: testInfo)
     }
     

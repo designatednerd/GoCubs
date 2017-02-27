@@ -9,12 +9,14 @@
 import UIKit
 import XCTest
 
+/// A structure to help pass necessary information to tests
 struct TestInfo {
-
     let testCase: XCTestCase
     let file: StaticString
     let line: UInt
 }
+
+//MARK: - Basic Robot Protocol 
 
 protocol BasicRobot {
     
@@ -24,18 +26,20 @@ protocol BasicRobot {
     func tapButton(withAccessibilityLabel label: String,
                    testInfo: TestInfo)
     
-    func waitForLabel(withText text: String,
-                      testInfo: TestInfo)
+    func checkViewIsVisible(withAccessibilityLabel label: String,
+                            testInfo: TestInfo)
     
-    func waitForView(withAccessibilityIdentifier identifier: String,
-                     testInfo: TestInfo)
+    func checkViewIsVisible(withAccessibilityIdentifier identifier: String,
+                            testInfo: TestInfo)
     
-    func waitForTableView(withAccessibilityIdentifier identifier: String,
-                          testInfo: TestInfo)
+    func checkTableViewIsVisible(withAccessibilityIdentifier identifier: String,
+                                 testInfo: TestInfo)
     
     func labelText(forLabelWithAccessibilityIdentifier identifier: String,
                    testInfo: TestInfo) -> String?
 }
+
+//MARK: - Default Implementation
 
 extension BasicRobot {
     

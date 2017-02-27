@@ -8,6 +8,11 @@
 
 import KIF
 
+/*
+ Swift extensions for KIF recommended here: 
+ https://github.com/kif-framework/KIF#use-with-swift
+ */
+
 extension XCTestCase {
     func tester(_ file: StaticString = #file, _ line: UInt = #line) -> KIFUITestActor {
         return KIFUITestActor(inFile: String(describing: file), atLine: Int(line), delegate: self)

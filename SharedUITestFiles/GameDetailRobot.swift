@@ -8,11 +8,18 @@
 
 import UIKit
 import XCTest
+
+//NOTE: @testable imports will no-op in XCUI bundles.
+// Any file you use from the main app should also be added to the XCUI target.
 @testable import GoCubs
 
-protocol GameDetailRobot: GameListRobot {
-    
+//MARK: - Game Detail Robot Protocol
+
+protocol GameDetailRobot: BasicRobot {
+    // No methods without default implementations
 }
+
+//MARK: - Game Detail Robot Default Implementation
 
 extension GameDetailRobot {
     
@@ -50,7 +57,7 @@ extension GameDetailRobot {
     
     private func checkLoserScore(score: String,
                                  testInfo: TestInfo) {
-        let loserScoreText = self.labelText(forLabelWithAccessibilityIdentifier:  AccessibilityString.losingTeamScore,
+        let loserScoreText = self.labelText(forLabelWithAccessibilityIdentifier: AccessibilityString.losingTeamScore,
                                             testInfo: testInfo)
         
         XCTAssertEqual(loserScoreText,
@@ -69,9 +76,9 @@ extension GameDetailRobot {
     func verifyOnGameDetails(testInfo: TestInfo) {
         NSLog("Verify on game details")
         //Can we see both winning and losing team names
-        self.waitForView(withAccessibilityIdentifier: AccessibilityString.winningTeamName,
+        self.checkViewIsVisible(withAccessibilityIdentifier: AccessibilityString.winningTeamName,
                          testInfo: testInfo)
-        self.waitForView(withAccessibilityIdentifier: AccessibilityString.losingTeamName,
+        self.checkViewIsVisible(withAccessibilityIdentifier: AccessibilityString.losingTeamName,
                          testInfo: testInfo)
     }
     
@@ -98,8 +105,8 @@ extension GameDetailRobot {
     func checkFlag(forResult result: ResultType,
                    testInfo: TestInfo) {
         NSLog("Check Flag")
-        self.waitForLabel(withText: result.accessibilityString,
-                          testInfo: testInfo)
+        self.checkViewIsVisible(withAccessibilityLabel: result.accessibilityString,
+                                testInfo: testInfo)
     }
     
     func verifyRainoutScoreAgainst(team: Team,

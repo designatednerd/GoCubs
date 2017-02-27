@@ -3,7 +3,7 @@
 //  GoCubs
 //
 //  Created by Ellen Shapiro on 2/20/17.
-//  Copyright © 2017 Vokal. All rights reserved.
+//  Copyright © 2017 DesignatedNerdSoftware. All rights reserved.
 //
 
 import KIF
@@ -25,6 +25,8 @@ extension TestInfo {
     }
 }
 
+//MARK: - Basic Robot Conformance
+
 struct KIFRobot: BasicRobot {
     
     func tapButton(withAccessibilityLabel label: String,
@@ -32,18 +34,18 @@ struct KIFRobot: BasicRobot {
         testInfo.kifTester.tapView(withAccessibilityLabel: label, traits: UIAccessibilityTraitButton)
     }
     
-    func waitForLabel(withText text: String,
-                      testInfo: TestInfo) {
-        testInfo.kifTester.waitForView(withAccessibilityLabel: text)
+    func checkViewIsVisible(withAccessibilityLabel label: String,
+                            testInfo: TestInfo) {
+        testInfo.kifTester.waitForView(withAccessibilityLabel: label)
     }
     
-    func waitForView(withAccessibilityIdentifier identifier: String,
-                     testInfo: TestInfo) {
+    func checkViewIsVisible(withAccessibilityIdentifier identifier: String,
+                            testInfo: TestInfo) {
         testInfo.kifTester.waitForView(withAccessibilityIdentifier: identifier)
     }
     
-    func waitForTableView(withAccessibilityIdentifier identifier: String,
-                          testInfo: TestInfo) {
+    func checkTableViewIsVisible(withAccessibilityIdentifier identifier: String,
+                                 testInfo: TestInfo) {
         testInfo.kifTester.waitForView(withAccessibilityIdentifier: identifier)
     }
     
@@ -57,6 +59,8 @@ struct KIFRobot: BasicRobot {
         return label.text
     }
 }
+
+//MARK: - Game List Robot conformance
 
 extension KIFRobot: GameListRobot {
 
@@ -98,5 +102,7 @@ extension KIFRobot: GameListRobot {
         testInfo.kifTester.tapRow(at: indexPathToTap, in: tableView)
     }
 }
+
+//MARK: - Game Detail Robot Conformance
 
 extension KIFRobot: GameDetailRobot { }
