@@ -122,15 +122,85 @@ extension GameDetailRobot {
                              testInfo: testInfo)
     }
     
+    func verifyTieScoreAgainst(team: Team,
+                               runs: Int,
+                          testInfo: TestInfo) {
+        NSLog("Verify Tie")
+        self.checkWinnerName(name: Team.Cubs.rawValue,
+                             testInfo: testInfo)
+        self.checkWinnerScore(score: String(runs),
+                              testInfo: testInfo)
+        self.checkLoserName(name: team.rawValue,
+                            testInfo: testInfo)
+        self.checkLoserScore(score: String(runs),
+                             testInfo: testInfo)
+    }
+    
+    func verifyWinningAndLosingPitcherLabelsAreDisplayed(testInfo: TestInfo) {
+        NSLog("Verify winning and losing pitcher labels displayed")
+        self.checkViewIsVisible(withAccessibilityLabel: LocalizedString.winningPitcher.uppercased(),
+                                testInfo: testInfo)
+        self.checkViewIsVisible(withAccessibilityLabel: LocalizedString.losingPitcher.uppercased(),
+                                testInfo: testInfo)
+    }
+    
+    func verifyCubsAndOpponentPitcherLabelsAreDisplayed(opposingTeam: Team,
+                                                        testInfo: TestInfo) {
+        NSLog("Verify cubs and opponent pitchers displayed")
+        let cubsPitcher = LocalizedString.pitcher(for: Team.Cubs.rawValue).uppercased()
+        self.checkViewIsVisible(withAccessibilityLabel: cubsPitcher,
+                                testInfo: testInfo)
+        let opponentPitcher = LocalizedString.pitcher(for: opposingTeam.rawValue).uppercased()
+        self.checkViewIsVisible(withAccessibilityLabel: opponentPitcher,
+                                testInfo: testInfo)
+    }
+    
     func goBackToList(testInfo: TestInfo) {
-        NSLog("Go back to list")
+        NSLog("Go Back To List")
         self.tapButton(withAccessibilityLabel: "Back",
                        testInfo: testInfo)
     }
     
-    func verifyIsPostseason(_ isPostseason: Bool,
+    func verifyWasSeriesWin(_ wasWin: Bool,
                             testInfo: TestInfo) {
-        NSLog("Verify is postseason")
+        NSLog("Verify was series win")
+        guard let recordText = self.recordText(testInfo) else {
+            XCTFail("Couldn't get record text",
+                    file: testInfo.file,
+                    line: testInfo.line)
+            return
+        }
+        
+        let winFormat = LocalizedString.winSeriesFormat
+        var hitFormat = false
+        let nonFormatWords = winFormat
+            .components(separatedBy: " ")
+            .filter {
+                word in
+                guard !hitFormat else {
+                    return false
+                }
+                
+                hitFormat = word.contains("%")
+                return !hitFormat
+        }
+        
+        let winSeriesString = nonFormatWords.joined(separator: " ")
+        
+        if wasWin {
+            XCTAssertTrue(recordText.contains(winSeriesString),
+                          file: testInfo.file,
+                          line: testInfo.line)
+        } else {
+            XCTAssertFalse(recordText.contains(winSeriesString),
+                           file: testInfo.file,
+                           line: testInfo.line)
+        }
+    }
+    
+    func verifyPortionOfYear(_ portion: PortionOfYear,
+                            testInfo: TestInfo) {
+        NSLog("Verify portion of year")
         guard let recordText = self.recordText(testInfo) else {
             XCTFail("Could not get record text!",
                     file: testInfo.file,
@@ -138,14 +208,7 @@ extension GameDetailRobot {
             return
         }
         
-        let expectedToContain: String
-        if isPostseason {
-            expectedToContain = LocalizedString.postseasonString
-        } else {
-            expectedToContain = LocalizedString.regularSeasonString
-        }
-        
-        XCTAssertTrue(recordText.contains(expectedToContain),
+        XCTAssertTrue(recordText.contains(portion.localizedName),
                       file: testInfo.file,
                       line: testInfo.line)
     }
@@ -153,6 +216,7 @@ extension GameDetailRobot {
     func verifyCubsRecord(wins: Int,
                           losses: Int,
                           testInfo: TestInfo) {
+        NSLog("Verify Cubs Record")
         guard let recordText = self.recordText(testInfo) else {
             XCTFail("Could not get record text!",
                     file: testInfo.file,

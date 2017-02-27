@@ -30,12 +30,20 @@ class GoCubsKIFTests: KIFTestCase, RobotTests {
     
     //MARK: - Actual Tests
     
-    func testKnownPostseasonWin() {
-        self.verifyKnownPostseasonWin()
+    func testWorldSeriesGame7() {
+        self.verifyAllOfChicagoWasNotDreaming()
     }
     
-    func testKnownPostseasonLoss() {
-        self.verifyKnownPostseasonLoss()
+    func testNLCSGameWin() {
+        self.verifyLeagueChampionshipSeriesWin()
+    }
+    
+    func testNLDSGameLoss() {
+        self.verifyDivisionSeriesLoss()
+    }
+    
+    func testKnownRegularSeasonTie() {
+        self.verifyTheFirstRegularSeasonTieInElevenYears()
     }
     
     func testKnownRegularSeasonWin() {
@@ -49,5 +57,4 @@ class GoCubsKIFTests: KIFTestCase, RobotTests {
     func testKnownRegularSeasonPostponement() {
         self.verifyKnownRegularSeasonPostponement()
     }
-    
 }

@@ -30,14 +30,22 @@ class GoCubsEarlGreyTests: XCTestCase, RobotTests {
     
     //MARK: - Actual Tests
     
-    func testKnownPostseasonWin() {
-        self.verifyKnownPostseasonWin()
+    func testWorldSeriesGame7() {
+        self.verifyAllOfChicagoWasNotDreaming()
     }
     
-    func testKnownPostseasonLoss() {
-        self.verifyKnownPostseasonLoss()
+    func testNLCSGameWin() {
+        self.verifyLeagueChampionshipSeriesWin()
     }
     
+    func testNLDSGameLoss() {
+        self.verifyDivisionSeriesLoss()
+    }
+    
+    func testKnownRegularSeasonTie() {
+        self.verifyTheFirstRegularSeasonTieInElevenYears()
+    }
+
     func testKnownRegularSeasonWin() {
         self.verifyKnownRegularSeasonWin()
     }
@@ -49,6 +57,5 @@ class GoCubsEarlGreyTests: XCTestCase, RobotTests {
     func testKnownRegularSeasonPostponement() {
         self.verifyKnownRegularSeasonPostponement()
     }
-    
 }
 

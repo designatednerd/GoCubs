@@ -112,8 +112,8 @@ class GameDetailViewController: UIViewController {
         switch game.result.type {
         case .win,
              .loss:
-            self.winningPitcherLabel.text = LocalizedString.winningPitcher
-            self.losingPitcherLabel.text = LocalizedString.losingPitcher
+            self.winningPitcherLabel.text = LocalizedString.winningPitcher.uppercased()
+            self.losingPitcherLabel.text = LocalizedString.losingPitcher.uppercased()
         case .postponed,
              .tie:
             self.winningPitcherLabel.text = LocalizedString.pitcher(for: Team.Cubs.rawValue).uppercased()
