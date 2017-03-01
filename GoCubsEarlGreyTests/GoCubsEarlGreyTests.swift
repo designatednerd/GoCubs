@@ -11,20 +11,24 @@ import EarlGrey
 
 class GoCubsEarlGreyTests: XCTestCase, RobotTests {
     
-    var basicRobot = EarlGreyRobot()
-    var listRobot: GameListRobot = EarlGreyRobot()
-    var detailRobot: GameDetailRobot = EarlGreyRobot()
+    var basicRobot: EarlGreyRobot!
+    var listRobot: GameListRobot!
+    var detailRobot: GameDetailRobot!
     
     //MARK: Test Lifecycle
     
     override func setUp() {
         super.setUp()
-        self.listRobot.verifyOnGameList(testInfo: self.currentLineTestInfo())
+        self.basicRobot = EarlGreyRobot(testCase: self)
+        self.listRobot = EarlGreyRobot(testCase: self)
+        self.detailRobot = EarlGreyRobot(testCase: self)        
+        self.listRobot.verifyOnGameList()
     }
     
     override func tearDown() {
-        (self.detailRobot as? EarlGreyRobot)?.goBackToList(testInfo: self.currentLineTestInfo())
-        self.listRobot.verifyOnGameList(testInfo: self.currentLineTestInfo())
+        //NOTE: This must be cast or it will use the default implementation, which Earl doesn't seem to like.
+        (self.detailRobot as? EarlGreyRobot)?.goBackToList()
+        self.listRobot.verifyOnGameList()
         super.tearDown()
     }
     

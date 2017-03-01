@@ -11,20 +11,25 @@ import KIF
 
 class GoCubsKIFTests: KIFTestCase, RobotTests {
     
-    var basicRobot: BasicRobot = KIFRobot()
-    var listRobot: GameListRobot = KIFRobot()
-    var detailRobot: GameDetailRobot = KIFRobot()
+    var basicRobot: KIFRobot!
+    var listRobot: GameListRobot!
+    var detailRobot: GameDetailRobot!
     
     //MARK: Test Lifecycle
     
     override func setUp() {
         super.setUp()
-        self.listRobot.verifyOnGameList(testInfo: self.currentLineTestInfo())
+        
+        self.basicRobot = KIFRobot(testCase: self)
+        self.listRobot = KIFRobot(testCase: self)
+        self.detailRobot = KIFRobot(testCase: self)
+
+        self.listRobot.verifyOnGameList()
     }
 
     override func tearDown() {
-        self.detailRobot.goBackToList(testInfo: self.currentLineTestInfo())
-        self.listRobot.verifyOnGameList(testInfo: self.currentLineTestInfo())
+        self.detailRobot.goBackToList()
+        self.listRobot.verifyOnGameList()
         super.tearDown()
     }
     
