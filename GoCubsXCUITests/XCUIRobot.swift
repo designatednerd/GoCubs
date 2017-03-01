@@ -11,6 +11,12 @@ import XCTest
 
 struct XCUIRobot: BasicRobot {
     
+    var currentTestCase: XCTestCase
+    
+    init(testCase: XCTestCase) {
+        self.currentTestCase = testCase
+    }
+    
     fileprivate let waitTimeout: TimeInterval = 5
     
     fileprivate var existsPredicate: NSPredicate {
@@ -26,59 +32,64 @@ struct XCUIRobot: BasicRobot {
     }
     
     func tapButton(withAccessibilityLabel label: String,
-                   testInfo: TestInfo) {
+                   file: StaticString,
+                   line: UInt) {
         let app = XCUIApplication()
         let buttonElement = app.buttons[label]
-        testInfo.testCase.expectation(for: self.existsPredicate,
-                             evaluatedWith: buttonElement)
-        testInfo.testCase.waitForExpectations(timeout: 2) {
+        self.currentTestCase.expectation(for: self.existsPredicate,
+                                         evaluatedWith: buttonElement)
+        self.currentTestCase.waitForExpectations(timeout: 2) {
             error in
             XCTFail("Could not find button with accessibility label \(label). Error: \(error)",
-                    file: testInfo.file,
-                    line: testInfo.line)
+                    file: file,
+                    line: line)
         }
 
         buttonElement.tap()
     }
     
     func checkViewIsVisible(withAccessibilityLabel label: String,
-                            testInfo: TestInfo) {
+                            file: StaticString,
+                            line: UInt) {
         let app = XCUIApplication()
         let labelElement = app.staticTexts[label]
 
-        testInfo.testCase.expectation(for: self.existsPredicate,
-                                      evaluatedWith: labelElement)
-        testInfo.testCase.waitForExpectations(timeout: self.waitTimeout)
+        self.currentTestCase.expectation(for: self.existsPredicate,
+                                         evaluatedWith: labelElement)
+        self.currentTestCase.waitForExpectations(timeout: self.waitTimeout)
     }
     
     func checkViewIsVisible(withAccessibilityIdentifier identifier: String,
-                            testInfo: TestInfo) {
+                            file: StaticString,
+                            line: UInt) {
         let app = XCUIApplication()
         let labelElement = app.staticTexts[identifier]
         
-        testInfo.testCase.expectation(for: self.existsPredicate,
-                             evaluatedWith: labelElement)
-        testInfo.testCase.waitForExpectations(timeout: self.waitTimeout)
+        self.currentTestCase.expectation(for: self.existsPredicate,
+                                      evaluatedWith: labelElement)
+        self.currentTestCase.waitForExpectations(timeout: self.waitTimeout)
     }
     
     func checkTableViewIsVisible(withAccessibilityIdentifier identifier: String,
-                                 testInfo: TestInfo) {
+                                 file: StaticString,
+                                 line: UInt) {
         let app = XCUIApplication()
         let tableElement = app.tables[identifier]
         
-        testInfo.testCase.expectation(for: self.existsPredicate,
+        self.currentTestCase.expectation(for: self.existsPredicate,
                                       evaluatedWith: tableElement)
-        testInfo.testCase.waitForExpectations(timeout: self.waitTimeout)
+        self.currentTestCase.waitForExpectations(timeout: self.waitTimeout)
     }
     
     func labelText(forLabelWithAccessibilityIdentifier identifier: String,
-                   testInfo: TestInfo) -> String? {
+                   file: StaticString,
+                   line: UInt) -> String? {
         let app = XCUIApplication()
         let labelElement = app.staticTexts[identifier]
         
-        testInfo.testCase.expectation(for: self.existsPredicate,
+        self.currentTestCase.expectation(for: self.existsPredicate,
                                       evaluatedWith: labelElement)
-        testInfo.testCase.waitForExpectations(timeout: self.waitTimeout)
+        self.currentTestCase.waitForExpectations(timeout: self.waitTimeout)
         
         return labelElement.label
     }
@@ -90,21 +101,22 @@ extension XCUIRobot: GameListRobot {
 
     func tapCell(withDateText dateText: String,
                  gameText: String,
-                 testInfo: TestInfo) {
+                 file: StaticString,
+                 line: UInt) {
         let app = XCUIApplication()
         let tableElement = app.tables[AccessibilityString.gamesTableview]
         
-        testInfo.testCase.expectation(for: self.existsPredicate,
+        self.currentTestCase.expectation(for: self.existsPredicate,
                                       evaluatedWith: tableElement)
-        testInfo.testCase.waitForExpectations(timeout: self.waitTimeout)
+        self.currentTestCase.waitForExpectations(timeout: self.waitTimeout)
         
         let cellElement = tableElement.cells
             .containing(.staticText, identifier: dateText)
             .staticTexts[gameText]
         
-        testInfo.testCase.expectation(for: self.existsPredicate,
+        self.currentTestCase.expectation(for: self.existsPredicate,
                                       evaluatedWith: cellElement)
-        testInfo.testCase.waitForExpectations(timeout: self.waitTimeout)
+        self.currentTestCase.waitForExpectations(timeout: self.waitTimeout)
         
         cellElement.tap()
     }

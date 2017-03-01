@@ -12,6 +12,9 @@ import XCTest
 
 struct EarlGreyRobot {
     
+    // BasicRobot conformance
+    var currentTestCase: XCTestCase
+    
     //MARK: - Earl grey helpers
     
     fileprivate func getLabelText(withBlock block: @escaping (String) -> Void) -> GREYActionBlock {
@@ -43,9 +46,9 @@ struct EarlGreyRobot {
         })
     }
     
-    fileprivate func earlWithInfo(_ testInfo: TestInfo) -> EarlGreyImpl {
-        return EarlGreyImpl.invoked(fromFile: testInfo.file.description,
-                                    lineNumber: testInfo.line)
+    fileprivate func earlFromFile(file: StaticString, line: UInt) -> EarlGreyImpl {
+        return EarlGreyImpl.invoked(fromFile: file.description,
+                                    lineNumber: line)
     }
 }
 
@@ -53,9 +56,14 @@ struct EarlGreyRobot {
 
 extension EarlGreyRobot: BasicRobot {
     
+    init(testCase: XCTestCase) {
+        self.currentTestCase = testCase
+    }
+    
     func tapButton(withAccessibilityLabel label: String,
-                   testInfo: TestInfo) {
-        earlWithInfo(testInfo)
+                   file: StaticString,
+                   line: UInt) {
+        self.earlFromFile(file: file, line: line)
             .selectElement(with: grey_allOfMatchers([
                     grey_accessibilityTrait(UIAccessibilityTraitButton),
                     grey_accessibilityLabel(label),
@@ -64,22 +72,25 @@ extension EarlGreyRobot: BasicRobot {
     }
 
     func checkViewIsVisible(withAccessibilityLabel label: String,
-                            testInfo: TestInfo) {
-        earlWithInfo(testInfo)
+                            file: StaticString,
+                            line: UInt) {
+        self.earlFromFile(file: file, line: line)
             .selectElement(with: grey_accessibilityLabel(label))
             .assert(grey_sufficientlyVisible())
     }
     
     func checkViewIsVisible(withAccessibilityIdentifier identifier: String,
-                            testInfo: TestInfo) {
-        earlWithInfo(testInfo)
+                            file: StaticString,
+                            line: UInt) {
+        self.earlFromFile(file: file, line: line)
             .selectElement(with: grey_accessibilityID(identifier))
             .assert(grey_sufficientlyVisible())
     }
     
     func checkTableViewIsVisible(withAccessibilityIdentifier identifier: String,
-                                 testInfo: TestInfo) {
-        earlWithInfo(testInfo)
+                                 file: StaticString,
+                                 line: UInt) {
+        self.earlFromFile(file: file, line: line)
             .selectElement(with: grey_allOfMatchers([
                     grey_kindOfClass(UITableView.self),
                     grey_sufficientlyVisible(),
@@ -88,10 +99,11 @@ extension EarlGreyRobot: BasicRobot {
     }
     
     func labelText(forLabelWithAccessibilityIdentifier identifier: String,
-                   testInfo: TestInfo) -> String? {
+                   file: StaticString,
+                   line: UInt) -> String? {
         var retrievedText = ""
         
-        earlWithInfo(testInfo)
+        self.earlFromFile(file: file, line: line)
             .selectElement(with: grey_allOfMatchers([
                     grey_kindOfClass(UILabel.self),
                     grey_accessibilityID(identifier)
@@ -115,9 +127,10 @@ extension EarlGreyRobot: GameListRobot {
 
     func tapCell(withDateText dateText: String,
                  gameText: String,
-                 testInfo: TestInfo) {
+                 file: StaticString,
+                 line: UInt) {
         
-        earlWithInfo(testInfo)
+        self.earlFromFile(file: file, line: line)
             .selectElement(with: grey_kindOfClass(UITableView.self))
             .perform(self.retriveElementOfClass(UITableView.self) {
                 tableView in
@@ -125,8 +138,8 @@ extension EarlGreyRobot: GameListRobot {
                     let table = tableView,
                     let indexPaths = table.cub_allAvailableIndexPaths else {
                         XCTFail("No table or index paths",
-                                file: testInfo.file,
-                                line: testInfo.line)
+                                file: file,
+                                line: line)
                         return
                 }
                 
@@ -142,8 +155,8 @@ extension EarlGreyRobot: GameListRobot {
                            && cellGameText == gameText
                 }) else {
                     XCTFail("No index path to scroll to!",
-                            file: testInfo.file,
-                            line: testInfo.line)
+                            file: file,
+                            line: line)
                     return
                 }
 
@@ -151,7 +164,7 @@ extension EarlGreyRobot: GameListRobot {
                 table.scrollRectToVisible(cellRect, animated: true)
                 
                 // Now that the cell is visible, tap it.
-                self.earlWithInfo(testInfo)
+                self.earlFromFile(file: file, line: line)
                     .selectElement(with: grey_allOfMatchers([
                         grey_descendant(grey_accessibilityLabel(dateText)),
                         grey_descendant(grey_accessibilityLabel(gameText)),
@@ -167,8 +180,10 @@ extension EarlGreyRobot: GameListRobot {
 
 extension EarlGreyRobot: GameDetailRobot {
 
-    func goBackToList(testInfo: TestInfo) {
+    func goBackToList(file: StaticString = #file,
+                      line: UInt = #line) {
         self.tapButton(withAccessibilityLabel: LocalizedString.listTitle,
-                       testInfo: testInfo)
+                       file: file,
+                       line: line)
     }
 }

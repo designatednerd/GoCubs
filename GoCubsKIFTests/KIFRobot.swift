@@ -10,49 +10,58 @@ import KIF
 import XCTest
 @testable import GoCubs
 
-extension TestInfo {
+//MARK: - Basic Robot Conformance
 
+struct KIFRobot: BasicRobot {
+    
+    var currentTestCase: XCTestCase
+    
     private var kifTest: KIFTestCase {
-        guard let kif = self.testCase as? KIFTestCase else {
+        guard let kif = self.currentTestCase as? KIFTestCase else {
             fatalError("Trying to use a non-kif test case for KIF tests")
         }
         
         return kif
     }
     
-    fileprivate var kifTester: KIFUITestActor {
-        return self.kifTest.tester(self.file, self.line)
+    fileprivate func kifTester(file: StaticString,
+                               line: UInt) -> KIFUITestActor {
+        return self.kifTest.tester(file, line)
     }
-}
-
-//MARK: - Basic Robot Conformance
-
-struct KIFRobot: BasicRobot {
+    
+    init(testCase: XCTestCase) {
+        self.currentTestCase = testCase
+    }
     
     func tapButton(withAccessibilityLabel label: String,
-                   testInfo: TestInfo) {
-        testInfo.kifTester.tapView(withAccessibilityLabel: label, traits: UIAccessibilityTraitButton)
+                   file: StaticString,
+                   line: UInt) {
+        self.kifTester(file: file, line: line).tapView(withAccessibilityLabel: label, traits: UIAccessibilityTraitButton)
     }
     
     func checkViewIsVisible(withAccessibilityLabel label: String,
-                            testInfo: TestInfo) {
-        testInfo.kifTester.waitForView(withAccessibilityLabel: label)
+                            file: StaticString,
+                            line: UInt) {
+        self.kifTester(file: file, line: line).waitForView(withAccessibilityLabel: label)
     }
     
     func checkViewIsVisible(withAccessibilityIdentifier identifier: String,
-                            testInfo: TestInfo) {
-        testInfo.kifTester.waitForView(withAccessibilityIdentifier: identifier)
+                            file: StaticString,
+                            line: UInt) {
+        self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: identifier)
     }
     
     func checkTableViewIsVisible(withAccessibilityIdentifier identifier: String,
-                                 testInfo: TestInfo) {
-        testInfo.kifTester.waitForView(withAccessibilityIdentifier: identifier)
+                                 file: StaticString,
+                                 line: UInt) {
+        self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: identifier)
     }
     
     func labelText(forLabelWithAccessibilityIdentifier identifier: String,
-                   testInfo: TestInfo) -> String? {
+                   file: StaticString,
+                   line: UInt) -> String? {
     
-        guard let label = testInfo.kifTester.waitForView(withAccessibilityIdentifier: identifier) as? UILabel else {
+        guard let label = self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: identifier) as? UILabel else {
             return nil
         }
         
@@ -66,13 +75,14 @@ extension KIFRobot: GameListRobot {
 
     func tapCell(withDateText dateText: String,
                  gameText: String,
-                 testInfo: TestInfo) {
+                 file: StaticString,
+                 line: UInt) {
         guard
-            let tableView = testInfo.kifTester.waitForView(withAccessibilityIdentifier: AccessibilityString.gamesTableview) as? UITableView,
+            let tableView = self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: AccessibilityString.gamesTableview) as? UITableView,
             let indexPaths = tableView.cub_allAvailableIndexPaths else {
                 XCTFail("Couldn't get all index paths!",
-                        file: testInfo.file,
-                        line: testInfo.line)
+                        file: file,
+                        line: line)
                 return
         }
     
@@ -85,8 +95,8 @@ extension KIFRobot: GameListRobot {
                 let vsText = cell.vsLabel.text,
                 let cellDateText = cell.dateLabel.text else {
                     XCTFail("Couldn't find labels to compare",
-                            file: testInfo.file,
-                            line: testInfo.line)
+                            file: file,
+                            line: line)
                     return false
             }
             
@@ -94,12 +104,12 @@ extension KIFRobot: GameListRobot {
             return vsText == gameText && cellDateText == dateText
         }) else {
             XCTFail("Could not find index path to tap for \(gameText) on \(dateText)",
-                    file: testInfo.file,
-                    line: testInfo.line)
+                    file: file,
+                    line: line)
             return
         }
 
-        testInfo.kifTester.tapRow(at: indexPathToTap, in: tableView)
+        self.kifTester(file: file, line: line).tapRow(at: indexPathToTap, in: tableView)
     }
 }
 
