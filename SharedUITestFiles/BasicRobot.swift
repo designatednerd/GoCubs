@@ -9,34 +9,34 @@
 import UIKit
 import XCTest
 
-/// A structure to help pass necessary information to tests
-struct TestInfo {
-    let testCase: XCTestCase
-    let file: StaticString
-    let line: UInt
-}
-
 //MARK: - Basic Robot Protocol 
 
 protocol BasicRobot {
+    
+    var currentTestCase: XCTestCase { get }
     
     func launchApplication(file: StaticString,
                            line: UInt)
 
     func tapButton(withAccessibilityLabel label: String,
-                   testInfo: TestInfo)
+                   file: StaticString,
+                   line: UInt)
     
     func checkViewIsVisible(withAccessibilityLabel label: String,
-                            testInfo: TestInfo)
+                            file: StaticString,
+                            line: UInt)
     
     func checkViewIsVisible(withAccessibilityIdentifier identifier: String,
-                            testInfo: TestInfo)
+                            file: StaticString,
+                            line: UInt)
     
     func checkTableViewIsVisible(withAccessibilityIdentifier identifier: String,
-                                 testInfo: TestInfo)
+                                 file: StaticString,
+                                 line: UInt)
     
     func labelText(forLabelWithAccessibilityIdentifier identifier: String,
-                   testInfo: TestInfo) -> String?
+                   file: StaticString,
+                   line: UInt) -> String?
 }
 
 //MARK: - Default Implementation

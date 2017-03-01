@@ -19,24 +19,28 @@ protocol GameListRobot: BasicRobot {
     
     func tapCell(withDateText dateText: String,
                  gameText: String,
-                 testInfo: TestInfo)
+                 file: StaticString,
+                 line: UInt)
 }
 
 //MARK: - Game List Robot default implementation
 
 extension GameListRobot {
     
-    func verifyOnGameList(testInfo: TestInfo) {
+    func verifyOnGameList(file: StaticString = #file,
+                          line: UInt = #line) {
         NSLog("Verify on game list")
         self.checkTableViewIsVisible(withAccessibilityIdentifier: AccessibilityString.gamesTableview,
-                              testInfo: testInfo)
+                                     file: file,
+                                     line: line)
     }
     
     func selectRow(forMonth month: Int,
                    day: Int,
                    homeTeam: Team,
                    awayTeam: Team,
-                   testInfo: TestInfo) {
+                   file: StaticString = #file,
+                   line: UInt = #line) {
         NSLog("Select row")
         let shortMonth = DateFormatter.cub_shortMonthName(for: month)
         let dateText = "\(shortMonth) \(day)"
@@ -44,6 +48,7 @@ extension GameListRobot {
                                               homeTeam: homeTeam.rawValue)
         self.tapCell(withDateText: dateText,
                      gameText: gameText,
-                     testInfo: testInfo)
+                     file: file,
+                     line: line)
     }
 }

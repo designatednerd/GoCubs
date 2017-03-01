@@ -26,148 +26,185 @@ extension GameDetailRobot {
     //MARK: - Reusable private methods
     
     private func checkWinnerName(name: String,
-                                 testInfo: TestInfo) {
+                                 file: StaticString,
+                                 line: UInt) {
         let winnerText = self.labelText(forLabelWithAccessibilityIdentifier: AccessibilityString.winningTeamName,
-                                        testInfo: testInfo)
+                                        file: file,
+                                        line: line)
         XCTAssertEqual(winnerText,
                        name.uppercased(),
-                       file: testInfo.file,
-                       line: testInfo.line)
+                       file: file,
+                       line: line)
     }
     
     private func checkWinnerScore(score: String,
-                                  testInfo: TestInfo) {
+                                  file: StaticString,
+                                  line: UInt) {
         let winnerScoreText = self.labelText(forLabelWithAccessibilityIdentifier: AccessibilityString.winningTeamScore,
-                                             testInfo: testInfo)
+                                             file: file,
+                                             line: line)
         XCTAssertEqual(winnerScoreText,
                        score,
-                       file: testInfo.file,
-                       line: testInfo.line)
+                       file: file,
+                       line: line)
     }
     
     private func checkLoserName(name: String,
-                                testInfo: TestInfo) {
+                                file: StaticString,
+                                line: UInt) {
         let loserText = self.labelText(forLabelWithAccessibilityIdentifier: AccessibilityString.losingTeamName,
-                                       testInfo: testInfo)
+                                       file: file,
+                                       line: line)
         XCTAssertEqual(loserText,
                        name.uppercased(),
-                       file: testInfo.file,
-                       line: testInfo.line)
+                       file: file,
+                       line: line)
     }
     
     private func checkLoserScore(score: String,
-                                 testInfo: TestInfo) {
+                                 file: StaticString,
+                                 line: UInt) {
         let loserScoreText = self.labelText(forLabelWithAccessibilityIdentifier: AccessibilityString.losingTeamScore,
-                                            testInfo: testInfo)
+                                            file: file,
+                                            line: line)
         
         XCTAssertEqual(loserScoreText,
                        score,
-                       file: testInfo.file,
-                       line: testInfo.line)
+                       file: file,
+                       line: line)
     }
     
-    private func recordText(_ testInfo: TestInfo) -> String? {
+    private func recordText(file: StaticString,
+                            line: UInt) -> String? {
         return self.labelText(forLabelWithAccessibilityIdentifier: AccessibilityString.cubsRecord,
-                              testInfo: testInfo)
+                              file: file,
+                              line: line)
     }
 
     //MARK: - Public robot methods
     
-    func verifyOnGameDetails(testInfo: TestInfo) {
+    func verifyOnGameDetails(file: StaticString = #file, line: UInt = #line) {
         NSLog("Verify on game details")
         //Can we see both winning and losing team names
         self.checkViewIsVisible(withAccessibilityIdentifier: AccessibilityString.winningTeamName,
-                         testInfo: testInfo)
+                                file: file,
+                                line: line)
         self.checkViewIsVisible(withAccessibilityIdentifier: AccessibilityString.losingTeamName,
-                         testInfo: testInfo)
+                                file: file,
+                                line: line)
     }
     
     func verifyWinner(team: Team,
                       runs: Int,
-                      testInfo: TestInfo) {
+                      file: StaticString = #file,
+                      line: UInt = #line) {
         NSLog("Verify winner")
         self.checkWinnerName(name: team.rawValue,
-                             testInfo: testInfo)
+                             file: file,
+                             line: line)
         self.checkWinnerScore(score: String(runs),
-                              testInfo: testInfo)
+                              file: file,
+                              line: line)
     }
     
     func verifyLoser(team: Team,
                      runs: Int,
-                     testInfo: TestInfo) {
+                     file: StaticString = #file,
+                     line: UInt = #line) {
         NSLog("Verify loser")
         self.checkLoserName(name: team.rawValue,
-                            testInfo: testInfo)
+                            file: file,
+                            line: line)
         self.checkLoserScore(score: String(runs),
-                             testInfo: testInfo)
+                             file: file,
+                             line: line)
     }
     
     func checkFlag(forResult result: ResultType,
-                   testInfo: TestInfo) {
+                   file: StaticString = #file,
+                   line: UInt = #line) {
         NSLog("Check Flag")
         self.checkViewIsVisible(withAccessibilityLabel: result.accessibilityString,
-                                testInfo: testInfo)
+                                file: file,
+                                line: line)
     }
     
     func verifyRainoutScoreAgainst(team: Team,
-                                   testInfo: TestInfo) {
+                                   file: StaticString = #file,
+                                   line: UInt = #line) {
         NSLog("Verify rainout")
         self.checkWinnerName(name: Team.Cubs.rawValue,
-                             testInfo: testInfo)
+                             file: file,
+                             line: line)
         self.checkWinnerScore(score: LocalizedString.noResult,
-                              testInfo: testInfo)
+                              file: file,
+                              line: line)
         self.checkLoserName(name: team.rawValue,
-                            testInfo: testInfo)
+                            file: file,
+                            line: line)
         self.checkLoserScore(score: LocalizedString.noResult,
-                             testInfo: testInfo)
+                             file: file,
+                             line: line)
     }
     
     func verifyTieScoreAgainst(team: Team,
                                runs: Int,
-                          testInfo: TestInfo) {
+                               file: StaticString = #file,
+                               line: UInt = #line) {
         NSLog("Verify Tie")
         self.checkWinnerName(name: Team.Cubs.rawValue,
-                             testInfo: testInfo)
+                             file: file,
+                             line: line)
         self.checkWinnerScore(score: String(runs),
-                              testInfo: testInfo)
+                              file: file,
+                              line: line)
         self.checkLoserName(name: team.rawValue,
-                            testInfo: testInfo)
+                            file: file,
+                            line: line)
         self.checkLoserScore(score: String(runs),
-                             testInfo: testInfo)
+                             file: file,
+                             line: line)
     }
     
-    func verifyWinningAndLosingPitcherLabelsAreDisplayed(testInfo: TestInfo) {
+    func verifyWinningAndLosingPitcherLabelsAreDisplayed(file: StaticString = #file, line: UInt = #line) {
         NSLog("Verify winning and losing pitcher labels displayed")
         self.checkViewIsVisible(withAccessibilityLabel: LocalizedString.winningPitcher.uppercased(),
-                                testInfo: testInfo)
+                                file: file,
+                                line: line)
         self.checkViewIsVisible(withAccessibilityLabel: LocalizedString.losingPitcher.uppercased(),
-                                testInfo: testInfo)
+                                file: file,
+                                line: line)
     }
     
     func verifyCubsAndOpponentPitcherLabelsAreDisplayed(opposingTeam: Team,
-                                                        testInfo: TestInfo) {
+                                                        file: StaticString = #file,
+                                                        line: UInt = #line) {
         NSLog("Verify cubs and opponent pitchers displayed")
         let cubsPitcher = LocalizedString.pitcher(for: Team.Cubs.rawValue).uppercased()
         self.checkViewIsVisible(withAccessibilityLabel: cubsPitcher,
-                                testInfo: testInfo)
+                                file: file,
+                                line: line)
         let opponentPitcher = LocalizedString.pitcher(for: opposingTeam.rawValue).uppercased()
         self.checkViewIsVisible(withAccessibilityLabel: opponentPitcher,
-                                testInfo: testInfo)
+                                file: file,
+                                line: line)
     }
     
-    func goBackToList(testInfo: TestInfo) {
+    func goBackToList(file: StaticString = #file, line: UInt = #line) {
         NSLog("Go Back To List")
         self.tapButton(withAccessibilityLabel: "Back",
-                       testInfo: testInfo)
+                       file: file,
+                       line: line)
     }
     
     func verifyWasSeriesWin(_ wasWin: Bool,
-                            testInfo: TestInfo) {
+                            file: StaticString = #file,
+                            line: UInt = #line) {
         NSLog("Verify was series win")
-        guard let recordText = self.recordText(testInfo) else {
+        guard let recordText = self.recordText(file: file, line: line) else {
             XCTFail("Couldn't get record text",
-                    file: testInfo.file,
-                    line: testInfo.line)
+                    file: file,
+                    line: line)
             return
         }
         
@@ -189,45 +226,47 @@ extension GameDetailRobot {
         
         if wasWin {
             XCTAssertTrue(recordText.contains(winSeriesString),
-                          file: testInfo.file,
-                          line: testInfo.line)
+                          file: file,
+                          line: line)
         } else {
             XCTAssertFalse(recordText.contains(winSeriesString),
-                           file: testInfo.file,
-                           line: testInfo.line)
+                           file: file,
+                           line: line)
         }
     }
     
     func verifyPortionOfYear(_ portion: PortionOfYear,
-                            testInfo: TestInfo) {
+                             file: StaticString = #file,
+                             line: UInt = #line) {
         NSLog("Verify portion of year")
-        guard let recordText = self.recordText(testInfo) else {
+        guard let recordText = self.recordText(file: file, line: line) else {
             XCTFail("Could not get record text!",
-                    file: testInfo.file,
-                    line: testInfo.line)
+                    file: file,
+                    line: line)
             return
         }
         
         XCTAssertTrue(recordText.contains(portion.localizedName),
-                      file: testInfo.file,
-                      line: testInfo.line)
+                      file: file,
+                      line: line)
     }
     
     func verifyCubsRecord(wins: Int,
                           losses: Int,
-                          testInfo: TestInfo) {
+                          file: StaticString = #file,
+                          line: UInt = #line) {
         NSLog("Verify Cubs Record")
-        guard let recordText = self.recordText(testInfo) else {
+        guard let recordText = self.recordText(file: file, line: line) else {
             XCTFail("Could not get record text!",
-                    file: testInfo.file,
-                    line: testInfo.line)
+                    file: file,
+                    line: line)
             return
         }
         
         let expectedRecord = LocalizedString.recordString(wins: wins, losses: losses)
         XCTAssertTrue(recordText.contains(expectedRecord),
-                      file: testInfo.file,
-                      line: testInfo.line)
+                      file: file,
+                      line: line)
     }
 }
 
