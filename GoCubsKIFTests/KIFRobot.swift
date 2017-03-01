@@ -115,4 +115,4 @@ extension KIFRobot: GameListRobot {
 
 //MARK: - Game Detail Robot Conformance
 
-extension KIFRobot: GameDetailRobot { }
+extension KIFRobot: GameDetailRobot { /* mix-in */ }
