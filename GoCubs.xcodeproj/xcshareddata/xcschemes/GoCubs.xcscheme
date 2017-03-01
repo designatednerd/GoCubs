@@ -43,9 +43,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "331C5D601BCCACBA00BFD183"
-               BuildableName = "GoCubsXCUITests.xctest"
-               BlueprintName = "GoCubsXCUITests"
+               BlueprintIdentifier = "9B4330E31E6237110050F90E"
+               BuildableName = "GoCubsEarlGreyTests.xctest"
+               BlueprintName = "GoCubsEarlGreyTests"
                ReferencedContainer = "container:GoCubs.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -63,9 +63,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9B4330E31E6237110050F90E"
-               BuildableName = "GoCubsEarlGreyTests.xctest"
-               BlueprintName = "GoCubsEarlGreyTests"
+               BlueprintIdentifier = "331C5D601BCCACBA00BFD183"
+               BuildableName = "GoCubsXCUITests.xctest"
+               BlueprintName = "GoCubsXCUITests"
                ReferencedContainer = "container:GoCubs.xcodeproj">
             </BuildableReference>
          </TestableReference>
