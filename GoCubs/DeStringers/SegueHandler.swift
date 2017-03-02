@@ -1,5 +1,5 @@
 //
-//  SeugueHandler.swift
+//  SegueHandler.swift
 //  GoCubs
 //
 //  Created by Ellen Shapiro on 10/11/15.
