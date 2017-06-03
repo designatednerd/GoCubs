@@ -21,107 +21,128 @@ extension RobotTests where Self: XCTestCase {
     
     func verifyAllOfChicagoWasNotDreaming() {
         //November 2, 2016: HOLY COW! Cubs won game 7 of the WORLD SERIES 8-7.
-        self.listRobot.selectRow(forMonth: 11,
-                                 day: 2,
-                                 homeTeam: .Indians,
-                                 awayTeam: .Cubs)
-        self.detailRobot.verifyWinner(team: .Cubs,
-                                      runs: 8)
-        self.detailRobot.verifyLoser(team: .Indians,
-                                     runs: 7)
-        self.detailRobot.verifyWinningAndLosingPitcherLabelsAreDisplayed()
-        self.detailRobot.verifyCubsRecord(wins: 4,
-                                          losses: 3)
-        self.detailRobot.verifyPortionOfYear(.worldSeries)
-        self.detailRobot.verifyWasSeriesWin(true)
+        self.listRobot
+            .selectRow(forMonth: 11,
+                       day: 2,
+                       homeTeam: .Indians,
+                       awayTeam: .Cubs)
+        
+        self.detailRobot
+            .verifyWinner(team: .Cubs,
+                          runs: 8)
+            .verifyLoser(team: .Indians,
+                         runs: 7)
+            .verifyWinningAndLosingPitcherLabelsAreDisplayed()
+            .verifyCubsRecord(wins: 4,
+                              losses: 3)
+            .verifyPortionOfYear(.worldSeries)
+            .verifyWasSeriesWin(true)
     }
     
     func verifyLeagueChampionshipSeriesWin() {
         //October 19: Cubs beat the Dodgers on the road 10-2, tying the NLCS 2-2
-        self.listRobot.selectRow(forMonth: 10,
-                                 day: 19,
-                                 homeTeam: .Dodgers,
-                                 awayTeam: .Cubs)
-        self.detailRobot.verifyWinner(team: .Cubs,
-                                      runs: 10)
-        self.detailRobot.verifyLoser(team: .Dodgers,
-                                     runs: 2)
-        self.detailRobot.verifyWinningAndLosingPitcherLabelsAreDisplayed()
-        self.detailRobot.checkFlag(forResult: .win)
-        self.detailRobot.verifyCubsRecord(wins: 2,
-                                          losses: 2)
-        self.detailRobot.verifyPortionOfYear(.leagueChampionshipSeries)
+        self.listRobot
+            .selectRow(forMonth: 10,
+                       day: 19,
+                       homeTeam: .Dodgers,
+                       awayTeam: .Cubs)
+        
+        self.detailRobot
+            .verifyWinner(team: .Cubs,
+                          runs: 10)
+            .verifyLoser(team: .Dodgers,
+                         runs: 2)
+            .verifyWinningAndLosingPitcherLabelsAreDisplayed()
+            .checkFlag(forResult: .win)
+            .verifyCubsRecord(wins: 2,
+                              losses: 2)
+            .verifyPortionOfYear(.leagueChampionshipSeries)
     }
     
     func verifyDivisionSeriesLoss() {
         //October 10: Cubs lost to the Giants on the road 6-5, bringing the NLDS to 2-1
-        self.listRobot.selectRow(forMonth: 10,
-                                 day: 10,
-                                 homeTeam: .Giants,
-                                 awayTeam: .Cubs)
-        self.detailRobot.verifyWinner(team: .Giants,
-                                      runs: 6)
-        self.detailRobot.verifyLoser(team: .Cubs,
-                                     runs: 5)
-        self.detailRobot.verifyWinningAndLosingPitcherLabelsAreDisplayed()
-        self.detailRobot.checkFlag(forResult: .loss)
-        self.detailRobot.verifyCubsRecord(wins: 2,
-                                          losses: 1)
-        self.detailRobot.verifyPortionOfYear(.divisionSeries)
+        self.listRobot
+            .selectRow(forMonth: 10,
+                       day: 10,
+                       homeTeam: .Giants,
+                       awayTeam: .Cubs)
+        
+        self.detailRobot
+            .verifyWinner(team: .Giants,
+                          runs: 6)
+            .verifyLoser(team: .Cubs,
+                         runs: 5)
+            .verifyWinningAndLosingPitcherLabelsAreDisplayed()
+            .checkFlag(forResult: .loss)
+            .verifyCubsRecord(wins: 2,
+                              losses: 1)
+            .verifyPortionOfYear(.divisionSeries)
     }
     
     func verifyTheFirstRegularSeasonTieInElevenYears() {
         //September 29: Cubs and the pirates tied(!) on the road 1-1
-        self.listRobot.selectRow(forMonth: 9,
-                                 day: 29,
-                                 homeTeam: .Pirates,
-                                 awayTeam: .Cubs)
-        self.detailRobot.verifyTieScoreAgainst(team: .Pirates,
-                                               runs: 1)
-        self.detailRobot.verifyCubsAndOpponentPitcherLabelsAreDisplayed(opposingTeam: .Pirates)
-        self.detailRobot.checkFlag(forResult: .tie)
-        self.detailRobot.verifyPortionOfYear(.regularSeason)
+        self.listRobot
+            .selectRow(forMonth: 9,
+                       day: 29,
+                       homeTeam: .Pirates,
+                       awayTeam: .Cubs)
+        
+        self.detailRobot
+            .verifyTieScoreAgainst(team: .Pirates,
+                                   runs: 1)
+            .verifyCubsAndOpponentPitcherLabelsAreDisplayed(opposingTeam: .Pirates)
+            .checkFlag(forResult: .tie)
+            .verifyPortionOfYear(.regularSeason)
     }
     
     func verifyKnownRegularSeasonWin() {
         //August 7: Cubs beat the Athletics on the road, 3-1
-        self.listRobot.selectRow(forMonth: 8,
-                                 day: 7,
-                                 homeTeam: .Athletics,
-                                 awayTeam: .Cubs)
-        self.detailRobot.verifyWinner(team: .Cubs,
-                                      runs: 3)
-        self.detailRobot.verifyLoser(team: .Athletics,
-                                     runs: 1)
-        self.detailRobot.verifyWinningAndLosingPitcherLabelsAreDisplayed()
-        self.detailRobot.checkFlag(forResult: .win)
-        self.detailRobot.verifyPortionOfYear(.regularSeason)
+        self.listRobot
+            .selectRow(forMonth: 8,
+                       day: 7,
+                       homeTeam: .Athletics,
+                       awayTeam: .Cubs)
+        
+        self.detailRobot
+            .verifyWinner(team: .Cubs,
+                          runs: 3)
+            .verifyLoser(team: .Athletics,
+                         runs: 1)
+            .verifyWinningAndLosingPitcherLabelsAreDisplayed()
+            .checkFlag(forResult: .win)
+            .verifyPortionOfYear(.regularSeason)
     }
     
     func verifyKnownRegularSeasonLoss() {
         //July 26: Cubs lost to the White Sox on the road 3-0
-        self.listRobot.selectRow(forMonth: 7,
-                                 day: 26,
-                                 homeTeam: .WhiteSox,
-                                 awayTeam: .Cubs)
-        self.detailRobot.verifyWinner(team: .WhiteSox,
-                                      runs: 3)
-        self.detailRobot.verifyLoser(team: .Cubs,
-                                     runs: 0)
-        self.detailRobot.verifyWinningAndLosingPitcherLabelsAreDisplayed()
-        self.detailRobot.checkFlag(forResult: .loss)
-        self.detailRobot.verifyPortionOfYear(.regularSeason)
+        self.listRobot
+            .selectRow(forMonth: 7,
+                       day: 26,
+                       homeTeam: .WhiteSox,
+                       awayTeam: .Cubs)
+        
+        self.detailRobot
+            .verifyWinner(team: .WhiteSox,
+                          runs: 3)
+            .verifyLoser(team: .Cubs,
+                         runs: 0)
+            .verifyWinningAndLosingPitcherLabelsAreDisplayed()
+            .checkFlag(forResult: .loss)
+            .verifyPortionOfYear(.regularSeason)
     }
     
     func verifyKnownRegularSeasonPostponement() {
         //May 9: Padres and Cubs were rained out at home
-        self.listRobot.selectRow(forMonth: 5,
-                                 day: 9,
-                                 homeTeam: .Cubs,
-                                 awayTeam: .Padres)
-        self.detailRobot.verifyRainoutScoreAgainst(team: .Padres)
-        self.detailRobot.verifyCubsAndOpponentPitcherLabelsAreDisplayed(opposingTeam: .Padres)
-        self.detailRobot.checkFlag(forResult: .postponed)
-        self.detailRobot.verifyPortionOfYear(.regularSeason)
+        self.listRobot
+            .selectRow(forMonth: 5,
+                       day: 9,
+                       homeTeam: .Cubs,
+                       awayTeam: .Padres)
+        
+        self.detailRobot
+            .verifyRainoutScoreAgainst(team: .Padres)
+            .verifyCubsAndOpponentPitcherLabelsAreDisplayed(opposingTeam: .Padres)
+            .checkFlag(forResult: .postponed)
+            .verifyPortionOfYear(.regularSeason)
     }
 }
