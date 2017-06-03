@@ -73,17 +73,18 @@ struct KIFRobot: BasicRobot {
 
 extension KIFRobot: GameListRobot {
 
+    @discardableResult
     func tapCell(withDateText dateText: String,
                  gameText: String,
                  file: StaticString,
-                 line: UInt) {
+                 line: UInt) -> GameListRobot {
         guard
             let tableView = self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: AccessibilityString.gamesTableview) as? UITableView,
             let indexPaths = tableView.cub_allAvailableIndexPaths else {
                 XCTFail("Couldn't get all index paths!",
                         file: file,
                         line: line)
-                return
+                return self
         }
     
         //Figure out which one we need to tap.
@@ -106,10 +107,11 @@ extension KIFRobot: GameListRobot {
             XCTFail("Could not find index path to tap for \(gameText) on \(dateText)",
                     file: file,
                     line: line)
-            return
+            return self 
         }
 
         self.kifTester(file: file, line: line).tapRow(at: indexPathToTap, in: tableView)
+        return self 
     }
 }
 

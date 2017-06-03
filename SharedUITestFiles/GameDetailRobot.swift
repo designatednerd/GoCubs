@@ -83,7 +83,21 @@ extension GameDetailRobot {
 
     //MARK: - Public robot methods
     
-    func verifyOnGameDetails(file: StaticString = #file, line: UInt = #line) {
+    //MARK: Actions
+    
+    @discardableResult
+    func goBackToList(file: StaticString = #file, line: UInt = #line) -> GameDetailRobot {
+        NSLog("Go Back To List")
+        self.tapButton(withAccessibilityLabel: "Back",
+                       file: file,
+                       line: line)
+        return self
+    }
+    
+    //MARK: Verifiers
+    
+    @discardableResult
+    func verifyOnGameDetails(file: StaticString = #file, line: UInt = #line) -> GameDetailRobot {
         NSLog("Verify on game details")
         //Can we see both winning and losing team names
         self.checkViewIsVisible(withAccessibilityIdentifier: AccessibilityString.winningTeamName,
@@ -92,12 +106,14 @@ extension GameDetailRobot {
         self.checkViewIsVisible(withAccessibilityIdentifier: AccessibilityString.losingTeamName,
                                 file: file,
                                 line: line)
+        return self
     }
-    
+
+    @discardableResult
     func verifyWinner(team: Team,
                       runs: Int,
                       file: StaticString = #file,
-                      line: UInt = #line) {
+                      line: UInt = #line) -> GameDetailRobot {
         NSLog("Verify winner")
         self.checkWinnerName(name: team.rawValue,
                              file: file,
@@ -105,12 +121,14 @@ extension GameDetailRobot {
         self.checkWinnerScore(score: String(runs),
                               file: file,
                               line: line)
+        return self
     }
     
+    @discardableResult
     func verifyLoser(team: Team,
                      runs: Int,
                      file: StaticString = #file,
-                     line: UInt = #line) {
+                     line: UInt = #line) -> GameDetailRobot {
         NSLog("Verify loser")
         self.checkLoserName(name: team.rawValue,
                             file: file,
@@ -118,20 +136,24 @@ extension GameDetailRobot {
         self.checkLoserScore(score: String(runs),
                              file: file,
                              line: line)
+        return self
     }
     
+    @discardableResult
     func checkFlag(forResult result: ResultType,
                    file: StaticString = #file,
-                   line: UInt = #line) {
+                   line: UInt = #line) -> GameDetailRobot {
         NSLog("Check Flag")
         self.checkViewIsVisible(withAccessibilityLabel: result.accessibilityString,
                                 file: file,
                                 line: line)
+        return self
     }
     
+    @discardableResult
     func verifyRainoutScoreAgainst(team: Team,
                                    file: StaticString = #file,
-                                   line: UInt = #line) {
+                                   line: UInt = #line) -> GameDetailRobot {
         NSLog("Verify rainout")
         self.checkWinnerName(name: Team.Cubs.rawValue,
                              file: file,
@@ -145,12 +167,14 @@ extension GameDetailRobot {
         self.checkLoserScore(score: LocalizedString.noResult,
                              file: file,
                              line: line)
+        return self
     }
     
+    @discardableResult
     func verifyTieScoreAgainst(team: Team,
                                runs: Int,
                                file: StaticString = #file,
-                               line: UInt = #line) {
+                               line: UInt = #line) -> GameDetailRobot {
         NSLog("Verify Tie")
         self.checkWinnerName(name: Team.Cubs.rawValue,
                              file: file,
@@ -164,9 +188,12 @@ extension GameDetailRobot {
         self.checkLoserScore(score: String(runs),
                              file: file,
                              line: line)
+        
+        return self
     }
     
-    func verifyWinningAndLosingPitcherLabelsAreDisplayed(file: StaticString = #file, line: UInt = #line) {
+    @discardableResult
+    func verifyWinningAndLosingPitcherLabelsAreDisplayed(file: StaticString = #file, line: UInt = #line) -> GameDetailRobot {
         NSLog("Verify winning and losing pitcher labels displayed")
         self.checkViewIsVisible(withAccessibilityLabel: LocalizedString.winningPitcher.uppercased(),
                                 file: file,
@@ -174,11 +201,13 @@ extension GameDetailRobot {
         self.checkViewIsVisible(withAccessibilityLabel: LocalizedString.losingPitcher.uppercased(),
                                 file: file,
                                 line: line)
+        return self
     }
     
+    @discardableResult
     func verifyCubsAndOpponentPitcherLabelsAreDisplayed(opposingTeam: Team,
                                                         file: StaticString = #file,
-                                                        line: UInt = #line) {
+                                                        line: UInt = #line) -> GameDetailRobot {
         NSLog("Verify cubs and opponent pitchers displayed")
         let cubsPitcher = LocalizedString.pitcher(for: Team.Cubs.rawValue).uppercased()
         self.checkViewIsVisible(withAccessibilityLabel: cubsPitcher,
@@ -188,24 +217,19 @@ extension GameDetailRobot {
         self.checkViewIsVisible(withAccessibilityLabel: opponentPitcher,
                                 file: file,
                                 line: line)
+        return self
     }
     
-    func goBackToList(file: StaticString = #file, line: UInt = #line) {
-        NSLog("Go Back To List")
-        self.tapButton(withAccessibilityLabel: "Back",
-                       file: file,
-                       line: line)
-    }
-    
+    @discardableResult
     func verifyWasSeriesWin(_ wasWin: Bool,
                             file: StaticString = #file,
-                            line: UInt = #line) {
+                            line: UInt = #line) -> GameDetailRobot {
         NSLog("Verify was series win")
         guard let recordText = self.recordText(file: file, line: line) else {
             XCTFail("Couldn't get record text",
                     file: file,
                     line: line)
-            return
+            return self
         }
         
         let winFormat = LocalizedString.winSeriesFormat
@@ -233,40 +257,47 @@ extension GameDetailRobot {
                            file: file,
                            line: line)
         }
+        
+        return self
     }
     
+    @discardableResult
     func verifyPortionOfYear(_ portion: PortionOfYear,
                              file: StaticString = #file,
-                             line: UInt = #line) {
+                             line: UInt = #line) -> GameDetailRobot {
         NSLog("Verify portion of year")
         guard let recordText = self.recordText(file: file, line: line) else {
             XCTFail("Could not get record text!",
                     file: file,
                     line: line)
-            return
+            return self
         }
         
         XCTAssertTrue(recordText.contains(portion.localizedName),
                       file: file,
                       line: line)
+        
+        return self
     }
     
+    @discardableResult
     func verifyCubsRecord(wins: Int,
                           losses: Int,
                           file: StaticString = #file,
-                          line: UInt = #line) {
+                          line: UInt = #line) -> GameDetailRobot {
         NSLog("Verify Cubs Record")
         guard let recordText = self.recordText(file: file, line: line) else {
             XCTFail("Could not get record text!",
                     file: file,
                     line: line)
-            return
+            return self
         }
         
         let expectedRecord = LocalizedString.recordString(wins: wins, losses: losses)
         XCTAssertTrue(recordText.contains(expectedRecord),
                       file: file,
                       line: line)
+        return self 
     }
 }
 

@@ -125,10 +125,11 @@ extension EarlGreyRobot: BasicRobot {
 
 extension EarlGreyRobot: GameListRobot {
 
+    @discardableResult
     func tapCell(withDateText dateText: String,
                  gameText: String,
                  file: StaticString,
-                 line: UInt) {
+                 line: UInt) -> GameListRobot {
         
         self.earlFromFile(file: file, line: line)
             .selectElement(with: grey_kindOfClass(UITableView.self))
@@ -173,6 +174,8 @@ extension EarlGreyRobot: GameListRobot {
                     ]))
                     .perform(grey_tap())
             })
+        
+        return self
     }
 }
 
@@ -180,10 +183,13 @@ extension EarlGreyRobot: GameListRobot {
 
 extension EarlGreyRobot: GameDetailRobot {
 
+    @discardableResult
     func goBackToList(file: StaticString = #file,
-                      line: UInt = #line) {
+                      line: UInt = #line) -> GameDetailRobot {
         self.tapButton(withAccessibilityLabel: LocalizedString.listTitle,
                        file: file,
                        line: line)
+        
+        return self 
     }
 }

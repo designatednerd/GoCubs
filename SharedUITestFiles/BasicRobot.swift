@@ -15,8 +15,9 @@ protocol BasicRobot {
     
     var currentTestCase: XCTestCase { get }
     
+    @discardableResult
     func launchApplication(file: StaticString,
-                           line: UInt)
+                           line: UInt) -> BasicRobot
 
     func tapButton(withAccessibilityLabel label: String,
                    file: StaticString,
@@ -43,8 +44,10 @@ protocol BasicRobot {
 
 extension BasicRobot {
     
+    @discardableResult
     func launchApplication(file: StaticString = #file,
-                           line: UInt = #line) {
-        //Default: No-op
+                           line: UInt = #line) -> BasicRobot {
+        //Default: Don't do anything
+        return self
     }
 }

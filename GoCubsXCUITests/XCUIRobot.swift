@@ -99,10 +99,11 @@ struct XCUIRobot: BasicRobot {
 
 extension XCUIRobot: GameListRobot {
 
+    @discardableResult
     func tapCell(withDateText dateText: String,
                  gameText: String,
                  file: StaticString,
-                 line: UInt) {
+                 line: UInt) -> GameListRobot {
         let app = XCUIApplication()
         let tableElement = app.tables[AccessibilityString.gamesTableview]
         
@@ -119,6 +120,8 @@ extension XCUIRobot: GameListRobot {
         self.currentTestCase.waitForExpectations(timeout: self.waitTimeout)
         
         cellElement.tap()
+        
+        return self 
     }
 }
 
