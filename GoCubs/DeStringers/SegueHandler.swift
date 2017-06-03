@@ -50,7 +50,7 @@ SegueIdentifier.RawValue == String { //The raw type of the SegueIdentifier must 
         guard let identifierString = segue.identifier,
             let identifier = SegueIdentifier(rawValue: identifierString) else {
                 //Fatal error since this will certainly crash on prod anyway if we try it, so let's at least be clear about it.
-                fatalError("No segue found for identifier \(segue.identifier) in view controller \(type(of: self))")
+                fatalError("No segue found for identifier \(String(describing: segue.identifier)) in view controller \(type(of: self))")
         }
         
         return identifier

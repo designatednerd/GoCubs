@@ -40,7 +40,7 @@ struct XCUIRobot: BasicRobot {
                                          evaluatedWith: buttonElement)
         self.currentTestCase.waitForExpectations(timeout: 2) {
             error in
-            XCTFail("Could not find button with accessibility label \(label). Error: \(error)",
+            XCTFail("Could not find button with accessibility label \(label). Error: \(String(describing: error))",
                     file: file,
                     line: line)
         }
