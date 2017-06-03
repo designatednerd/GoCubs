@@ -140,7 +140,7 @@ extension GameDetailRobot {
     }
     
     @discardableResult
-    func checkFlag(forResult result: ResultType,
+    func verifyFlag(showsResult result: ResultType,
                    file: StaticString = #file,
                    line: UInt = #line) -> GameDetailRobot {
         NSLog("Check Flag")

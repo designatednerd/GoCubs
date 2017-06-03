@@ -53,7 +53,7 @@ extension RobotTests where Self: XCTestCase {
             .verifyLoser(team: .Dodgers,
                          runs: 2)
             .verifyWinningAndLosingPitcherLabelsAreDisplayed()
-            .checkFlag(forResult: .win)
+            .verifyFlag(showsResult: .win)
             .verifyCubsRecord(wins: 2,
                               losses: 2)
             .verifyPortionOfYear(.leagueChampionshipSeries)
@@ -73,7 +73,7 @@ extension RobotTests where Self: XCTestCase {
             .verifyLoser(team: .Cubs,
                          runs: 5)
             .verifyWinningAndLosingPitcherLabelsAreDisplayed()
-            .checkFlag(forResult: .loss)
+            .verifyFlag(showsResult: .loss)
             .verifyCubsRecord(wins: 2,
                               losses: 1)
             .verifyPortionOfYear(.divisionSeries)
@@ -91,7 +91,7 @@ extension RobotTests where Self: XCTestCase {
             .verifyTieScoreAgainst(team: .Pirates,
                                    runs: 1)
             .verifyCubsAndOpponentPitcherLabelsAreDisplayed(opposingTeam: .Pirates)
-            .checkFlag(forResult: .tie)
+            .verifyFlag(showsResult: .tie)
             .verifyPortionOfYear(.regularSeason)
     }
     
@@ -109,7 +109,7 @@ extension RobotTests where Self: XCTestCase {
             .verifyLoser(team: .Athletics,
                          runs: 1)
             .verifyWinningAndLosingPitcherLabelsAreDisplayed()
-            .checkFlag(forResult: .win)
+            .verifyFlag(showsResult: .win)
             .verifyPortionOfYear(.regularSeason)
     }
     
@@ -127,7 +127,7 @@ extension RobotTests where Self: XCTestCase {
             .verifyLoser(team: .Cubs,
                          runs: 0)
             .verifyWinningAndLosingPitcherLabelsAreDisplayed()
-            .checkFlag(forResult: .loss)
+            .verifyFlag(showsResult: .loss)
             .verifyPortionOfYear(.regularSeason)
     }
     
@@ -142,7 +142,7 @@ extension RobotTests where Self: XCTestCase {
         self.detailRobot
             .verifyRainoutScoreAgainst(team: .Padres)
             .verifyCubsAndOpponentPitcherLabelsAreDisplayed(opposingTeam: .Padres)
-            .checkFlag(forResult: .postponed)
+            .verifyFlag(showsResult: .postponed)
             .verifyPortionOfYear(.regularSeason)
     }
 }
