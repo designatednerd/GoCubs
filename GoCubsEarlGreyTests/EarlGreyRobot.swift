@@ -79,26 +79,27 @@ extension EarlGreyRobot: BasicRobot {
             .assert(grey_sufficientlyVisible())
     }
     
-    func checkViewIsVisible(withAccessibilityIdentifier identifier: String,
+    func checkViewIsVisible(withAccessibilityIdentifier identifier: AccessibilityIdentifier,
                             file: StaticString,
                             line: UInt) {
         self.earlFromFile(file: file, line: line)
-            .selectElement(with: grey_accessibilityID(identifier))
+            .selectElement(with: grey_accessibilityID(identifier.rawValue))
             .assert(grey_sufficientlyVisible())
     }
     
-    func checkTableViewIsVisible(withAccessibilityIdentifier identifier: String,
+    func checkTableViewIsVisible(withAccessibilityIdentifier identifier: AccessibilityIdentifier,
                                  file: StaticString,
                                  line: UInt) {
         self.earlFromFile(file: file, line: line)
             .selectElement(with: grey_allOfMatchers([
+                    grey_accessibilityID(identifier.rawValue),
                     grey_kindOfClass(UITableView.self),
                     grey_sufficientlyVisible(),
                 ]))
             .assert(grey_sufficientlyVisible())
     }
     
-    func labelText(forLabelWithAccessibilityIdentifier identifier: String,
+    func labelText(forLabelWithAccessibilityIdentifier identifier: AccessibilityIdentifier,
                    file: StaticString,
                    line: UInt) -> String? {
         var retrievedText = ""
@@ -106,7 +107,7 @@ extension EarlGreyRobot: BasicRobot {
         self.earlFromFile(file: file, line: line)
             .selectElement(with: grey_allOfMatchers([
                     grey_kindOfClass(UILabel.self),
-                    grey_accessibilityID(identifier)
+                    grey_accessibilityID(identifier.rawValue)
                 ]))
             .perform(self.getLabelText(withBlock: {
                 text in

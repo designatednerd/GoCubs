@@ -28,7 +28,7 @@ extension GameDetailRobot {
     private func checkWinnerName(name: String,
                                  file: StaticString,
                                  line: UInt) {
-        let winnerText = self.labelText(forLabelWithAccessibilityIdentifier: AccessibilityString.winningTeamName,
+        let winnerText = self.labelText(forLabelWithAccessibilityIdentifier: .winning_team_name,
                                         file: file,
                                         line: line)
         XCTAssertEqual(winnerText,
@@ -40,7 +40,7 @@ extension GameDetailRobot {
     private func checkWinnerScore(score: String,
                                   file: StaticString,
                                   line: UInt) {
-        let winnerScoreText = self.labelText(forLabelWithAccessibilityIdentifier: AccessibilityString.winningTeamScore,
+        let winnerScoreText = self.labelText(forLabelWithAccessibilityIdentifier: .winning_score,
                                              file: file,
                                              line: line)
         XCTAssertEqual(winnerScoreText,
@@ -52,7 +52,7 @@ extension GameDetailRobot {
     private func checkLoserName(name: String,
                                 file: StaticString,
                                 line: UInt) {
-        let loserText = self.labelText(forLabelWithAccessibilityIdentifier: AccessibilityString.losingTeamName,
+        let loserText = self.labelText(forLabelWithAccessibilityIdentifier: .losing_team_name,
                                        file: file,
                                        line: line)
         XCTAssertEqual(loserText,
@@ -64,7 +64,7 @@ extension GameDetailRobot {
     private func checkLoserScore(score: String,
                                  file: StaticString,
                                  line: UInt) {
-        let loserScoreText = self.labelText(forLabelWithAccessibilityIdentifier: AccessibilityString.losingTeamScore,
+        let loserScoreText = self.labelText(forLabelWithAccessibilityIdentifier: .losing_score,
                                             file: file,
                                             line: line)
         
@@ -76,7 +76,7 @@ extension GameDetailRobot {
     
     private func recordText(file: StaticString,
                             line: UInt) -> String? {
-        return self.labelText(forLabelWithAccessibilityIdentifier: AccessibilityString.cubsRecord,
+        return self.labelText(forLabelWithAccessibilityIdentifier: .cubs_record,
                               file: file,
                               line: line)
     }
@@ -100,10 +100,10 @@ extension GameDetailRobot {
     func verifyOnGameDetails(file: StaticString = #file, line: UInt = #line) -> GameDetailRobot {
         NSLog("Verify on game details")
         //Can we see both winning and losing team names
-        self.checkViewIsVisible(withAccessibilityIdentifier: AccessibilityString.winningTeamName,
+        self.checkViewIsVisible(withAccessibilityIdentifier: .winning_team_name,
                                 file: file,
                                 line: line)
-        self.checkViewIsVisible(withAccessibilityIdentifier: AccessibilityString.losingTeamName,
+        self.checkViewIsVisible(withAccessibilityIdentifier: .losing_team_name,
                                 file: file,
                                 line: line)
         return self

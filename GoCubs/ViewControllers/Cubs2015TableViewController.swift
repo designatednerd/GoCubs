@@ -37,7 +37,7 @@ class Cubs2015TableViewController: UITableViewController {
     
     fileprivate func localizeAndAccessibilize() {
         self.title = LocalizedString.listTitle
-        self.tableView.accessibilityIdentifier = AccessibilityString.gamesTableview
+        self.tableView.accessibilityIdentifier = AccessibilityIdentifier.games_table_view.rawValue
     }
     
     // MARK: - Segues

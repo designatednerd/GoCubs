@@ -53,13 +53,13 @@ enum ResultType: String {
     var accessibilityString: String {
         switch self {
         case .win:
-            return AccessibilityString.cubsWin
+            return AccessibilityLabel.cubsWin
         case .loss:
-            return AccessibilityString.cubsLose
+            return AccessibilityLabel.cubsLose
         case .tie:
-            return AccessibilityString.tieGame
+            return AccessibilityLabel.tieGame
         case .postponed:
-            return AccessibilityString.postponed
+            return AccessibilityLabel.postponed
         }
     }
     

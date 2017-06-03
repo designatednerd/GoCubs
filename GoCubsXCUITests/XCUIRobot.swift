@@ -59,33 +59,33 @@ struct XCUIRobot: BasicRobot {
         self.currentTestCase.waitForExpectations(timeout: self.waitTimeout)
     }
     
-    func checkViewIsVisible(withAccessibilityIdentifier identifier: String,
+    func checkViewIsVisible(withAccessibilityIdentifier identifier: AccessibilityIdentifier,
                             file: StaticString,
                             line: UInt) {
         let app = XCUIApplication()
-        let labelElement = app.staticTexts[identifier]
+        let labelElement = app.staticTexts[identifier.rawValue]
         
         self.currentTestCase.expectation(for: self.existsPredicate,
                                       evaluatedWith: labelElement)
         self.currentTestCase.waitForExpectations(timeout: self.waitTimeout)
     }
     
-    func checkTableViewIsVisible(withAccessibilityIdentifier identifier: String,
+    func checkTableViewIsVisible(withAccessibilityIdentifier identifier: AccessibilityIdentifier,
                                  file: StaticString,
                                  line: UInt) {
         let app = XCUIApplication()
-        let tableElement = app.tables[identifier]
+        let tableElement = app.tables[identifier.rawValue]
         
         self.currentTestCase.expectation(for: self.existsPredicate,
                                       evaluatedWith: tableElement)
         self.currentTestCase.waitForExpectations(timeout: self.waitTimeout)
     }
     
-    func labelText(forLabelWithAccessibilityIdentifier identifier: String,
+    func labelText(forLabelWithAccessibilityIdentifier identifier: AccessibilityIdentifier,
                    file: StaticString,
                    line: UInt) -> String? {
         let app = XCUIApplication()
-        let labelElement = app.staticTexts[identifier]
+        let labelElement = app.staticTexts[identifier.rawValue]
         
         self.currentTestCase.expectation(for: self.existsPredicate,
                                       evaluatedWith: labelElement)
@@ -105,7 +105,7 @@ extension XCUIRobot: GameListRobot {
                  file: StaticString,
                  line: UInt) -> GameListRobot {
         let app = XCUIApplication()
-        let tableElement = app.tables[AccessibilityString.gamesTableview]
+        let tableElement = app.tables[AccessibilityIdentifier.games_table_view.rawValue]
         
         self.currentTestCase.expectation(for: self.existsPredicate,
                                       evaluatedWith: tableElement)

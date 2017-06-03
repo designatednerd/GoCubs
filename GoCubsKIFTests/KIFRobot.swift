@@ -45,23 +45,23 @@ struct KIFRobot: BasicRobot {
         self.kifTester(file: file, line: line).waitForView(withAccessibilityLabel: label)
     }
     
-    func checkViewIsVisible(withAccessibilityIdentifier identifier: String,
+    func checkViewIsVisible(withAccessibilityIdentifier identifier: AccessibilityIdentifier,
                             file: StaticString,
                             line: UInt) {
-        self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: identifier)
+        self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: identifier.rawValue)
     }
     
-    func checkTableViewIsVisible(withAccessibilityIdentifier identifier: String,
+    func checkTableViewIsVisible(withAccessibilityIdentifier identifier: AccessibilityIdentifier,
                                  file: StaticString,
                                  line: UInt) {
-        self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: identifier)
+        self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: identifier.rawValue)
     }
     
-    func labelText(forLabelWithAccessibilityIdentifier identifier: String,
+    func labelText(forLabelWithAccessibilityIdentifier identifier: AccessibilityIdentifier,
                    file: StaticString,
                    line: UInt) -> String? {
     
-        guard let label = self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: identifier) as? UILabel else {
+        guard let label = self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: identifier.rawValue) as? UILabel else {
             return nil
         }
         
@@ -79,7 +79,7 @@ extension KIFRobot: GameListRobot {
                  file: StaticString,
                  line: UInt) -> GameListRobot {
         guard
-            let tableView = self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: AccessibilityString.gamesTableview) as? UITableView,
+            let tableView = self.kifTester(file: file, line: line).waitForView(withAccessibilityIdentifier: AccessibilityIdentifier.games_table_view.rawValue) as? UITableView,
             let indexPaths = tableView.cub_allAvailableIndexPaths else {
                 XCTFail("Couldn't get all index paths!",
                         file: file,

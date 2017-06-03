@@ -42,15 +42,19 @@ class GameDetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.configureForGame()
-        self.addAcessibility()
+        self.addAcessibilityIdentifiers()
     }
     
-    fileprivate func addAcessibility() {
-        self.losingTeamNameLabel.accessibilityIdentifier = AccessibilityString.losingTeamName
-        self.losingTeamScoreLabel.accessibilityIdentifier = AccessibilityString.losingTeamScore
-        self.winningTeamNameLabel.accessibilityIdentifier = AccessibilityString.winningTeamName
-        self.winningTeamScoreLabel.accessibilityIdentifier = AccessibilityString.winningTeamScore
-        self.cubsRecordLabel.accessibilityIdentifier = AccessibilityString.cubsRecord
+    fileprivate func addAcessibilityIdentifiers() {
+        self.losingTeamNameLabel.accessibilityIdentifier = AccessibilityIdentifier.losing_team_name.rawValue
+        self.losingTeamScoreLabel.accessibilityIdentifier = AccessibilityIdentifier.losing_score.rawValue
+        self.losingPitcherNameLabel.accessibilityIdentifier = AccessibilityIdentifier.losing_pitcher_name.rawValue
+        
+        self.winningTeamNameLabel.accessibilityIdentifier = AccessibilityIdentifier.winning_team_name.rawValue
+        self.winningTeamScoreLabel.accessibilityIdentifier = AccessibilityIdentifier.winning_score.rawValue
+        self.winningPitcherNameLabel.accessibilityIdentifier = AccessibilityIdentifier.winning_pitcher_name.rawValue
+        
+        self.cubsRecordLabel.accessibilityIdentifier = AccessibilityIdentifier.cubs_record.rawValue
     }
 
     //MARK: - Setup

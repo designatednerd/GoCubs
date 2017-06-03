@@ -65,7 +65,7 @@ extension GameListRobot {
     func verifyOnGameList(file: StaticString = #file,
                           line: UInt = #line) -> GameListRobot {
         NSLog("Verify on game list")
-        self.checkTableViewIsVisible(withAccessibilityIdentifier: AccessibilityString.gamesTableview,
+        self.checkTableViewIsVisible(withAccessibilityIdentifier: .games_table_view,
                                      file: file,
                                      line: line)
         return self

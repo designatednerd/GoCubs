@@ -9,6 +9,8 @@
 import UIKit
 import XCTest
 
+@testable import GoCubs
+
 //MARK: - Basic Robot Protocol 
 
 protocol BasicRobot {
@@ -27,15 +29,15 @@ protocol BasicRobot {
                             file: StaticString,
                             line: UInt)
     
-    func checkViewIsVisible(withAccessibilityIdentifier identifier: String,
+    func checkViewIsVisible(withAccessibilityIdentifier identifier: AccessibilityIdentifier,
                             file: StaticString,
                             line: UInt)
     
-    func checkTableViewIsVisible(withAccessibilityIdentifier identifier: String,
+    func checkTableViewIsVisible(withAccessibilityIdentifier identifier: AccessibilityIdentifier,
                                  file: StaticString,
                                  line: UInt)
     
-    func labelText(forLabelWithAccessibilityIdentifier identifier: String,
+    func labelText(forLabelWithAccessibilityIdentifier identifier: AccessibilityIdentifier,
                    file: StaticString,
                    line: UInt) -> String?
 }
