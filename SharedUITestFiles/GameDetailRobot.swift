@@ -193,30 +193,70 @@ extension GameDetailRobot {
     }
     
     @discardableResult
-    func verifyWinningAndLosingPitcherLabelsAreDisplayed(file: StaticString = #file, line: UInt = #line) -> GameDetailRobot {
+    func verifyPitcherLabelsAreDisplayed(winningPitcherName: String,
+                                         losingPitcherName: String,
+                                         file: StaticString = #file,
+                                         line: UInt = #line) -> GameDetailRobot {
         NSLog("Verify winning and losing pitcher labels displayed")
         self.checkViewIsVisible(withAccessibilityLabel: LocalizedString.winningPitcher.uppercased(),
                                 file: file,
                                 line: line)
+        let retrievedWinningPitcherName = self.labelText(forLabelWithAccessibilityIdentifier: .winning_pitcher_name,
+                                                         file: file,
+                                                         line: line)
+        XCTAssertEqual(retrievedWinningPitcherName,
+                       winningPitcherName,
+                       file: file,
+                       line: line)
+        
         self.checkViewIsVisible(withAccessibilityLabel: LocalizedString.losingPitcher.uppercased(),
                                 file: file,
                                 line: line)
+        let retrievedLosingPitcherName = self.labelText(forLabelWithAccessibilityIdentifier: .losing_pitcher_name,
+                                                        file: file,
+                                                        line: line)
+        XCTAssertEqual(retrievedLosingPitcherName,
+                       losingPitcherName,
+                       file: file,
+                       line: line)
+        
         return self
     }
     
     @discardableResult
-    func verifyCubsAndOpponentPitcherLabelsAreDisplayed(opposingTeam: Team,
+    func verifyNoResultPitcherLabelsAreDisplayed(cubsPitcherName: String,
+                                         opponentPitcherName: String,
+                                         opposingTeam: Team,
                                                         file: StaticString = #file,
                                                         line: UInt = #line) -> GameDetailRobot {
-        NSLog("Verify cubs and opponent pitchers displayed")
+        NSLog("Verify cubs and opponent pitchers displayed when there is no winner or loser (ie, rainouts and ties)")
         let cubsPitcher = LocalizedString.pitcher(for: Team.Cubs.rawValue).uppercased()
         self.checkViewIsVisible(withAccessibilityLabel: cubsPitcher,
                                 file: file,
                                 line: line)
+        self.checkViewIsVisible(withAccessibilityLabel: cubsPitcherName,
+                                file: file,
+                                line: line)
+        // Cubs "win" any game with no result. 
+        let retrievedCubsPitcherName = self.labelText(forLabelWithAccessibilityIdentifier: .winning_pitcher_name,
+                                                      file: file,
+                                                      line: line)
+        XCTAssertEqual(retrievedCubsPitcherName,
+                       cubsPitcherName,
+                       file: file,
+                       line: line)        
+        
         let opponentPitcher = LocalizedString.pitcher(for: opposingTeam.rawValue).uppercased()
         self.checkViewIsVisible(withAccessibilityLabel: opponentPitcher,
                                 file: file,
                                 line: line)
+        let retrievedOpponentPitcherName = self.labelText(forLabelWithAccessibilityIdentifier: .losing_pitcher_name,
+            file: file,
+            line: line)
+        XCTAssertEqual(retrievedOpponentPitcherName,
+                       opponentPitcherName,
+                       file: file,
+                       line: line)
         return self
     }
     

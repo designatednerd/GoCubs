@@ -32,7 +32,8 @@ extension RobotTests where Self: XCTestCase {
                           runs: 8)
             .verifyLoser(team: .Indians,
                          runs: 7)
-            .verifyWinningAndLosingPitcherLabelsAreDisplayed()
+            .verifyPitcherLabelsAreDisplayed(winningPitcherName: "Chapman",
+                                             losingPitcherName: "Shaw")
             .verifyCubsRecord(wins: 4,
                               losses: 3)
             .verifyPortionOfYear(.worldSeries)
@@ -52,7 +53,8 @@ extension RobotTests where Self: XCTestCase {
                           runs: 10)
             .verifyLoser(team: .Dodgers,
                          runs: 2)
-            .verifyWinningAndLosingPitcherLabelsAreDisplayed()
+            .verifyPitcherLabelsAreDisplayed(winningPitcherName: "Montgomery",
+                                             losingPitcherName: "Urias")
             .verifyFlag(showsResult: .win)
             .verifyCubsRecord(wins: 2,
                               losses: 2)
@@ -72,7 +74,8 @@ extension RobotTests where Self: XCTestCase {
                           runs: 6)
             .verifyLoser(team: .Cubs,
                          runs: 5)
-            .verifyWinningAndLosingPitcherLabelsAreDisplayed()
+            .verifyPitcherLabelsAreDisplayed(winningPitcherName: "Blach",
+                                             losingPitcherName: "Montgomery")
             .verifyFlag(showsResult: .loss)
             .verifyCubsRecord(wins: 2,
                               losses: 1)
@@ -90,7 +93,9 @@ extension RobotTests where Self: XCTestCase {
         self.detailRobot
             .verifyTieScoreAgainst(team: .Pirates,
                                    runs: 1)
-            .verifyCubsAndOpponentPitcherLabelsAreDisplayed(opposingTeam: .Pirates)
+            .verifyNoResultPitcherLabelsAreDisplayed(cubsPitcherName: "Wood",
+                                                     opponentPitcherName: "Nova",
+                                                     opposingTeam: .Pirates)
             .verifyFlag(showsResult: .tie)
             .verifyPortionOfYear(.regularSeason)
     }
@@ -108,7 +113,8 @@ extension RobotTests where Self: XCTestCase {
                           runs: 3)
             .verifyLoser(team: .Athletics,
                          runs: 1)
-            .verifyWinningAndLosingPitcherLabelsAreDisplayed()
+            .verifyPitcherLabelsAreDisplayed(winningPitcherName: "Hendricks",
+                                             losingPitcherName: "Manaea")
             .verifyFlag(showsResult: .win)
             .verifyPortionOfYear(.regularSeason)
     }
@@ -126,7 +132,8 @@ extension RobotTests where Self: XCTestCase {
                           runs: 3)
             .verifyLoser(team: .Cubs,
                          runs: 0)
-            .verifyWinningAndLosingPitcherLabelsAreDisplayed()
+            .verifyPitcherLabelsAreDisplayed(winningPitcherName: "Shields",
+                                             losingPitcherName: "Hendricks")
             .verifyFlag(showsResult: .loss)
             .verifyPortionOfYear(.regularSeason)
     }
@@ -139,9 +146,13 @@ extension RobotTests where Self: XCTestCase {
                        homeTeam: .Cubs,
                        awayTeam: .Padres)
         
+        //TODO: Is this actually getting parsed correctly? Strop pitches for the cubs.
+        
         self.detailRobot
             .verifyRainoutScoreAgainst(team: .Padres)
-            .verifyCubsAndOpponentPitcherLabelsAreDisplayed(opposingTeam: .Padres)
+            .verifyNoResultPitcherLabelsAreDisplayed(cubsPitcherName: "Villanueva",
+                                                     opponentPitcherName: "Strop",
+                                                     opposingTeam: .Padres)
             .verifyFlag(showsResult: .postponed)
             .verifyPortionOfYear(.regularSeason)
     }
