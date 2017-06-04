@@ -146,12 +146,10 @@ extension RobotTests where Self: XCTestCase {
                        homeTeam: .Cubs,
                        awayTeam: .Padres)
         
-        //TODO: Is this actually getting parsed correctly? Strop pitches for the cubs.
-        
         self.detailRobot
             .verifyRainoutScoreAgainst(team: .Padres)
-            .verifyNoResultPitcherLabelsAreDisplayed(cubsPitcherName: "Villanueva",
-                                                     opponentPitcherName: "Strop",
+            .verifyNoResultPitcherLabelsAreDisplayed(cubsPitcherName: "Strop",
+                                                     opponentPitcherName: "Villanueva",
                                                      opposingTeam: .Padres)
             .verifyFlag(showsResult: .postponed)
             .verifyPortionOfYear(.regularSeason)

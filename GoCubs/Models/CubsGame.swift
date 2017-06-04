@@ -41,8 +41,23 @@ class CubsGame {
         self.opponent = Opponent(name: components[1])
         self.result = Result(resultString: components[2])
         self.cubsRecord = CubsRecord(recordString: components[3])
-        self.winningPitcher = Pitcher(pitcherString: components[4])
-        self.losingPitcher = Pitcher(pitcherString: components[5])
+        
+        switch self.result.type {
+        case .win,
+             .loss:
+            // Winning pitcher is first when there is an actual winner
+            self.winningPitcher = Pitcher(pitcherString: components[4])
+            self.losingPitcher = Pitcher(pitcherString: components[5])
+        case .postponed,
+             .tie:
+            if self.opponent.isHomeTeam {
+                self.winningPitcher = Pitcher(pitcherString: components[4])
+                self.losingPitcher = Pitcher(pitcherString: components[5])
+            } else {
+                self.winningPitcher = Pitcher(pitcherString: components[5])
+                self.losingPitcher = Pitcher(pitcherString: components[4])
+            }
+        }
     }
     
     var resultString: String {
