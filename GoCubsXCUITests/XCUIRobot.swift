@@ -13,6 +13,8 @@ struct XCUIRobot: BasicRobot {
     
     var currentTestCase: XCTestCase
     
+    static var app: XCUIApplication!
+    
     init(testCase: XCTestCase) {
         self.currentTestCase = testCase
     }
@@ -25,7 +27,11 @@ struct XCUIRobot: BasicRobot {
     
     func launchApplication(file: StaticString = #file,
                            line: UInt = #line) {
-        XCUIApplication().launch()
+        if XCUIRobot.app == nil {
+            let app = XCUIApplication()
+            app.launch()
+            XCUIRobot.app = app
+        }
         
         // Set the initial state - such as interface orientation - required for tests before they run.
         XCUIDevice.shared().orientation = .portrait
