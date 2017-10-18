@@ -131,6 +131,17 @@ extension XCUIRobot: GameListRobot {
     }
 }
 
-//MARK: - Game Detail Robot
+//MARK: - Game Detail Robot conformance
 
-extension XCUIRobot: GameDetailRobot { /* mix-in */ }
+extension XCUIRobot: GameDetailRobot {
+    
+    @discardableResult
+    func goBackToList(file: StaticString = #file,
+                      line: UInt = #line) -> GameDetailRobot {
+        let app = XCUIApplication()
+        app.navigationBars
+            .buttons[LocalizedString.listTitle]
+            .tap()        
+        return self
+    }
+}

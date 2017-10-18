@@ -25,6 +25,14 @@ class GoCubsXCUITests: XCTestCase, RobotTests {
         self.basicRobot.launchApplication()
     }
     
+    override func tearDown() {
+        //NOTE: This must be cast or it will use the default implementation.
+        (self.detailRobot as? XCUIRobot)?.goBackToList()
+        self.listRobot.verifyOnGameList()
+        
+        super.tearDown()
+    }
+    
     //MARK: - Actual Tests
     
     func testWorldSeriesGame7() {
