@@ -21,8 +21,8 @@ class GoCubsKIFTests: KIFTestCase, RobotTests {
         super.setUp()
         
         self.basicRobot = KIFRobot(testCase: self)
-        self.listRobot = KIFRobot(testCase: self)
         self.detailRobot = KIFRobot(testCase: self)
+        self.listRobot = KIFRobot(testCase: self)
 
         self.listRobot.verifyOnGameList()
     }
@@ -30,6 +30,11 @@ class GoCubsKIFTests: KIFTestCase, RobotTests {
     override func tearDown() {
         self.detailRobot.goBackToList()
         self.listRobot.verifyOnGameList()
+        
+        self.listRobot = nil
+        self.detailRobot = nil
+        self.basicRobot = nil 
+        
         super.tearDown()
     }
     

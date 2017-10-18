@@ -20,15 +20,21 @@ class GoCubsEarlGreyTests: XCTestCase, RobotTests {
     override func setUp() {
         super.setUp()
         self.basicRobot = EarlGreyRobot(testCase: self)
+        self.detailRobot = EarlGreyRobot(testCase: self)
         self.listRobot = EarlGreyRobot(testCase: self)
-        self.detailRobot = EarlGreyRobot(testCase: self)        
+        
         self.listRobot.verifyOnGameList()
     }
     
     override func tearDown() {
-        //NOTE: This must be cast or it will use the default implementation, which Earl doesn't seem to like.
+        //NOTE: This must be cast or it will use the default implementation.
         (self.detailRobot as? EarlGreyRobot)?.goBackToList()
         self.listRobot.verifyOnGameList()
+        
+        self.listRobot = nil
+        self.detailRobot = nil
+        self.basicRobot = nil
+        
         super.tearDown()
     }
     

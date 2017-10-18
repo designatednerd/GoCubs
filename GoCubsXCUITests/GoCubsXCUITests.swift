@@ -18,9 +18,9 @@ class GoCubsXCUITests: XCTestCase, RobotTests {
         super.setUp()
         
         self.basicRobot = XCUIRobot(testCase: self)
-        self.listRobot = XCUIRobot(testCase: self)
         self.detailRobot = XCUIRobot(testCase: self)
-        
+        self.listRobot = XCUIRobot(testCase: self)
+
         self.continueAfterFailure = false
         self.basicRobot.launchApplication()
     }
@@ -29,6 +29,10 @@ class GoCubsXCUITests: XCTestCase, RobotTests {
         //NOTE: This must be cast or it will use the default implementation.
         (self.detailRobot as? XCUIRobot)?.goBackToList()
         self.listRobot.verifyOnGameList()
+        
+        self.listRobot = nil
+        self.detailRobot = nil
+        self.basicRobot = nil 
         
         super.tearDown()
     }
