@@ -64,7 +64,7 @@ extension EarlGreyRobot: BasicRobot {
                    file: StaticString,
                    line: UInt) {
         self.earlFromFile(file: file, line: line)
-            .selectElement(with: grey_allOfMatchers([
+            .selectElement(with: grey_allOf([
                     grey_accessibilityTrait(UIAccessibilityTraitButton),
                     grey_accessibilityLabel(label),
                 ]))
@@ -91,7 +91,7 @@ extension EarlGreyRobot: BasicRobot {
                                  file: StaticString,
                                  line: UInt) {
         self.earlFromFile(file: file, line: line)
-            .selectElement(with: grey_allOfMatchers([
+            .selectElement(with: grey_allOf([
                     grey_accessibilityID(identifier.rawValue),
                     grey_kindOfClass(UITableView.self),
                     grey_sufficientlyVisible(),
@@ -105,7 +105,7 @@ extension EarlGreyRobot: BasicRobot {
         var retrievedText = ""
         
         self.earlFromFile(file: file, line: line)
-            .selectElement(with: grey_allOfMatchers([
+            .selectElement(with: grey_allOf([
                     grey_kindOfClass(UILabel.self),
                     grey_accessibilityID(identifier.rawValue)
                 ]))
@@ -167,7 +167,7 @@ extension EarlGreyRobot: GameListRobot {
                 
                 // Now that the cell is visible, tap it.
                 self.earlFromFile(file: file, line: line)
-                    .selectElement(with: grey_allOfMatchers([
+                    .selectElement(with: grey_allOf([
                         grey_descendant(grey_accessibilityLabel(dateText)),
                         grey_descendant(grey_accessibilityLabel(gameText)),
                         grey_kindOfClass(UITableViewCell.self),
