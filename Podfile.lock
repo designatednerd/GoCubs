@@ -1,16 +1,16 @@
 PODS:
-  - EarlGrey (1.7.2)
-  - KIF (3.5.1):
-    - KIF/Core (= 3.5.1)
-  - KIF/Core (3.5.1)
+  - EarlGrey (1.12.1)
+  - KIF (3.6.0):
+    - KIF/Core (= 3.6.0)
+  - KIF/Core (3.6.0)
 
 DEPENDENCIES:
   - EarlGrey
   - KIF
 
 SPEC CHECKSUMS:
-  EarlGrey: 704eb520225eeec801e77ad0583095f4f2624520
-  KIF: 082eb65279e51c3092923802849eb796a04982ab
+  EarlGrey: f7774b813c888ebdb9a21e612d67874d17d5a326
+  KIF: bd770edd8ce49bc7308501e4871e58a02d137be3
 
 PODFILE CHECKSUM: 3dc89c55d8adfbdf03a4381981274ba36c45b0f8
 
