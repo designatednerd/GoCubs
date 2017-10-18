@@ -34,7 +34,7 @@ struct XCUIRobot: BasicRobot {
         }
         
         // Set the initial state - such as interface orientation - required for tests before they run.
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
     }
     
     func tapButton(withAccessibilityLabel label: String,
