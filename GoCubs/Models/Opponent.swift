@@ -22,7 +22,7 @@ struct Opponent {
         var nameToUse: String
         if name.hasPrefix(at) {
             self.isHomeTeam = true            
-            nameToUse = name.substring(from: at.endIndex)
+            nameToUse = String(name[at.endIndex...])
         } else {
             self.isHomeTeam = false
             nameToUse = name

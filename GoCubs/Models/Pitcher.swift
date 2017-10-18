@@ -24,9 +24,8 @@ struct Pitcher {
         let recordStringWithParen = components[1]
         
         //Grab up to the )
-        let recordString = recordStringWithParen
-            .substring(to: recordStringWithParen.characters.index(before: recordStringWithParen.endIndex))
-        
+        let parenIndex = recordStringWithParen.index(before: recordStringWithParen.endIndex)
+        let recordString = String(recordStringWithParen[..<parenIndex])
         
         let record = recordString.cub_asInts()
         self.wins = record.firstValue
